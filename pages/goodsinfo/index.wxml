@@ -1,0 +1,188 @@
+<!--pages/goodsinfo/index.wxml-->
+
+<view class="s1">
+  <image src="../../img/home/全部订单_03.png" mode="scaleToFill"></image>
+  <text>商品详情</text>
+</view>
+
+
+<view class="s0">
+<view class="s2">
+     <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+  <block wx:for="{{bnrUrl}}" wx:for-index="index">
+    <swiper-item>
+      <image src='{{item.url}}' class='u-img-slide' mode='aspectFill' style="width:100%; height:720rpx;   background-size: 100%;"></image>
+    </swiper-item>
+  </block>
+</swiper>
+  </view>
+<view class="main">
+  
+  <view class="s3">
+      <h3>雅迪（yadea）新款米彩龟王60V豪华电动车轻便代步踏板电瓶车男女电摩 靠背版白色</h3>
+      <li>
+        <image src="../../img/home/商品详情_03.png" mode="scaleToFill" style="width:30rpx; height:12px"></image>
+        <text>开通VIP会员卡。享受满700减50优惠卷</text>
+        <image class="s3_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
+      </li>
+    
+  </view>
+ <view class="space"></view>
+  <view class="s4">
+        <h1>优惠</h1>
+        <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
+      <li>
+        <p>白条</p>
+        <text>点此激活白条立减50元，6期免息</text>
+      </li>
+      <li>
+        <p>领劵</p>
+        <text>点此激活白条立减50元，6期免息</text>
+      </li>
+      <li>
+        <p>限购</p>
+        <text>购买1-2件时享受单件价￥3099,...</text>
+      </li>
+  </view>
+   <view class="space"></view>
+   <view class="s5">
+   <li>
+      <h1>已选</h1>
+      <text>靠背版白色，1件，可选服务于</text>
+      <image class="s5_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
+      <p></p>
+    </li>
+    <li>
+      <h1>送至</h1>
+      <image src="../../img/home/商品详情_07.png" mode="scaleToFill" style="width:30rpx; height:18px; margin-right:10rpx;"></image>
+      <text>四川成都市金牛区星汉北路金府...</text>
+      <p>现货</p>
+    </li>
+    <li>
+      <h1>运费</h1>
+      <text>在线支付运费50元</text>
+    </li>
+    <li class="s5_bot">
+    <image src="../../img/home/商品详情_11.png" mode="scaleToFill" style="width:35rpx; height:18px; margin-right:10rpx;"></image>
+      <text>店铺发货&售后</text>
+      <image src="../../img/home/商品详情_14.png" mode="scaleToFill" style="width:35rpx; height:18px; margin-right:10rpx;"></image>
+      <text>不支持7天无理由退货</text>
+    </li>
+   </view> 
+  <view class="space"></view>
+  <view class="s6">
+    <li>
+      <p></p>
+      <h1>评价</h1>
+      <text>3100+</text>     
+      <image class="s3_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
+      <h2>好评度94%</h2>
+    </li>
+      <li>
+        <text>外观漂亮</text>
+        <text>柔软舒适</text>
+        <text>时尚大气</text>
+        <text>动力强劲</text>
+      </li>
+  </view>
+ <view class="s7">
+    <image src="../../img/home/商品详情_003.png" mode="scaleToFill" style="width:350rpx; height:120rpx"></image>
+    <text>车子质量：棒棒哒 电池续航：耐跑哈 外形外观：很漂亮 骑行体验：好驾驭很便捷哟使用场景： 哪哪都觉得...</text>
+    <li>
+      <image src="../../img/home/商品详情_007.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
+    <image src="../../img/home/商品详情_09.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
+    <image src="../../img/home/商品详情_011.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
+    </li>
+    <h1>白色</h1>
+      <text class="advice">查看全部评价</text>
+ </view> 
+</view>
+</view>
+
+<view class="bottom">
+    <li>
+      <view>
+      <image src="../../img/home/商品详情_21.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
+      <text>店铺</text>
+      </view>
+      <view>
+      <image src="../../img/home/商品详情_18.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
+      <text>购物车</text>
+      </view> 
+    </li>
+    <li>
+      <view>
+      <text>加入购物车</text>
+      <text id="pay">立即购买</text>
+      </view>
+    </li>   
+</view>
+
+
+<view class="choose">
+    <view class="choose_content">
+        <view class="c_header">
+            <image src="../../img/home/商品详情_02.png" mode="scaleToFill" style="width:200rpx; height:180rpx"></image>
+            <li>
+            <text>￥3099.00</text>
+            <h1>编号:49927298515</h1>
+            </li>
+            <image src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
+        </view>
+        <view class="color">
+          <h1>颜色</h1>
+            <li>
+              <text>靠背版白色</text>
+              <text class="c_active">靠背版金属银红</text>
+              <text>靠背版蓝色</text>
+              <text>尾箱版白色</text>
+              <text>尾箱版金属银红</text>
+              <text>尾箱版蓝色</text>
+            </li>           
+        </view>
+        <view class="number">
+          <text>数量</text>
+          <view class="stepper">  
+              <!-- 减号 -->  
+              <text  bindtap="delCount" data-index="{{index}}     ">-</text>  
+              <!-- 数值 -->  
+              <input type="number" value="1"  />  
+              <!-- 加号 -->  
+              <text  >+</text>  
+          </view>  
+        </view>
+
+        <view class="safe">
+          <h1>保障服务</h1>
+          <view>
+          <image src="../../img/home/购买选择_07.png" mode="scaleToFill" style="width:30rpx; height:25rpx"></image>
+          <text>只换不修</text>
+          <p>三包范围硬件故障，免费换新</p>
+          <h2>服务介绍</h2>
+          <image src="../../img/home/购买选择_09.png" mode="scaleToFill" style="width:30rpx; height:30rpx"></image>
+          </view>
+          <li>
+              <text>2年免费换新 ￥199.0</text>
+              <text>3年免费换新 ￥259.0</text>
+          </li>
+
+
+          <view>
+          <li>
+          <image src="../../img/home/购买选择_11.png" mode="scaleToFill" style="width:30rpx; height:30rpx"></image>
+          <p style="color:black; margin-left:10rpx;">延长保障</p>
+          </li>
+          <li>
+          <h2>服务介绍</h2>
+          <image src="../../img/home/购买选择_09.png" mode="scaleToFill" style="width:30rpx; height:30rpx"></image>
+          </li>
+          </view>
+          <li>
+              <text>延保至3年 ￥189.0</text>
+              <text>延保至4年 ￥209.0</text>
+          </li>
+        </view>
+
+        <text class="yes">确定</text>
+    </view>
+</view>

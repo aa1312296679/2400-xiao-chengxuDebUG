@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Goods":"../pages/componts/goodlist"
+  },
+  "navigationBarTitleText": "仁马二手车"
+}

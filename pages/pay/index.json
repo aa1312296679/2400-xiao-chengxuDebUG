@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-header":"../pages/componts/header",
+    "Goods":"..//pages/componts/goodlist"
+  }
+}

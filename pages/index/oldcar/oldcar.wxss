@@ -1,0 +1,224 @@
+/* pages/car/oldcar.wxss */
+.search{  
+      width: 70%;
+      margin: 0 auto;
+    }  
+  .searchcion {
+    position: absolute;
+    top: 15rpx;
+    left: 150rpx;
+  }  
+    .search_arr {    
+      border-radius: 10rpx;  
+      margin-left: 10rpx;  
+    }  
+    .search_arr input{ 
+      height: 60rpx;
+      font-size: 12px;
+      border-radius: 5px;
+      background-color: #f37568;
+    } 
+    .s1 {
+      height: 100rpx;
+      background-color: #f13a1c;
+      color: #fff;
+      margin-bottom: 20rpx;
+    } 
+    .text_mid {
+      margin-left: 200rpx;
+    }
+    .s1_text {
+      float: left;
+      margin-left: 40rpx;
+    }
+    .s1 image {
+      float: left;
+    }
+   .s1 image:nth-child(3) {
+     float: right;
+   }
+
+   .s2{
+     width: 90%;
+     margin: 0 auto;
+     display: flex;
+     justify-content: space-around;
+     
+   }
+   .s2 text {
+     width: 120rpx;
+     height: 60rpx;
+     background-color: #bb88f2;
+     text-align: center;
+     line-height: 60rpx;
+     color: #fff;
+     border-radius: 30rpx 10rpx 30rpx 10rpx;
+   }
+   .s2 text:nth-child(2){
+     background-color: #25c7df;
+   }
+   .s2 text:nth-child(3){
+     background-color: #fcbf4c;
+   }
+   .s2 text:nth-child(4){
+     background-color: #679efe;
+   }
+   
+
+
+   .s7 {
+     width: 95%;
+     margin: 20rpx auto;
+     display: flex;
+     justify-content: center;
+     box-shadow: 3px 3px 3px #ccc;
+     border-radius: 5px;
+   }
+   .content_text{
+     font-size: 25rpx;
+     color: #ccc;
+   }
+   .s7_text {
+     font-size: 15px;
+     color: #ccc;
+   }
+   .s7_text text{
+     color: red;
+     font-weight: 650;
+   }
+   .s7_content {
+     color: #ccc;
+     font-size: 12px;
+   }
+   .s7_content text {
+     color: #888;
+     font-size: 14px;
+   }
+     .s7_content image {
+       margin-left: 10rpx;
+     }
+     .s7_left {
+       margin-top: 20rpx;
+     }
+     .s7_right {
+       margin-left: 20rpx;
+       margin-top: 20rpx;
+       font-size: 14px;
+     }
+
+     .shaixuan {
+       background-color: #fff;
+       position: fixed;
+       display: none;
+       width: 85%;
+       height: 100%;
+       right: 0rpx;
+       top: 0;
+       z-index: 999;
+     }
+     .shaixuan view {
+       height: 100rpx;
+     }
+     .shaixuan view p {
+       display: inline-block;
+        width: 8rpx;
+        height: 40rpx;
+        margin-top: 40rpx;
+        margin-left: 20rpx;
+        background-color: #6180f1;
+        border-radius: 4rpx;
+        float: left;
+     }
+     .shaixuan view input {
+       width: 95%;
+       margin: 0 auto;
+       background-color: #f6f6f6;
+       height: 80rpx;
+       border-radius: 15rpx;
+     }
+      .shaixuan view text {
+        float: left;
+        margin-top: 40rpx;
+        margin-left: 20rpx;
+      }
+    .shaixuan view image {
+      float: right;
+    }
+    .shaixuan view:nth-child(2) {
+      display: flex;
+      justify-content: space-around;
+    }
+   .shaixuan view:nth-child(2) text {
+     background-color: #f6f6f6;
+     display: block;
+     width: 130rpx;
+     height: 70rpx;
+     text-align: center;
+     line-height: 70rpx;
+     border-radius: 15rpx;
+     font-size: 14px;
+     margin-top: 10rpx;
+   }
+   .shaixuan view:nth-child(4) text {
+     background-color: #f6f6f6;
+     display: block;
+     width: 180rpx;
+     height: 90rpx;
+     text-align: center;
+     line-height: 90rpx;
+     border-radius: 15rpx;
+     font-size: 14px;
+     margin-top: 10rpx;
+   }
+   .shaixuan view:nth-child(5)  {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+   .shaixuan view:nth-child(5) text {
+     background-color: #f6f6f6;
+     display: block;
+     width: 250rpx;
+     height:65rpx;
+     text-align: center;
+     line-height:65rpx;
+     font-size: 14px;
+     margin-top: 40rpx;
+     border-radius: 30rpx;
+   }
+.shaixuan view:nth-child(5) li {
+  display: block;
+  width: 60rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  border-bottom: 1px solid#ccc;
+}
+.shaixuan .space {
+  height: 50rpx;
+}
+.btn {
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+}
+.btn text {
+  width: 160rpx;
+	height: 60rpx;
+	background-image: linear-gradient(0deg, 
+		#f9ac52 0%, 
+		#fecb49 100%), 
+	linear-gradient(0deg, 
+		#ea1d0f 0%, 
+		#f54621 100%);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 29rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+}
+.btn text:nth-child(2) {
+  background-image: linear-gradient(0deg, 
+		#ea1d0f 0%, 
+		#f54621 100%);
+}

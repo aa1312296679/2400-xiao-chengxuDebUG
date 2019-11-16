@@ -1,0 +1,89 @@
+/* pages/shop/index.wxss */
+.s1 {
+  width: 100%;
+  background-color: red;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+}
+.s1 image {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  float: left;
+  width: 17rpx;
+	height: 33rpx;
+}
+.s0 {
+  background-color: #f6f6f6;
+  height: 1200rpx;
+}
+.main {
+  width: 95%;
+  margin: 0 auto;
+}
+.space {
+  height: 20rpx;
+  background-color: #f6f6f6;
+}
+.s3 {
+  background-color: #fff;
+  border-radius: 15rpx;
+  margin-top: 10rpx;
+}
+.s3 h3{
+  font-weight: 550;
+  font-size: 15px;
+  margin-left: 20rpx;
+  
+}
+.s3 p {
+  display: inline-block;
+  margin-top: 40rpx;
+  width: 77rpx;
+	height: 36rpx;
+  text-align: center;
+	background-image: linear-gradient(0deg, 
+		#eb1e10 0%, 
+		#f23e1d 100%);
+	border-radius: 10rpx;
+  font-size: 13px;
+  color: #fff;
+  margin-left: 20rpx;
+}
+.s3 li {
+  display: block;
+  font-size: 12px;
+  margin-left: 40rpx;
+  line-height: 60rpx;
+  
+}
+.s3 li text {
+  margin-left: 20rpx;
+}
+.s4 {
+  margin-top: 20rpx;
+  background-color: #fff;
+  font-size: 12px;
+  border-radius: 10rpx;
+}
+.s4 p {
+  display: inline-block;
+  width: 8rpx;
+	height: 31rpx;
+	background-color: #6180f1;
+	border-radius: 4rpx;
+  margin-left: 30rpx;
+  margin: 20rpx 10rpx 0rpx 20rpx;
+}
+.s4 h2{
+  font-size: 15px;
+}
+.s4 text {
+  display: block;
+  text-indent: 2em;
+  margin: 10rpx;
+}
+.s4 text:nth-child(5) {
+  padding-bottom: 30rpx;
+}

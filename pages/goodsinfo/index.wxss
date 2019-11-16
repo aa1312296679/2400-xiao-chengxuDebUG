@@ -1,0 +1,402 @@
+/* pages/goodsinfo/index.wxss */
+.s1 {
+  width: 100%;
+  background-color: red;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+}
+.s1 image {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  float: left;
+  width: 17rpx;
+	height: 33rpx;
+}
+.s0 {
+  background-color: #fff;
+  height: 1200rpx;
+}
+.main {
+  width: 100%;
+  margin: 0 auto;
+}
+.space {
+  height: 30rpx;
+  background-color: #f6f6f6;
+}
+.u-wrp-bnr {
+  height: 720rpx;
+}
+
+.s3 {
+  background-color: #fff;
+  width: 100%;
+  margin: 0 auto;
+}
+.s3 h3{
+  font-weight: 500;
+  font-size: 15px;
+  display: block;
+  padding-top: 10rpx;
+  margin: 0rpx 0rpx 20rpx 20rpx;
+}
+
+.s3 li {
+  display: block;
+  font-size: 12px;
+  margin-left: 20rpx;
+  
+}
+.s3 li text {
+  margin-left: 10rpx;
+  line-height: 60rpx;
+}
+.s3 li image:nth-child(3) {
+  margin-top: 10rpx;
+  float: right;
+}
+.s3_r {
+  float: right;
+  margin-right: 20rpx;
+}
+.s4 {
+  margin-top: 20rpx;
+  background-color: #fff;
+  font-size: 12px;
+  border-radius: 10rpx;
+  height: 200rpx;
+}
+.s4 li {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin-left: 80rpx;
+  line-height: 30rpx;
+  margin-top: 20rpx;
+}
+.s4 h1 {
+font-size: 15px;
+margin-left: 20rpx;
+float: left;
+}
+.s4 image {
+  float: right;
+  margin-right: 20rpx;
+}
+.s4 li p {
+   background-color: #ffe0e6;
+   border-radius: 10rpx;
+   color: #ca0000ec;
+}
+.s4 li text {
+  font-size: 14px;
+}
+.s5_r{
+  margin-left: 210rpx;
+}
+.s5 li{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  margin: 30rpx 0rpx;
+}
+.s5 li h1 {
+  font-size: 15px;
+  font-weight: 540;
+  margin: 0rpx 30rpx 0rpx 30rpx;
+}
+.s5 li p {
+  width: 100%;
+  margin-left: 130rpx;
+  color: #ca0000ec;
+  padding-bottom: 40rpx; 
+  border-bottom: 1px solid #ccc; 
+}
+.s5_bot{
+  align-items: center;
+}
+.s5_bot image{
+  margin-left: 40rpx;
+}
+.s5_bot text{
+  font-size: 12px;
+  color: #ccc;
+}
+
+.s6 {
+  height: 150rpx;
+  padding-top: 40rpx;
+  
+}
+.s6 li:nth-child(1){
+ margin-left: 10rpx;
+ font-size: 13px;
+ color: #ccc;
+}
+.s6 li:nth-child(1) p{
+  display: inline-block;
+  width: 8rpx;
+	height: 40rpx;
+	background-color: #6180f1;
+	border-radius: 4rpx;
+  float: left;
+  margin-left: 40rpx;
+}
+.s6 image{
+  margin-top: 6rpx;
+}
+
+.s6 li:nth-child(1) h1 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+}
+.s6 li:nth-child(1) text {
+  margin-left: 10rpx;
+}
+.s6 li:nth-child(1) h2 {
+  float: right;
+  margin-right: 10rpx;
+}
+.s6 li:nth-child(2) {
+  display: flex;
+  margin-top: 30rpx;
+}
+.s6 li:nth-child(2) text {
+  background-color: #ffe0e6;
+  margin-left: 30rpx;
+  padding: 5rpx 15rpx;
+  font-size: 13px;
+  border-radius: 15rpx;
+}
+.s7 {
+  height: 700rpx;
+}
+.s7 text {
+  display: block;
+  margin-left: 40rpx;
+  font-size: 13px;
+}
+.s7 li {
+  margin-left: 20rpx;
+  display: flex;
+}
+.s7  image {
+  margin-left: 20rpx;
+}
+.s7 li image {
+  margin-left: 20rpx;
+}
+.s7 h1 {
+  margin-left: 40rpx;
+  color: #ccc;
+  font-size: 13px;
+}
+.s7 .advice {
+  width: 180rpx;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15rpx 30rpx;
+  margin-top: 50rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  margin-left: 250rpx;
+}
+
+.bottom {
+  position: fixed;
+  justify-content: space-around;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  background-color: #fff;
+}
+
+
+.bottom li  {
+ display: flex;
+ width: 30%;
+ 
+}
+.bottom li view {
+  margin-left: 42rpx;
+  font-size: 13px;
+}
+.bottom li:nth-child(2) {
+  position: absolute;
+  top: 30rpx;
+  right: 70rpx;
+  width: 60%;
+}
+.bottom li:nth-child(2) text {
+  padding: 20rpx 40rpx;
+  background-image: linear-gradient(0deg, 
+		#f9ae52 0%, 
+		#feca49 100%), 
+	linear-gradient(
+		#fdfdfe, 
+		#fdfdfe);
+  margin-left: 20rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  color: #fff;
+}
+ #pay {
+  background-image: linear-gradient(0deg, 
+		#ed2502 0%, 
+		#f84033 100%), 
+	linear-gradient(
+		#fdfdfe, 
+		#fdfdfe);
+    padding: 20rpx 50rpx;
+}
+.choose {
+  position: fixed;
+  height: 90%;
+  width: 100%;
+  bottom: 0rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: block;
+}
+.choose_content {
+  width: 95%;
+  margin: 0 auto;
+}
+.c_header {
+  margin-top: 20rpx;
+  display: flex;
+}
+.c_header image {
+  border-radius: 15rpx;
+  float: left;
+}
+.c_header li>text {
+  display: block;
+  margin-top: 100rpx;
+  margin-left: 20rpx;
+  color: #ca0000ec;
+  font-weight: 600;
+}
+.c_header li>h1 {
+  margin-left: 20rpx;
+  color: rgb(94, 92, 92);
+  font-size: 12px;
+}
+.c_header image:nth-child(3) {
+  margin-left: 220rpx;
+}
+.color h1 {
+  display: block;
+  font-size: 15px;
+  margin: 10rpx;
+}
+.color li {
+  display: flex;
+  flex-wrap: wrap;
+}
+.color li text {
+  padding: 10rpx 40rpx;
+  background-color: #f6f6f6;
+  margin: 10rpx 20rpx;
+  font-size: 13px;
+  border-radius: 25rpx;
+}
+.color .c_active {
+  border: 1px solid #ca0000ec;
+  color: #ca0000ec;
+  background-color: #ffe0e6;
+}
+ .stepper {  
+    width:90px;  
+    height: 24px;  
+    /*给主容器设一个边框*/  
+    border: 1rpx solid #f6f6f6;  
+    border-radius: 10px;  
+    margin:0 auto;  
+    font-size: 16px;
+    float: right;
+}  
+  
+/*加号和减号*/  
+.stepper text {  
+    width: 24px;  
+    line-height: 26px;  
+    text-align: center;  
+    float: left;
+    color: #ccc; 
+}  
+  
+/*数值*/  
+.stepper input {  
+    width: 40px;  
+    height: 24px;  
+    float: left;  
+     margin: 0 auto;   
+    text-align: center;  
+    font-size: 14px;  
+    color: #000;
+    /*给中间的input设置左右边框即可*/  
+    border-left: 1rpx solid #ccc;  
+    border-right: 1rpx solid #ccc;  
+}  
+  
+/*普通样式*/  
+.stepper .normal{  
+    color: black;  
+}  
+  
+/*禁用样式*/  
+.stepper .disabled{  
+    color: #ccc;  
+}  
+.number {
+  margin-top: 30rpx;
+}
+.safe {
+  margin-top: 30rpx;
+  font-size: 13px;
+}
+.safe view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.safe p{
+  font-size: 12px;
+  color: #ccc;
+  margin-right: 30rpx;
+}
+.safe image {
+  margin-left: 20rpx;
+}
+.safe h2 {
+  margin-left: 20rpx;
+  color: red;
+}
+.safe li {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+}
+.safe li text{
+  padding:10rpx 30rpx;
+  background-color: #f6f6f6;
+  border-radius: 25rpx;
+  margin-left: 30rpx;
+}
+.yes {
+  display: block;
+  width: 95%;
+  background-color: red;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  border-radius: 40rpx;
+  color: #fff;
+}

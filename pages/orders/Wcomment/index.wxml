@@ -1,0 +1,115 @@
+<!--pages/orders/Wcomment/index.wxml-->
+
+<view class="content">
+  <view class="main">
+
+<view class="s2">
+    <view class="s2_top">
+    <text>多次方汽车</text>
+     <text>订单完成</text>
+     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+   
+    </view>
+    <view class="s2_bot">
+      <view class="s7">
+    <view class="s7_left">
+      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
+      <view class="content_text">普通胎X1 </view>
+      <text class="s7_text">￥2600 </text>
+      
+     <view class="stepper">  
+      <text>售后</text>
+      <text class="btn">评价</text>
+  </view>  
+    </view>
+  </view>
+  
+    </view>
+  </view>  
+
+  <view class="s2">
+    <view class="s2_top">
+    <text>多次方汽车</text>
+     <text>订单完成</text>
+     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+   
+    </view>
+    <view class="s2_bot">
+      <view class="s7">
+    <view class="s7_left">
+      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
+      <view class="content_text">普通胎X1 </view>
+      <text class="s7_text">￥2600 </text>
+      
+     <view class="stepper">  
+      <text>售后</text>
+      <text class="btn">评价</text>
+  </view>  
+    </view>
+  </view>
+  
+    </view>
+  </view>  
+
+  <view class="s2">
+    <view class="s2_top">
+    <text>多次方汽车</text>
+     <text>订单完成</text>
+     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+   
+    </view>
+    <view class="s2_bot">
+      <view class="s7">
+    <view class="s7_left">
+      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
+      <view class="content_text">普通胎X1 </view>
+      <text class="s7_text">￥2600 </text>
+      
+     <view class="stepper">  
+      <text>售后</text>
+      <text class="btn">评价</text>
+  </view>  
+    </view>
+  </view>
+  
+    </view>
+  </view>  
+  <view class="s2">
+    <view class="s2_top">
+    <text>多次方汽车</text>
+     <text>订单完成</text>
+     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+   
+    </view>
+    <view class="s2_bot">
+      <view class="s7">
+    <view class="s7_left">
+      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
+      <view class="content_text">普通胎X1 </view>
+      <text class="s7_text">￥2600 </text>
+      
+     <view class="stepper">  
+      <text>售后</text>
+      <text class="btn">评价</text>
+  </view>  
+    </view>
+  </view>
+  
+    </view>
+  </view>  
+
+  
+</view>
+  </view>

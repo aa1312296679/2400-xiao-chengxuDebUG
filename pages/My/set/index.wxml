@@ -1,0 +1,44 @@
+<!--pages/My/set/index.wxml-->
+
+<view class="content">
+  <view class="main">
+    <view class="main_top">
+      <image src="../../../img/home/编辑资料_03.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+    </view>
+    <view class="main_mid">
+      <li>
+        <text>昵称</text>
+        <input value="小周"></input>
+      </li>
+      <li>
+        <text>姓名</text>
+        <input value="周梅"></input>
+      </li>
+      <li>
+        <text>性别</text>
+        <input value="女"></input>
+      </li>
+      <li>
+        <text>生日</text>
+        <input value="1999-8-17"></input>
+      </li>
+      <li>
+        <text>职业</text>
+        <input value="设计师"></input>
+      </li>
+      <li>
+        <text>地区</text>
+        <input value="四川-成都"></input>
+      </li>
+      <li>
+        <text>手机号</text>
+        <input value="15984817250"></input>
+      </li>
+      <li>
+        <text>身份证</text>
+        <input value="511323199908176322"></input>
+      </li>
+    </view>
+      
+    </view>
+    </view>

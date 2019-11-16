@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/oldcar/oldcar",
+    "pages/car/car",
+    "pages/user/user",
+    "pages/logs/logs",
+    "pages/nearby/nearby",
+    "pages/message/message",
+    "pages/Pprice/pay/index",
+    "pages/index/choosegoods/index",
+    "pages/orders/orders/index",
+    "pages/orders/Wpays/index",
+    "pages/orders/Worder/index",
+    "pages/orders/Rorder/index",
+    "pages/orders/Wcomment/index",
+    "pages/orders/Wservice/index",
+    "pages/Pprice/index",
+    "pages/My/about/index",
+    "pages/My/address/index",
+    "pages/My/advice/index",
+    "pages/My/assemble/index",
+    "pages/My/invite/index",
+    "pages/My/production/index",
+    "pages/My/set/index",
+    "pages/My/release/index",
+    "pages/orders/writeorder/index",
+    "pages/login/login/index",
+    "pages/login/register/index",
+    "pages/My/address/waddress/index",
+    "pages/vip/vipcenter/index",
+    "pages/shop/index",
+    "pages/service/index",
+    "pages/goodsinfo/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f13a1c",
+    "navigationBarTitleText": "仁马",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#C62724",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "img/home/形状 10.png",
+        "iconPath": "img/home/购物车_10.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "img/home/形状 7.png",
+        "iconPath": "img/home/购物车_12.png",
+        "pagePath": "pages/nearby/nearby",
+        "text": "附近门店"
+      },
+      {
+        "selectedIconPath": "img/home/购物车_70.png",
+        "iconPath": "img/home/购物车_70.png",
+        "pagePath": "pages/message/message",
+        "text": "消息"
+      },
+      {
+        "selectedIconPath": "img/home/形状 8.png",
+        "iconPath": "img/home/购物车_05.png",
+        "pagePath": "pages/car/car",
+        "text": "购物车"
+      },
+      {
+        "selectedIconPath": "img/home/形状 9.png",
+        "iconPath": "img/home/购物车_07.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

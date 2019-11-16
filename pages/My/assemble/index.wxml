@@ -1,0 +1,45 @@
+<!--pages/My/assemble /index.wxml-->
+
+
+<view class="s2">
+  <text>全部</text>
+  <text>拼团中</text>
+  <text>拼团成功</text>
+  <text>拼团失败</text>
+</view>
+<view class="s2_bto"></view>
+<view class="s3">
+  <view class="s3_main">
+    <text>团购说明和商品信息</text>
+    <text>助力好友</text>
+    <view class="s3_bto">
+      <image src="../../../img/user/我的拼团_03.png"></image>
+      <image src="../../../img/user/我的拼团_05.png"></image>
+      <image src="../../../img/user/我的拼团_07.png"></image>
+      <image src="../../../img/user/我的拼团_10.png"></image>
+    </view>  
+  </view>
+  <view class="invite">
+      <text>邀请微信好友</text>
+      <text>邀请朋友圈好友</text>
+      <text>面对面邀请</text>
+    </view>
+</view>
+
+<view class="s3">
+  <view class="s3_main">
+    <text>团购说明和商品信息</text>
+    <text>助力好友</text>
+    <view class="s3_bto">
+      <image src="../../../img/user/我的拼团_03.png"></image>
+      <image src="../../../img/user/我的拼团_05.png"></image>
+      <image src="../../../img/user/我的拼团_07.png"></image>
+      <image src="../../../img/user/我的拼团_10.png"></image>
+    </view>  
+  </view>
+  <view class="invite">
+      <text>邀请微信好友</text>
+      <text>邀请朋友圈好友</text>
+      <text>面对面邀请</text>  
+  </view>
+</view>

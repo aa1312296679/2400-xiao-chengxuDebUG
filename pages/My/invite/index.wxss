@@ -1,0 +1,150 @@
+/* pages/My/invite/index.wxss */
+.s1 {
+  width: 100%;
+  background-color: red;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+}
+.s1 image {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  float: left;
+  width: 17rpx;
+	height: 33rpx;
+}
+.content {
+  width: 100%;
+  background-color: #fff;
+}
+.space {
+  display: block;
+ height: 20rpx;
+}
+.main {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+.main view {
+  margin-top: 20rpx;
+  position: relative;
+}
+.main view text {
+  border: 1px solid #fff;
+  top: 20rpx;
+  right: 10rpx;
+  position: absolute;
+  border-radius: 20rpx;
+  font-size: 12px;
+  padding: 5rpx 12rpx;
+  color: #fff;
+}
+
+.main_text{
+  background-color: red;
+  border-radius: 20rpx;
+  font-size: 13px;
+  padding: 15rpx 40rpx;
+  height: 50rpx;
+  color: #fff;
+}
+.s2 {
+  width: 100%;
+}
+.s2_main {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+.s2_content{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+.s2_content text {
+  display: block;
+  width: 300rpx;
+	height: 90rpx;
+  margin-top: 30rpx;
+  padding-left: 30rpx;
+  line-height: 90rpx;
+	background-color: #74a7ff;
+	border-radius: 20rpx;
+  color: #fff;
+  font-size: 13px;
+}
+.s2_content image {
+  position: absolute;
+}
+.s2_content li:nth-child(1) image {
+  top: 40rpx;
+  left: 25rpx;
+}
+.s2_content li:nth-child(2) image {
+  top: 40rpx;
+  left: 400rpx;
+}
+.s2_content li:nth-child(3) image {
+  top: 160rpx;
+  left: 30rpx;
+}
+.s2_content li:nth-child(4) image {
+  top: 160rpx;
+  left: 410rpx;
+}
+.s2_content li:nth-child(2) text {
+  background-color: #c98ef3;
+}
+.s2_content li:nth-child(3) text {
+  background-color: #f9b051;
+}
+.s2_content li:nth-child(4) text {
+  background-color: #2ed0e8;
+}
+.s3 {
+  width: 100%;
+  margin-top: 20rpx;
+}
+.s3_main {
+  width: 95%;
+  margin: 0 auto;
+}
+.s3_main p {
+  display: inline-block;
+  width: 8rpx;
+	height: 31rpx;
+	background-color: #6180f1;
+	border-radius: 4rpx;
+  margin-right: 10rpx;
+}
+
+.s3_content {
+  height: 120rpx;
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 1px solid #ccc;
+  margin-top: 20rpx;
+}
+.s3 image {
+  float: left;
+  margin-left: 30rpx;
+}
+.s3_text {
+  float: left;
+  margin-top: 10rpx;
+}
+.s3_text text:nth-child(1) {
+  display: block;
+}
+.s3_text text:nth-child(2) {
+  font-size: 13px;
+  color: #ccc;
+}
+.s3 .specal{
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}

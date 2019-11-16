@@ -1,0 +1,64 @@
+<!--pages/pay/index.wxml-->
+<view class="bank">
+  <view class="bank_main">
+  <view class="bank_top">
+  <p></p>
+  <text>成都银行(金府支行)</text>
+  <h4>为您推荐的最佳位置</h4>
+  </view>
+  <view class="bank_bot">
+    <p></p>
+    <input value="您的电话"></input>
+  </view>
+   </view>
+</view>
+<view class="s6">
+<view class="s7">
+    <view class="s7_left">
+      <image src="../../../img/home/木马首页_20.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配本...</h4> 
+      <view class="content_text"> 17英寸 | 最大速度：240km/h</view>
+      <text class="s7_text"><text>￥495  </text>760人选购</text>
+      <view class="s7_content">途虎汽车配件旗舰店 <text>成都</text>
+      <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+      </view>
+    </view>
+  </view>
+  </view>
+
+<view class="updata">
+  <view class="updata_main">
+    <p></p>
+    <text>上传故障视频或图片方便维修师精准判断</text>
+    <image src="../../../img/home/确认订单_03.png" style="margin-top:25rpx; width: 80px; height: 70px; " mode="scaleToFill"></image>
+  </view>
+</view>
+
+<view class="pay">
+  <view class="pay_main">
+  <view class="pay_content">
+  <text>支付方式</text>
+  <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+  <text>微信支付</text>
+  </view>
+  <view class="pay_content">
+  <text>优惠券</text>
+  <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+  <text class="pay_content_text">0张可用</text>
+  
+  </view>
+  <text>使用00积分抵扣￥00元 </text>
+  <text class="spacel">备注:</text>
+  <input value="请先和商家协商一致"></input>
+  </view>
+</view>
+
+<view class="s4">
+    <view class="s4_main">
+    <text>实付:</text>
+    <text>￥495</text>
+    <h4>提交订单</h4>
+    </view>
+</view>

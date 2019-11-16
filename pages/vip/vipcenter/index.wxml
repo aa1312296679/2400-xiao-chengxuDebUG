@@ -1,0 +1,59 @@
+<!--pages/vip/vipcenter/index.wxml-->
+<view class="s1">
+  <image src="../../../img/home/全部订单_03.png" mode="scaleToFill"></image>
+  <text>会员中心</text>
+</view>
+<view class="s2">
+<image style="width:100%; height:350rpx;" src="../../../img/user/会员中心_03.jpg" mode="scaleToFill"></image>
+
+<view class="s2_content">
+    <image style="float:left;width:80rpx; height:75rpx;" src="../../../img/user/会员中心_003.jpg" mode="scaleToFill"></image>
+    <text>夏季死去的花</text>
+     <image style="width:40rpx; height:35rpx; " src="../../../img/user/会员中心_03.png" mode="scaleToFill"></image>
+     <view>你的会员将在2019-10-30到期></view>
+     <view>已为您节省0.00元</view>
+
+     <view class="s2_bot">
+      <text>0</text>
+      <text>0</text>
+      <text>0</text>
+     </view>
+     <view class="s2_bot1">
+        <text>优惠卷</text>
+        <text>积分</text>
+        <text>免服务费商品</text>
+     </view>
+</view>
+</view>
+<view class="s3">
+    <text>会员卡特权</text>
+    <view class="s3_content">
+      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心_06.jpg" mode="scaleToFill"></image>
+      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心_08.jpg" mode="scaleToFill"></image>
+      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心_10.jpg" mode="scaleToFill"></image>
+      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心_12.jpg" mode="scaleToFill"></image>
+    </view>
+    <view class="s3_content">
+      <text>专享卷</text>
+      <text>专享服务</text>
+      <text>消费返积分</text>
+      <text>更多特权</text>
+    </view>
+    <view class="speal">每年省不低于00元</view>
+</view>
+<view class="s4">
+  <image style="width:120rpx; height:50rpx;" src="../../../img/user/会员中心_19.png" mode="scaleToFill"></image>
+  <text>00元/年开通会员</text>
+</view>
+<view class="s6">
+  <image style="width:40rpx; height:40rpx;" src="../../../img/user/会员中心_07.jpg" mode="scaleToFill"></image>
+  <text>会员专享券 · 每年省不低于0元</text>
+  <image style="width:40rpx; height:40rpx;" src="../../../img/user/会员中心_07.jpg" mode="scaleToFill"></image>
+</view>
+<view class="s7">
+  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心_19.jpg" mode="scaleToFill"></image>
+  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心_19.jpg" mode="scaleToFill"></image>
+  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心_19.jpg" mode="scaleToFill"></image>
+  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心_19.jpg" mode="scaleToFill"></image>
+</view>
+

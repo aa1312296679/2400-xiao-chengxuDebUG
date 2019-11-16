@@ -1,0 +1,186 @@
+<!--pages/orders/Wcomment/index.wxml-->
+
+
+<view class="content">
+  <view class="main">
+<view class="s2">
+    <view class="s2_top">
+    <text>多次方汽车</text>
+     <text>单项质保商品</text>
+     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+   
+    </view>
+    <view class="s2_bot">
+      <view class="s7">
+    <view class="s7_left">
+      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
+      <view class="content_text">普通轮胎X1 </view>
+      <text class="s7_text">￥2600 </text>
+      
+     <view class="stepper">  
+      <text class="btn">申请售后</text>
+  </view>  
+    </view>
+  </view>
+  <view>
+      <image src="../../../img/home/已接单_03.png" mode="scaleToFill" style="margin-top:20rpx; margin-left:60rpx; width: 30rpx; height: 30rpx;"></image>
+      <text class="s7_text1">添加信息</text>
+      </view>
+    </view>
+  </view>  
+
+  <view class="s2">
+    <view class="s2_top">
+    <text>多次方汽车</text>
+     <text>多项质保商品</text>
+     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+   
+    </view>
+    <view class="s2_bot">
+      <view class="s7">
+    <view class="s7_left">
+      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
+      <view class="content_text">普通轮胎X1 </view>
+      <text class="s7_text">￥2600 </text>
+      
+     <view class="stepper">  
+      <text class="btn">质保项查看</text>
+  </view>  
+    </view>
+  </view>
+  <view>
+      <image src="../../../img/home/已接单_03.png" mode="scaleToFill" style="margin-top:20rpx; margin-left:60rpx; width: 30rpx; height: 30rpx;"></image>
+      <text class="s7_text1">添加信息</text>
+      </view>
+    </view>
+  </view>   
+  
+
+  <view class="s2">
+    <view class="s2_top">
+    <text>多次方汽车</text>
+     <text>单项质保商品</text>
+     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+   
+    </view>
+    <view class="s2_bot">
+      <view class="s7">
+    <view class="s7_left">
+      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
+      <view class="content_text">普通轮胎X1 </view>
+      <text class="s7_text">￥2600 </text>
+      
+     <view class="stepper">  
+      <text class="btn">申请售后</text>
+  </view>  
+    </view>
+  </view>
+  <view>
+      <image src="../../../img/home/已接单_03.png" mode="scaleToFill" style="margin-top:20rpx; margin-left:60rpx; width: 30rpx; height: 30rpx;"></image>
+      <text class="s7_text1">添加信息</text>
+      </view>
+    </view>
+  </view> 
+<view class="s2">
+    <view class="s2_top">
+    <text>多次方汽车</text>
+     <text>多项质保商品</text>
+     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+   
+    </view>
+    <view class="s2_bot">
+      <view class="s7">
+    <view class="s7_left">
+      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
+      <view class="content_text">普通轮胎X1 </view>
+      <text class="s7_text">￥2600 </text>
+      
+     <view class="stepper">  
+      <text class="btn">申请售后</text>
+  </view>  
+    </view>
+  </view>
+  <view>
+      <image src="../../../img/home/已接单_03.png" mode="scaleToFill" style="margin-top:20rpx; margin-left:60rpx; width: 30rpx; height: 30rpx;"></image>
+      <text class="s7_text1">添加信息</text>
+      </view>
+    </view>
+  </view> 
+  </view>
+</view>
+<view class="s0">
+  </view>
+
+
+<view class="service">
+      <view class="s_content">
+          <view class="s_top">
+              <text>质保项目</text>
+              <image src="../../../img/user/质保项目_03.png" style="margin-top:30rpx; margin-right:30rpx; width: 20rpx; height: 20rpx;"></image>
+          </view>
+          <view class="s_bot">
+              <view>
+                <input value="质保项"></input>
+                <text>申请售后</text>
+              </view>
+              <view>
+                <input value="质保项"></input>
+                <text>申请售后</text>
+              </view>
+              <view>
+                <input value="质保项"></input>
+                <text>申请售后</text>
+              </view>
+              <view>
+                <input value="质保项"></input>
+                <text>申请售后</text>
+              </view>
+              <view>
+                <input value="质保项"></input>
+                <text>申请售后</text>
+              </view>
+          </view>
+      </view>
+  </view>
+
+
+  <view class="info">
+      <view class="i_content">
+          <view class="i_top">
+              <text>添加信息</text>
+              <image src="../../../img/user/质保项目_03.png" style="margin-top:30rpx; margin-right:30rpx; width: 20rpx; height: 20rpx;"></image>
+          </view>
+          <view class="i_bot">
+              <view>
+                <input value="品牌"></input>
+              </view>
+              <view>
+                <input value="质保商品名称"></input>
+              </view>
+              <view>
+                <input value="购买日期"></input>
+              </view>
+              <view>
+                <input value="商品钢印日期"></input>
+              </view>
+              <view>
+                <input value="商品条形码"></input>
+              </view>
+          </view>
+          <view class="i_btn">
+              <text>确定</text>
+          </view>
+      </view>
+  </view>

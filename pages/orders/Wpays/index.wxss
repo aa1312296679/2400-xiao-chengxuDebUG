@@ -1,0 +1,161 @@
+/* pages/orders/Wcomment/index.wxss */
+.s1 {
+  width: 100%;
+  background-color: red;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+}
+.s1 image {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  float: left;
+  width: 17rpx;
+	height: 33rpx;
+}
+.content {
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 1200rpx;
+  padding-top: 10rpx;
+}
+.main {
+  width: 95%;
+  margin: 0rpx auto;
+}
+.s2{
+  height: 300rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20rpx;
+  position: relative;
+}
+.s2_top radio {
+  position: absolute;
+  display: block;
+  width: 10rpx;
+  height: 10rpx;
+  left: 1%;
+}
+
+.s2_top text{
+  margin-top: 5rpx;
+  float: left;
+  font-size: 13px;
+  margin-left: 60rpx;
+  font-weight: 600;
+}
+.s2_top text:nth-child(2) {
+  margin-right: 40rpx;
+  float: right;
+  color: red;
+  font-size: 10px;
+}
+.s2_top image{
+  margin-left: 15rpx;
+}
+.s7 {
+     width: 85%;
+     margin: 5rpx auto;
+     display: flex;
+     justify-content: center;
+     border-radius: 5px;
+   }
+   .content_text{
+     font-size: 25rpx;
+     color: #ccc;
+   }
+   .s7_text {
+     font-size: 15px;
+     color: #ccc;
+   }
+
+   .s7_right {
+     font-size: 12px;
+     margin-left: 20rpx;
+   }
+   .s7_text{
+     color: red;
+     font-weight: 650;
+   }
+   .s7_text1{
+     font-size: 13px;
+     font-weight: 500;
+   }
+   .s7_content {
+     color: #ccc;
+     font-size: 12px;
+   }
+   .s7_content text {
+     color: #888;
+     font-size: 14px;
+   }
+     .s7_content image {
+       margin-left: 10rpx;
+     }
+     .stepper {
+       float: right;
+     }
+     .stepper text {
+      display: inline-block;
+      text-align: center;
+      line-height: 49rpx;
+      margin-left: 10rpx;
+      width: 130rpx;
+      height: 49rpx;
+      border-radius: 25rpx;
+      font-size: 11px;
+      border: solid 1rpx #7f8389;  
+     }
+     .stepper text:nth-child(3) {
+        color: #f23c1d;
+        border: solid 1rpx #f23c1d;
+        margin-top: 20rpx;
+        position: absolute;
+        right: 2%;
+        bottom: 5%;
+     }
+     .stepper text:nth-child(2) {
+        margin-top: 20rpx;
+        width: 150rpx;
+        position: absolute;
+        right: 22%;
+        bottom: 5%;
+     }
+     .stepper text:nth-child(1) {
+        margin-top: 20rpx;
+        width: 150rpx;
+        position: absolute;
+        right: 45%;
+        bottom: 5%;
+     }
+    .s5 {
+      position: fixed;
+      z-index: 999;
+      bottom: 0rpx;
+      width: 100%;
+      height: 100rpx;
+      background-color: #fff;
+    }
+    .s5 text {
+      float: right;
+      color: red;
+      font-size: 18px;
+      line-height: 90rpx;
+      font-weight: 600;
+    }
+    .s5 h4 {
+      margin-top: 10rpx;
+      float: right;
+      width: 150rpx;
+      height: 70rpx;
+      line-height: 70rpx;
+      font-size: 15px;
+      background-color: red;
+      padding-left: 40rpx;
+      color: #fff;
+      border-radius: 30rpx;
+    }

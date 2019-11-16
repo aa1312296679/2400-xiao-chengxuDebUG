@@ -1,0 +1,39 @@
+<!--pages/My/release/index.wxml-->
+
+<view class="s0">
+<view class="space"></view>
+<view class="main">
+  <view class="s2">
+    <text>请上传封面图片或视频</text>
+    <image src="../../../img/home/发布商品_03.png" mode="scaleToFill" style="width:150rpx; height:150rpx"></image>
+  </view>
+  <view class="s3">
+      <li>
+        <text>标题</text>
+        <input value="请输入标题名称"></input>
+      </li>
+      <li>
+        <text>价格</text>
+        <input value="请输入商品价格"></input>
+      </li>
+      <li>
+        <text>品牌</text>
+        <input value="请输入品牌名称"></input>
+      </li>
+      <li>
+        <text>商品介绍</text>
+        <input value="请输入商品详细介绍"></input>
+      </li>
+      <li>
+        <text>交易地点</text>
+        <input value="请输入商店详细地址"></input>
+      </li>
+  </view>
+
+  <view class="s4">
+    <p></p>
+    <h4>商品多角度图片</h4>
+    <image src="../../../img/home/发布商品_07.png" mode="scaleToFill" style="width:160rpx; height:160rpx"></image>
+  </view>
+</view>
+</view>

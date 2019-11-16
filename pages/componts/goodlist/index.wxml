@@ -1,0 +1,14 @@
+<!--pages/componts/goodlist/goods.wxml-->
+<view class="s7">
+    <view class="s7_left">
+      <image src="../../../img/home/木马首页_20.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配本...</h4> 
+      <view class="content_text"> 17英寸 | 最大速度：240km/h</view>
+      <text class="s7_text"><text>￥495  </text>760人选购</text>
+      <view class="s7_content">途虎汽车配件旗舰店 <text>成都</text>
+      <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,35 @@
+<!--pages/shop/index.wxml-->
+
+
+<view class="s0">
+<view class="space"></view>
+<view class="main">
+  <view class="s2">
+    <image src="../../img/home/店铺详情_03.jpg" mode="scaleToFill" style="width:100%; height:150px"></image>
+  </view>
+  <view class="s3">
+      <h3>小拇指汽修店</h3>
+      <p>宝贝</p>
+      <li>
+        <image src="../../img/home/店铺详情_07.png" mode="scaleToFill" style="width:20rpx; height:10px"></image>
+        <text>周一至周六9:20-21:00</text>
+      </li>
+      <li>
+        <image src="../../img/home/店铺详情_11.png" mode="scaleToFill" style="width:20rpx; height:10px"></image>
+        <text>15984817236</text>
+      </li>
+      <li>
+        <image src="../../img/home/店铺详情_13.png" mode="scaleToFill" style="width:20rpx; height:10px"></image>
+        <text>四川成都金牛万达甲级写字楼404</text>
+      </li>
+  </view>
+
+  <view class="s4">
+    <p></p>
+    <h2>店铺介绍</h2>
+    <text>   小拇指汽车维修中心为杭州小拇指汽车维修科技股份有限公司创办，小拇指以49道工序的漆面修补技术领跑汽车后服务市场。</text>
+    <text>自2004年创立以来，小拇指汽修连锁门店网络已经遍布全国大多数城市，服务的车主数量庞大，消费者满意度普遍较高。在小拇指，大多数的加盟商创业成功，加盟商纷纷选择开二店，高出行业平均水平。</text>
+    <text>小拇指连续三年荣获“中国服务业优秀加盟特许品牌”，连续三年荣获“品牌中国金谱奖”，是 “中国特许连锁百强”品牌。2015年 [1]  ，新三板挂牌</text>
+  </view>
+</view>
+</view>

@@ -1,0 +1,106 @@
+/* pages/vip/vipcenter/index.wxss */
+.s1 {
+  width: 100%;
+  background-color: #d4a481;
+  text-align: center;
+  height: 90rpx;
+  line-height: 70rpx;
+  color: #fff;
+}
+.s1 image {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  float: left;
+  width: 17rpx;
+	height: 33rpx;
+}
+.s2 {
+  position: relative;
+}
+.s2_content {
+  position: absolute;
+  width: 80%;
+  top: 20rpx;
+  left: 10%;
+}
+.s2_content text {
+  color: #fff;
+}
+.s2_content view {
+  font-size: 13px;
+  color: #936549;
+}
+.s2_content view:nth-child(5) {
+  margin-left: 80rpx;
+    margin-top: 20rpx;
+}
+.s2_bot {
+  display: flex;
+  justify-content: space-around;
+}
+.s2_bot text {
+  margin-top: 80rpx;
+  color: #936549;
+  font-weight: 550;
+  font-size: 17px;
+}
+.s2_bot1 {
+  display: flex;
+  justify-content: space-around;
+}
+.s2_bot1 text {
+  color: #936549;
+  margin-left: 20rpx;
+}
+.s2_bot1 text:nth-child(2) {
+  margin-left: 80rpx;
+}
+.s3_content {
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: space-around;
+}
+.s3_content text {
+  margin-left: 20rpx;
+  font-size: 13px;
+}
+.s3_content text:nth-child(2) {
+  margin-left: 50rpx;
+}
+.speal {
+  font-size: 12px;
+  width: 110rpx;
+  margin-left: 40rpx;
+  color: #ccc;
+}
+.s4 {
+  margin-top: 10rpx;
+  text-align: center;
+}
+.s4 text {
+  display: block;
+  width: 80%;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  margin-left: 80rpx;
+  background-color: #f5cc5e;
+  border-radius: 30rpx;
+}
+.s6 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rpx;
+}
+.s6 text {
+  font-size: 14px;
+}
+.s7 image {
+  margin-top: 20rpx;
+}
+.s7 {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

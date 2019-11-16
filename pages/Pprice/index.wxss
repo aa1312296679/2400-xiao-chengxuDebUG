@@ -1,0 +1,153 @@
+/* pages/Pprice/index.wxss */
+.search{  
+      width: 70%;
+      margin: 0 auto;
+    }  
+  .searchcion {
+    position: absolute;
+    top: 15rpx;
+    left: 150rpx;
+  }  
+    .search_arr {    
+      border-radius: 10rpx;  
+      margin-left: 10rpx;  
+    }  
+    .search_arr input{ 
+      height: 60rpx;
+      font-size: 12px;
+      border-radius: 5px;
+      background-color: #f37568;
+    } 
+    .s1 {
+      height: 100rpx;
+      background-color: #f13a1c;
+      color: #fff;
+      margin-bottom: 20rpx;
+    } 
+    .text_mid {
+      margin-left: 200rpx;
+    }
+    .s1_text {
+      float: left;
+    }
+    .s1 image {
+      float: left;
+    }
+   .s1 image:nth-child(3) {
+     float: right;
+   }
+   .content{
+     background-color: #fafafa;
+     padding-left: 20rpx;
+     height: 1200rpx;
+   }
+   .content_top {
+     height: 80rpx;
+   }
+   .content_top p {
+    display: inline-block;
+    width: 6px;
+    height: 40rpx;
+    margin-top: 10rpx;
+    background-color: #6180f1;
+    border-radius: 4px;
+    float: left;
+   }
+    .content_top text {
+      float: left;
+      margin-top: 15rpx;
+      margin-left: 10rpx;
+      font-size: 13px;
+    }
+    .sidebar {
+      width: 15%;
+      float: left;
+      
+    }
+    .sidebar p {
+      display: block;
+      width: 100rpx;
+      height: 100rpx;
+      background-image: linear-gradient(0deg, 
+        #ff5e62 1%, 
+        #ff9966 100%);
+      border-radius: 20rpx;
+    }
+    .sidebar li:nth-child(2) p{
+      background-image: linear-gradient(0deg, 
+		#b183d4 0%, 
+		#9b6fe0 0%, 
+		#855beb 0%, 
+		#c9b6f8 100%);
+    }
+     .sidebar li:nth-child(3) p{
+     background-image: linear-gradient(0deg, 
+		#2f80ed 0%, 
+		#43a6f0 48%, 
+		#56ccf2 100%);
+    }
+    .sidebar li:nth-child(4) p{
+    background-image: linear-gradient(0deg, 
+		#f89e2c 0%, 
+		#ffd200 100%);
+    }
+    .sidebar li:nth-child(5) p{
+     background-image: linear-gradient(0deg, 
+		#ff5e62 1%, 
+		#ff9966 100%);
+    }
+
+    .sidebar text {
+      font-size: 14px;
+    }
+    .sidebar li {
+      display: block; 
+      height: 200rpx;
+    }
+    .main {
+      float: left;
+      width: 85%;
+    }
+
+    .s7 {
+  background-color: #fafafa;
+    }
+   .s7_main {
+     width: 95%;
+     margin: 0 auto;
+     margin-bottom: 15rpx;
+     display: flex;
+     justify-content: center;
+     border-radius: 5px;
+     background-color: #fff;
+   }
+   .content_text{
+     font-size: 25rpx;
+     color: #7a7a7a;
+   }
+
+   .s7_text {
+     font-size: 13px;
+     color: #7a7a7a;
+   }
+   .s7_text text{
+     color: red;
+     font-weight: 650;
+   }
+   .s7_content {
+     color: #7a7a7a;
+     font-size: 12px;
+   }
+   .s7_right {
+     margin-top: 0rpx;
+   }
+   .s7_right h4 {
+     font-size: 13px;
+   }
+   .s7_content text {
+     color: #888;
+     font-size: 12px;
+   }
+     .s7_content image {
+       margin-left: 10rpx;
+     }

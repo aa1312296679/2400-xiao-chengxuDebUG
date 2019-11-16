@@ -1,0 +1,44 @@
+<!--pages/choosegoods/index.wxml-->
+<view class="s0">
+<view style="background-color:#fff;">
+<view class="s1">
+  <text class="s1_text">成都</text>
+  <image src="../../../img/home/仁马二手车_01_03.png" style=" width: 20px; height: 15px; margin-top:8rpx;" mode="scaleToFill"></image>
+  <view class="search">  
+        <view class="df search_arr">  
+          <icon class="searchcion" size='15' color="#fff" type='search'></icon>  
+          <input class="search_input" placeholder-style="color:#fff" disabled placeholder="         搜索" />  
+        </view>  
+      </view>
+</view>
+
+<view class="s2">
+  <text>足迹</text>
+  <text>聊天商品</text>
+  <text>购物清单</text>
+  <text>已购买</text>
+</view>
+
+  <Goods></Goods>
+  <Goods></Goods>
+  <Goods></Goods>
+  <Goods></Goods>
+  </view>
+</view>
+
+
+<view class="share">
+  <view>
+    <image src="../../../img/user/质保项目_03.png" style=" width: 20px; height: 20px; margin:6px;" mode="scaleToFill"></image>  
+  </view>
+  <view class="share_btn">
+      <li>
+        <image src="../../../img/user/查看发送_03.png" style=" width: 30px; height: 22px; margin:6px;" mode="scaleToFill"></image> 
+        <text>查看</text>
+      </li>
+      <li>
+        <image src="../../../img/user/查看发送_003.png" style=" width: 30px; height: 30px; margin:6px;" mode="scaleToFill"></image> 
+        <text>发送</text>
+      </li>
+  </view>
+</view>

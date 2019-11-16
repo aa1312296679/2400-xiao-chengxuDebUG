@@ -1,0 +1,133 @@
+/**index.wxss**/
+
+
+.usermotto {
+  margin-top: 200px;
+}
+.s1 {
+  height: 110rpx;
+  background-color: #f13a1c;
+}
+.search{  
+      width: 70%;
+    }  
+    .search_arr { 
+      margin-top: 25rpx;   
+      border-radius: 10rpx;  
+      margin-left: 10rpx;  
+    }  
+    .search_arr input{ 
+      margin-top: 5rpx;   
+      height: 60rpx;
+      font-size: 12px;
+      border-radius: 5px;
+      background-color: #f37568;
+    }  
+    .bc_text {  
+      line-height: 68rpx;  
+      height: 68rpx;  
+      margin-top: 34rpx;  
+    }  
+        
+    .page_row{  
+      display: flex;  
+      flex-direction: row;
+      margin-left: 25px;  
+    }  
+    .searchcion {  
+      margin: 18rpx 10rpx 10rpx 100rpx;  
+      position: absolute;  
+      left:25rpx;  
+      z-index: 2;  
+      width: 20rpx;  
+      height: 20rpx;  
+      text-align: center;
+    }
+    .s1_lefticon image{
+      width: 20px;
+      height: 20px;
+      margin-top: 30rpx;
+    }  
+    .s1_right {
+      width: 50rpx;
+      float: right;
+      font-size: 24rpx;
+      color: #fff;
+      margin-left: 15rpx;
+    }
+    .u-wrp-bnr {
+      width: 95%;
+      margin: 0 auto;
+      height: 300rpx;
+      display: block;
+      position: relative;
+      top: 20rpx;
+      background: #f0f0f0;
+    }
+    .u-img-slide {
+      width: 100%;
+      height: inherit;
+    }
+    .s3 {
+      margin-top: 30rpx;
+      display: flex;
+      justify-content: space-around;
+    }
+    .s4 {
+      display: flex;
+      justify-content: space-around;
+      color: rgb(65, 63, 63);
+      font-size: 28rpx;
+    }
+    .s5 {
+      height: 120px;
+      background-color: #f6f6f6;
+    }
+    .s5 image {
+      margin-top: 20rpx;
+    }
+
+  .s6_top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10rpx;
+  }
+   .s6_top image {
+     margin-right: 20rpx;
+   }
+   .s6_top text {
+    border-left: 15rpx solid #6180f1;
+    margin-left: 20rpx;
+   }
+   .s7 {
+     width: 95%;
+     margin: 5rpx auto;
+     display: flex;
+     justify-content: center;
+     box-shadow: 3px 3px 3px #ccc;
+     border-radius: 5px;
+   }
+   .content_text{
+     font-size: 25rpx;
+     color: #ccc;
+   }
+   .s7_text {
+     font-size: 15px;
+     color: rgb(83, 83, 83);
+   }
+   .s7_text text{
+     color: red;
+     font-weight: 650;
+   }
+   .s7_content {
+     color: #ccc;
+     font-size: 12px;
+   }
+   .s7_content text {
+     color: #888;
+     font-size: 14px;
+   }
+     .s7_content image {
+       margin-left: 10rpx;
+     }

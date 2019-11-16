@@ -1,0 +1,80 @@
+/* pages/login/login/index.wxss */
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.bg image {
+  float: left;
+}
+.login_top {
+  left: 40%;
+  top: 15%;
+  position: absolute;
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #fff;
+  z-index: 999;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_text {
+  position: absolute;
+  left: 47%;
+  top: 31%;
+  font-size: 23px;
+  color: #fff;
+  font-weight: 600;
+}
+.login_content {
+  position: absolute;
+  left: 20%;
+  top: 40%;
+  width: 75%;
+}
+.login_content input {
+  width: 80%;
+  height: 80rpx;
+  background-color: #fff;
+  margin-top: 30rpx;
+  padding-left: 40rpx;
+  border-radius: 50rpx;
+  color: #fe4a70;
+}
+.login_content>text {
+  margin-top: 20rpx;
+  margin-right: 80rpx;
+  float: right;
+  font-size: 13px;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+.login_sub {
+  margin-top: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 50rpx;
+}
+.login_sub text {
+  width: 180rpx;
+  height: 65rpx;
+  text-align: center;
+  line-height: 65rpx;
+  background-color: #fea45f;
+  border-radius: 50rpx;
+  color: #fff;
+}
+.login_content p {
+  display: block;
+  margin-top: 80rpx;
+  font-size: 11px;
+  color: #fff;
+}
+.login_content image {
+  margin-left: 180rpx;
+  margin-top: 20rpx;
+}

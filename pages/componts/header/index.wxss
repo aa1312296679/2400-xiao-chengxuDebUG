@@ -1,0 +1,19 @@
+/* pages/componts/header/index.wxss */
+.s1 {
+      height: 120rpx;
+      background-color: #ec2312;
+      color: #fff;
+      margin-bottom: 0rpx;
+    } 
+    .text_mid {
+      margin-left: 200rpx;
+    }
+    .s1_text {
+      float: left;
+    }
+    .s1 image {
+      float: left;
+    }
+   .s1 image:nth-child(3) {
+     float: right;
+   }

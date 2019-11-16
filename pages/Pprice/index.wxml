@@ -1,0 +1,130 @@
+<!--pages/Pprice/index.wxml-->
+<view class="s1">
+  <text class="s1_text">成都</text>
+  <image src="../../img/home/仁马二手车_01_03.png" style=" width: 20px; height: 15px; margin-top:8rpx;" mode="scaleToFill"></image>
+  <view class="search">  
+        <view class="df search_arr">  
+          <icon class="searchcion" size='15' color="#fff" type='search'></icon>  
+          <input class="search_input" placeholder-style="color:#fff" disabled placeholder="         搜索" />  
+        </view>  
+      </view>
+</view>
+
+<view class="content">
+    <view class="content_top">
+    <p></p>
+    <text>分类</text>
+    </view>
+  <view class="sidebar"> 
+  <li>
+    <p></p>
+    <text>分类一</text>
+   </li> 
+    <li>
+    <p></p>
+    <text>分类二</text>
+     </li>
+     <li>
+    <p></p>
+    <text>分类三</text>
+     </li>
+     <li>
+    <p></p>
+    <text>分类四</text>
+     </li>
+     <li>
+    <p></p>
+    <text>分类五</text>
+     </li>
+  </view>
+
+  <view class="main">
+    <navigator url="pay/index">
+      <view class="s7">
+<view class="s7_main">
+    <view class="s7_left">
+      <image src="../../img/home/木马首页_20.png" alt="" style=" width: 180rpx; height: 180rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配本...</h4> 
+      <view class="content_text"> 17英寸 | 最大速度：240km/h</view>
+      <text class="s7_text"><text>￥495  </text>760人选购</text>
+      <view class="s7_content">途虎汽车配件旗舰店 <text>成都</text>
+      <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+      </view>
+    </view>
+    </view>
+  </view>
+  </navigator>
+  
+  <view class="s7">
+<view class="s7_main">
+    <view class="s7_left">
+      <image src="../../img/home/木马首页_20.png" alt="" style=" width: 180rpx; height: 180rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配本...</h4> 
+      <view class="content_text"> 17英寸 | 最大速度：240km/h</view>
+      <text class="s7_text"><text>￥495  </text>760人选购</text>
+      <view class="s7_content">途虎汽车配件旗舰店 <text>成都</text>
+      <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+      </view>
+    </view>
+    </view>
+  </view>
+
+
+  <view class="s7">
+<view class="s7_main">
+    <view class="s7_left">
+      <image src="../../img/home/木马首页_20.png" alt="" style=" width: 180rpx; height: 180rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配本...</h4> 
+      <view class="content_text"> 17英寸 | 最大速度：240km/h</view>
+      <text class="s7_text"><text>￥495  </text>760人选购</text>
+      <view class="s7_content">途虎汽车配件旗舰店 <text>成都</text>
+      <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+      </view>
+    </view>
+    </view>
+  </view>
+
+  <view class="s7">
+<view class="s7_main">
+    <view class="s7_left">
+      <image src="../../img/home/木马首页_20.png" alt="" style=" width: 180rpx; height: 180rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配本...</h4> 
+      <view class="content_text"> 17英寸 | 最大速度：240km/h</view>
+      <text class="s7_text"><text>￥495  </text>760人选购</text>
+      <view class="s7_content">途虎汽车配件旗舰店 <text>成都</text>
+      <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+      </view>
+    </view>
+    </view>
+  </view>
+
+  <view class="s7">
+<view class="s7_main">
+    <view class="s7_left">
+      <image src="../../img/home/木马首页_20.png" alt="" style=" width: 180rpx; height: 180rpx;"></image>
+    </view>
+    <view class="s7_right">
+      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配本...</h4> 
+      <view class="content_text"> 17英寸 | 最大速度：240km/h</view>
+      <text class="s7_text"><text>￥495  </text>760人选购</text>
+      <view class="s7_content">途虎汽车配件旗舰店 <text>成都</text>
+      <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+      </view>
+    </view>
+    </view>
+  </view>
+
+  
+  </view>
+  <view>
+  
+  </view>
+</view>
