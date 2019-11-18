@@ -5,10 +5,10 @@
     <text>木马app</text>
     <image src="../../img/home/木马首页_03.png" style=" float:right; width: 30px; height: 30px;"></image>
   </view>
-  <view wx:if='!userInfo'>
+  <view wx:if='{{!userInfo}}'>
     <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权登录</button>
   </view>
-  <view wx:else-if='userInfo'>
+  <view wx:else>
     <view>
       <image src="{{userInfo.avatarUrl}}" style="width: 65px; height: 65px;" ></image>
       <view style="color:#fff;">{{userInfo.nickName}}</view>
