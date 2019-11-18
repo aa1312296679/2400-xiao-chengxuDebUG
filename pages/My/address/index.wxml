@@ -1,26 +1,13 @@
 <!--pages/My/address/index.wxml-->
 
 
-<view class="content"> 
+<view wx:for="{{addressList}}" class="content"> 
     <radio checked="true"></radio>
     <view class="top">
       <h2>小周</h2>
       <p>159***7250</p>
       <text>默认</text>
       <text>公司</text>
-      <view>
-      四川成都市金牛区城区星汉北路金府国际2-3
-      <image src="../../../img/home/收货地址_03.png" style=" width: 40rpx; height: 40rpx;" mode="scaleToFill"></image>
-      </view>
-    </view>
-</view>
-
-<view class="content"> 
-    <radio checked="true"></radio>
-    <view class="top">
-      <h2>小周</h2>
-      <p>159***7250</p>
-      <text style="background-color:rgba(16, 120, 238, 0.63);">公司</text>
       <view>
       四川成都市金牛区城区星汉北路金府国际2-3
       <image src="../../../img/home/收货地址_03.png" style=" width: 40rpx; height: 40rpx;" mode="scaleToFill"></image>

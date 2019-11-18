@@ -1,18 +1,32 @@
 // pages/choosegoods/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    chooseList: []
   },
-
+  getChooseGoods(type) {
+    app.request({
+      url: `/content/api/product-access`,
+      method: 'post',
+      data: {
+        type: type,
+      }
+    }).then(resp => {
+      console.log(resp)
+      this.setData({
+        chooseList: resp.data.product
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getChooseGoods(options.type)
   },
 
   /**

@@ -19,9 +19,10 @@
 <view class="main">
   
   <view class="s3">
-      <h3>雅迪（yadea）新款米彩龟王60V豪华电动车轻便代步踏板电瓶车男女电摩 靠背版白色</h3>
+      <h3>{{productData.title}}</h3>
       <li>
         <image src="../../img/home/商品详情_03.png" mode="scaleToFill" style="width:30rpx; height:12px"></image>
+        <view style="color:red;font-weight:bold;font-size: 16px;">{{productData.price}}</view>
         <text>开通VIP会员卡。享受满700减50优惠卷</text>
         <image class="s3_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
       </li>
@@ -113,21 +114,21 @@
     <li>
       <view>
       <text>加入购物车</text>
-      <text id="pay">立即购买</text>
+      <text bindtap="goBuy" id="pay">立即购买</text>
       </view>
     </li>   
 </view>
 
 
-<view class="choose">
+<view wx:if="{{isShow}}" class="choose">
     <view class="choose_content">
         <view class="c_header">
-            <image src="../../img/home/商品详情_02.png" mode="scaleToFill" style="width:200rpx; height:180rpx"></image>
+            <image src="../../img/home/商品详情_02.jpg" mode="scaleToFill" style="width:200rpx; height:180rpx"></image>
             <li>
             <text>￥3099.00</text>
             <h1>编号:49927298515</h1>
             </li>
-            <image src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
+            <image bindtap="closeBuy" src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
         </view>
         <view class="color">
           <h1>颜色</h1>
@@ -183,6 +184,6 @@
           </li>
         </view>
 
-        <text class="yes">确定</text>
+        <text bindtap="closeBuy" class="yes">确定</text>
     </view>
 </view>

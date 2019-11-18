@@ -17,10 +17,7 @@
   <text bindtap="shaixuan">筛选</text>
 </view>
 
-  <Goods></Goods>
-  <Goods></Goods>
-  <Goods></Goods>
-  <Goods></Goods>
+  <Goods wx:for="{{carList}}" productData="{{item}}"></Goods>
 
 
   <view class="shaixuan" style="display:{{Sdisplay}}">

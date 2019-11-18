@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "Goods": "../pages/componts/goodlist"
+  },
   "navigationBarTitleText": "配件价格"
 }

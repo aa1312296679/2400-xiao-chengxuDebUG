@@ -7,6 +7,16 @@
   line-height: 70rpx;
   color: #fff;
 }
+.address-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+input{
+  width: 100%;
+  border: none;
+}
 .s1 image {
   margin-left: 20rpx;
   margin-top: 20rpx;

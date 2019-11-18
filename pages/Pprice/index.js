@@ -6,21 +6,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    chooseList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const that = this
     wx.request({
       url: `${app.globalData.host}/content/api/product-access`,
       method:'post',
       data:{
-        type:3,
+        type:options.type,
       },
       success(res){
         console.log(res)
+        that.setData({
+          chooseList: res.data.data.product
+        })
+        console.log(that.data.chooseList)
       }
     })
   },

@@ -19,10 +19,7 @@
   <text>已购买</text>
 </view>
 
-  <Goods></Goods>
-  <Goods></Goods>
-  <Goods></Goods>
-  <Goods></Goods>
+  <Goods wx:for="{{chooseList}}" productData="{{item}}"></Goods>
   </view>
 </view>
 

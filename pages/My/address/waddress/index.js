@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    addressData: {
+      uid: null,
+      addressId: null,
+      province: null,
+      city: null,
+      area: null,
+      address: null,
+      name: null,
+      phone: null,
+      default: 0,
+    }
   },
 
   /**

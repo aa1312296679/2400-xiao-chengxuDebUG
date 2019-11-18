@@ -51,7 +51,9 @@ App({
     })
   },
   globalData: {
-    userInfo:null,
+    userInfo: {
+      id: 1
+    },
     host: 'http://lck.hzlyzhenzhi.com'
   }
 })

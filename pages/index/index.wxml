@@ -28,15 +28,15 @@
 </view>
 
 <view class="s3">
-  <navigator url="../Pprice/index" class="demo">
+  <navigator url="../Pprice/index?type=1" class="demo">
     <image src="../../img/home/木马首页_07.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
     <button>上门维修</button>
   </navigator>
-  <navigator url="../index/choosegoods/index" class="demo">
+  <navigator url="../index/choosegoods/index?type=2" class="demo">
     <image src="../../img/home/木马首页_09.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
     <button>购新车</button>
   </navigator>
-  <navigator url="../index/oldcar/oldcar" class="demo">
+  <navigator url="../index/oldcar/oldcar?type=3" class="demo">
     <image src="../../img/home/木马首页_11.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
     <button>购二手车</button>
   </navigator>
@@ -56,6 +56,6 @@
     <text> 优选区</text>
     <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
   </view>
-  <Goods></Goods>
+  <Goods wx:for="{{goodProduct}}" productData="{{item}}"></Goods>
 </view>
 

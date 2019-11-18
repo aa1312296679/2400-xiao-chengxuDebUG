@@ -74,7 +74,7 @@ Page({
       url: `${app.globalData.host}/content/api/index-search`,
       method:'post',
       data:{
-        search
+        search: search
       },
       success(res){
         console.log(res)

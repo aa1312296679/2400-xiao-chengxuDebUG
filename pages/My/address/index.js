@@ -1,17 +1,36 @@
 // pages/My/address/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    addressList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.globalData.userInfo)
+    if (app.globalData.userInfo) {
+      app.request({
+        url: '/content/api/user-address',
+        data: {
+          uid: app.globalData.userInfo.id
+        }
+      }).then(res =>{
+        console.log(res)
+        this.setData({
+          addressList:res.data
+        })
+      })
+    } else {
+      wx.reLaunch({
+         url: '/pages/login/index',
+       })
+    }
 
   },
 

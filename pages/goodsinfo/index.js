@@ -1,4 +1,5 @@
 // pages/goodsinfo/index.js
+const app = getApp()
 Page({
 
   /**
@@ -7,21 +8,49 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
+    isShow: false,
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     "bnrUrl": [
-      { "url": "../../img/home/商品详情_02.png" },
-      { "url": "../../img/home/商品详情_02.png" },
-      { "url": "../../img/home/商品详情_02.png" },
-      { "url": "../../img/home/商品详情_02.png" }
-    ]
+      { "url": "../../img/home/商品详情_02.jpg" },
+      { "url": "../../img/home/商品详情_02.jpg" },
+      { "url": "../../img/home/商品详情_02.jpg" },
+      { "url": "../../img/home/商品详情_02.jpg" }
+    ],
+    productData: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    if (app.globalData.userInfo && app.globalData.userInfo.id) {
+      app.request({
+        url: '/content/api/product-detail',
+        data: {
+          productId: options.id,
+          uid: app.globalData.userInfo.id
+        }
+      }).then(res => {
+        console.log(res)
+        this.setData({
+          productData: res.data.product
+        })
+      })
+    }else {
+      app.request({
+        url: '/content/api/product-detail',
+        data: {
+          productId: options.id
+        }
+      }).then(res => {
+        console.log(res)
+        this.setData({
+          productData: res.data.product
+        })
+      })
+    }
   },
 
   /**
@@ -30,7 +59,16 @@ Page({
   onReady: function () {
 
   },
-
+  goBuy() {
+    this.setData({
+      isShow: true
+    })
+  },
+  closeBuy() {
+    this.setData({
+      isShow: false
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

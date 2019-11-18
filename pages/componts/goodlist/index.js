@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    productData: {
+      type: Object,
+      value: {}
+    }
   },
 
   /**
@@ -18,6 +21,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    viewDetails() {
+      wx.redirectTo({
+        url: '/pages/goodsinfo/index?id=' + this.properties.productData.id,
+      })
+    }
   }
 })

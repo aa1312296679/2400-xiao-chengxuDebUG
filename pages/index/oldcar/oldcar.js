@@ -1,20 +1,34 @@
 // pages/car/oldcar.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    carList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getOldCar(options.type)
   },
-
+  getOldCar(type) {
+    app.request({
+      url: `/content/api/product-access`,
+      method: 'post',
+      data: {
+        type: type,
+      }
+    }).then(resp => {
+      console.log(resp)
+      this.setData({
+        carList: resp.data.product
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
