@@ -1,18 +1,28 @@
 // pages/Pprice/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: `${app.globalData.host}/content/api/product-access`,
+      method:'post',
+      data:{
+        type:3,
+      },
+      success(res){
+        console.log(res)
+      }
+    })
   },
 
   /**

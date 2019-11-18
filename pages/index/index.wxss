@@ -73,12 +73,21 @@
       display: flex;
       justify-content: space-around;
     }
-    .s4 {
-      display: flex;
-      justify-content: space-around;
-      color: rgb(65, 63, 63);
-      font-size: 28rpx;
+    .demo{
+      text-align: center;
     }
+    .demo button{
+      padding: 0;
+      font-size: 30rpx;
+      line-height: 30rpx;
+      margin-bottom: 20rpx;
+      background: transparent;
+    }
+
+    .demo button::after {
+      border: none
+    }
+    
     .s5 {
       height: 120px;
       background-color: #f6f6f6;

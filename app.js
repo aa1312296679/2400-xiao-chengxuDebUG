@@ -33,6 +33,23 @@ App({
       }
     })
   },
+  request({ url, data = {uid:1}, method = "post", header = { 'content-type': "application/json" }, host, complate }) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: (host || this.globalData.host) + url,
+        header, method, data,
+        success(res) {
+          resolve(res.data)
+        },
+        complete() {
+          if (complate) complate();
+        },
+        fail(err) {
+          reject(err)
+        }
+      })
+    })
+  },
   globalData: {
     userInfo:null,
     host: 'http://lck.hzlyzhenzhi.com'

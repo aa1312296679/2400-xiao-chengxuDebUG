@@ -7,11 +7,11 @@
       <view class="search">  
         <view class="df search_arr">  
           <icon class="searchcion" size='15' color="#fff" type='search'></icon>  
-          <input class="search_input" placeholder-style="color:#fff" disabled placeholder="        搜索" />  
+          <input class="search_input" placeholder-style="color:#fff" placeholder="        搜索" bindblur="search"/>  
         </view>  
       </view>
       <view>
-        <text class="s1_right">滚动字幕滑动</text>
+        <text class="s1_right">{{content}}</text>
       </view>
       <image src="../../img/home/木马首页_03.png" style=" width: 40px; height: 40px; margin:6px;" mode="scaleToFill"></image>  
     </view>  
@@ -21,47 +21,41 @@
   <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
   <block wx:for="{{bnrUrl}}" wx:for-index="index">
     <swiper-item>
-      <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+      <image src='{{item.imageUrl + item.url}}' class='u-img-slide' mode='aspectFill'></image>
     </swiper-item>
   </block>
 </swiper>
 </view>
 
 <view class="s3">
-<navigator url="../Pprice/index">
-  <image src="../../img/home/木马首页_07.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+  <navigator url="../Pprice/index" class="demo">
+    <image src="../../img/home/木马首页_07.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+    <button>上门维修</button>
   </navigator>
-  <navigator url="../index/choosegoods/index">
-  <image src="../../img/home/木马首页_09.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+  <navigator url="../index/choosegoods/index" class="demo">
+    <image src="../../img/home/木马首页_09.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+    <button>购新车</button>
   </navigator>
-  <navigator url="../index/oldcar/oldcar">
-  <image src="../../img/home/木马首页_11.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
-    </navigator>
-  <image src="../../img/home/木马首页_13.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>    
-</view>
-
-<view class="s4">
-  <navigator url="../Pprice/index">
-  <text>上门维修</text>
-   </navigator>
-  <navigator url="../index/choosegoods/index">
-  <text>购新车</text>
+  <navigator url="../index/oldcar/oldcar" class="demo">
+    <image src="../../img/home/木马首页_11.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+    <button>购二手车</button>
   </navigator>
-  <navigator url="../index/oldcar/oldcar">
-  <text>购二手车</text>
-  </navigator>
-  <text>人工客服</text>
+  <view class="demo"> 
+    <image src="../../img/home/木马首页_13.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+    <button open-type="contact">人工客服</button>   
+  </view>
+  
 </view>
 
 <view class="s5">
   <image src="../../img/home/木马首页_02.png" mode="scaleToFill" style=" width: 100%; height: 200rpx;"></image>
 </view>
 
-<view class="s6">
+<view class="s6" wx:if='{{goodProduct.length != 0}}'>
   <view class="s6_top">
     <text> 优选区</text>
     <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
   </view>
+  <Goods></Goods>
 </view>
 
-<Goods></Goods>

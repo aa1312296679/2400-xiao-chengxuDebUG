@@ -6,16 +6,16 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
-    app: null, 
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    "bnrUrl": [
-      { "url": "../../img/home/木马首页_04.png" }, 
-      { "url": "../../img/home/木马首页_04.png" }, 
-      { "url": "../../img/home/木马首页_04.png" }, 
-      { "url": "../../img/home/木马首页_04.png" }
-    ],
-    productList: []
+    content:'',
+    goodProduct:[],
+    bnrUrl: [
+      // { "url": "../../img/home/木马首页_04.png" }, 
+      // { "url": "../../img/home/木马首页_04.png" }, 
+      // { "url": "../../img/home/木马首页_04.png" }, 
+      // { "url": "../../img/home/木马首页_04.png" }
+    ]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -23,25 +23,23 @@ Page({
       url: '../logs/logs'
     })
   },
-  getProductList() {
-    console.log(111)
+  onLoad: function () {
+    var that = this
     wx.request({
-      url: this.data.app + '/content/api/home-index',
-      method: 'post',
-      data: {
-        page: 1
+      url: `${app.globalData.host}/content/api/home-index`,
+      method:'post',
+      data:{
+        page:3
       },
-      success(data) {
-        console.log(data)
+      success(res){
+        that.setData({
+          bnrUrl:res.data.data.advert,
+          content: res.data.data.logo.content,
+          goodProduct: res.data.data.goodProduct
+        })
+        console.log(res)
       }
     })
-  },
-  onLoad: function () {
-    const app = getApp()
-    this.setData({
-      app: app.globalData.host
-    })
-    this.getProductList()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -68,6 +66,20 @@ Page({
         }
       })
     }
+  },
+  search(e){
+    console.log(e)
+    let search = e.detail.value
+    wx.request({
+      url: `${app.globalData.host}/content/api/index-search`,
+      method:'post',
+      data:{
+        search
+      },
+      success(res){
+        console.log(res)
+      }
+    })
   },
   getUserInfo: function(e) {
     console.log(e)
