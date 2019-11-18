@@ -1,34 +1,57 @@
+const app = getApp();
 Page({
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    userInfo:null
   },
   onLoad: function () {
-    console.log(123)
-    // 查看是否授权
+    this.setData({
+      userInfo:app.globalData.userInfo
+    })
+    let that = this
+    wx.login({
+      success: function (res) {
+        console.log('loginCode:', res.code)
+        wx.request({
+          url: `${app.globalData.host}/content/api/weixin-login`,
+          method: 'post',
+          data:{
+            code: res.code
+          },
+          success(resp) {
+            console.log(resp)
+          }
+        })
+      }
+    })
     wx.getSetting({
       success(res) {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
-            success: function (res) {
-              console.log(res.userInfo)
+            success(res) {
+              that.setData({
+                userInfo: res.userInfo
+              })
             }
           })
         }
       }
     })
-    wx.getUserInfo({
-      success: function (res) {
-
-        var userInfo = res.userInfo
-        console.log(this.userInfo)
-        var nickName = userInfo.nickName
-        var avatarUrl = userInfo.avatarUrl
-        var gender = userInfo.gender //性别 0：未知、1：男、2：女
-        var province = userInfo.province
-        var city = userInfo.city
-        var country = userInfo.country
-      }
+  },
+  onshow(){
+    console.log(app.globalData.userInfo)
+  },
+  onGotUserInfo(res){
+    console.log(res)
+    wx.setStorage({
+      key: 'userInfo',
+      data: res.detail.userInfo,
+    })
+    var userInfo = wx.getStorageSync('userInfo')
+    app.globalData.userInfo = userInfo
+    this.setData({
+      userInfo: res.detail.userInfo
     })
   },
   bindGetUserInfo(e) {
