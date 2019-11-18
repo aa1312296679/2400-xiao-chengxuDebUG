@@ -10,8 +10,9 @@ Page({
     userData: {
       uid: null,
       avatar: null,
+      nickname:null,
       phone: null,
-      username: null,
+      name: null,
       sex: null,
       birthday: null,
       work: null,
@@ -32,6 +33,19 @@ Page({
     console.log(this.data.uid)
     this.getUserInfo()
   },
+  // 提交
+  formSubmit(e){
+    let subData = e.detail.value
+    subData.sex = subData.sex == "男" ? 0 : 1
+    subData.avatar = this.data.userData.avatar
+    subData.uid = this.data.uid
+    app.request({
+      url:'/content/api/alter-msg',
+      data: subData
+    }).then(res=>{
+      console.log(res)
+    })
+  },
   getUserInfo() {
     app.request({
       url: '/content/api/user-personal',
@@ -41,16 +55,20 @@ Page({
     }).then(resp => {
       console.log(resp)
       const data = resp.data
-      this.data.userData.uid = data.id
-      this.data.userData.avatar = data.avatar
-      this.data.userData.username = data.username
-      this.data.userData.sex = data.sex
-      this.data.userData.birthday = data.birthday
-      this.data.userData.work = data.work
-      this.data.userData.province = data.province
-      this.data.userData.city = data.city
-      this.data.userData.area = data.area
-      this.data.userData.identity = data.identity
+      this.setData({
+        userData: data
+      })
+
+      // this.data.userData.uid = data.id
+      // this.data.userData.avatar = data.nickname
+      // this.data.userData.name = data.name
+      // this.data.userData.sex = data.sex
+      // this.data.userData.birthday = data.birthday
+      // this.data.userData.work = data.work
+      // this.data.userData.province = data.province
+      // this.data.userData.city = data.city
+      // this.data.userData.area = data.area
+      // this.data.userData.identity = data.identity
     })
   },
   /**
