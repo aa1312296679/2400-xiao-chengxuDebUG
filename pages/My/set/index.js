@@ -6,7 +6,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    uid: null
+    uid: null,
+    userData: {
+      uid: null,
+      avatar: null,
+      phone: null,
+      username: null,
+      sex: null,
+      birthday: null,
+      work: null,
+      province: null,
+      city: null,
+      area: null,
+      identity: null
+    }
   },
 
   /**
@@ -27,6 +40,17 @@ Page({
       }
     }).then(resp => {
       console.log(resp)
+      const data = resp.data
+      this.data.userData.uid = data.id
+      this.data.userData.avatar = data.avatar
+      this.data.userData.username = data.username
+      this.data.userData.sex = data.sex
+      this.data.userData.birthday = data.birthday
+      this.data.userData.work = data.work
+      this.data.userData.province = data.province
+      this.data.userData.city = data.city
+      this.data.userData.area = data.area
+      this.data.userData.identity = data.identity
     })
   },
   /**
