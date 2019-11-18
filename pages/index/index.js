@@ -6,6 +6,7 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
+    app: null, 
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     "bnrUrl": [
@@ -13,7 +14,8 @@ Page({
       { "url": "../../img/home/木马首页_04.png" }, 
       { "url": "../../img/home/木马首页_04.png" }, 
       { "url": "../../img/home/木马首页_04.png" }
-    ]
+    ],
+    productList: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -21,7 +23,25 @@ Page({
       url: '../logs/logs'
     })
   },
+  getProductList() {
+    console.log(111)
+    wx.request({
+      url: this.data.app + '/content/api/home-index',
+      method: 'post',
+      data: {
+        page: 1
+      },
+      success(data) {
+        console.log(data)
+      }
+    })
+  },
   onLoad: function () {
+    const app = getApp()
+    this.setData({
+      app: app.globalData.host
+    })
+    this.getProductList()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

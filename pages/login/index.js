@@ -1,11 +1,15 @@
 // pages/login/login/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo: {
+      phone: 12345678987,
+      password: 123456
+    }
   },
 
   /**
@@ -13,6 +17,23 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  login() {
+    wx.request({
+      url: `${app.globalData.host}/content/api/user-login`,
+      method: 'post',
+      data: this.data.userInfo,
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success(res){
+        console.log(res)
+        app.globalData.userInfo = res.data.data.user
+        wx.switchTab({
+          url: '/pages/user/user',
+        })
+      }
+    })
   },
 
   /**
