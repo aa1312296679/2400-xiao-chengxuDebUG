@@ -1,20 +1,34 @@
 // pages/My/set/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    uid: null
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 生命周期函数--监听页面加载s
    */
   onLoad: function (options) {
-
+    this.setData({
+      uid: app.globalData.userInfo.id
+    })
+    console.log(this.data.uid)
+    this.getUserInfo()
   },
-
+  getUserInfo() {
+    app.request({
+      url: '/content/api/user-personal',
+      data: {
+        uid: this.data.uid
+      }
+    }).then(resp => {
+      console.log(resp)
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -5,16 +5,12 @@ Page({
     userInfo: null
   },
   onshow() {
-    console.log(22222)
-    console.log(app.globalData.userInfo)
     this.setData({
       userInfo: app.globalData.userInfo
     })
     let that = this
   },
   onLoad: function() {
-    console.log(22222)
-    console.log(app.globalData.userInfo)
     this.setData({
       userInfo: app.globalData.userInfo
     })

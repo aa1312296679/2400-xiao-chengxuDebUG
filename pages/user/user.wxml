@@ -11,10 +11,10 @@
   </view>
   <view wx:else>
   已登录
-    <view>
+    <!-- <view>
       <image src="{{userInfo.avatarUrl}}" style="width: 65px; height: 65px;" ></image>
       <view style="color:#fff;">{{userInfo.nickName}}</view>
-    </view>
+    </view> -->
     <view class="s1_content">
       <image src="../../img/user/个人中心_06.png" style="width: 15px; height: 15px;"></image>
       <text>159256542013  </text>
