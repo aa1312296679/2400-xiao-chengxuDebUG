@@ -130,7 +130,7 @@
             </li>
             <image bindtap="closeBuy" src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
         </view>
-        <view class="color">
+        <!-- <view class="color">
           <h1>颜色</h1>
             <li>
               <text>靠背版白色</text>
@@ -140,7 +140,7 @@
               <text>尾箱版金属银红</text>
               <text>尾箱版蓝色</text>
             </li>           
-        </view>
+        </view> -->
         <view class="number">
           <text>数量</text>
           <view class="stepper">  
@@ -153,7 +153,7 @@
           </view>  
         </view>
 
-        <view class="safe">
+        <!-- <view class="safe">
           <h1>保障服务</h1>
           <view>
           <image src="../../img/home/购买选择_07.png" mode="scaleToFill" style="width:30rpx; height:25rpx"></image>
@@ -182,7 +182,7 @@
               <text>延保至3年 ￥189.0</text>
               <text>延保至4年 ￥209.0</text>
           </li>
-        </view>
+        </view> -->
 
         <text bindtap="closeBuy" class="yes">确定</text>
     </view>
