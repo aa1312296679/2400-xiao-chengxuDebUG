@@ -18,7 +18,27 @@ Page({
       default: 0,
     }
   },
-
+  getAddressData(id) {
+    const that = this
+    app.request({
+      url: '/content/api/user-address',
+      data: {
+        uid: app.globalData.userInfo.id
+      }
+    }).then(res => {
+      res.data.map(item => {
+        if (item.id == id) {
+          that.setData({
+            ['addressData.name']: item.name,
+            ['addressData.phone']: item.phone,
+            ['addressData.address']: item.address,
+            ['addressData.default']: item.default,
+            ['addressData.area']: item.area
+          })
+        }
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -34,6 +54,7 @@ Page({
       })
     }
     if (options.id) {
+      this.getAddressData(options.id)
       this.setData({
         ['addressData.addressId']: options.id
       })
@@ -89,7 +110,14 @@ Page({
       url: '/content/api/add-address',
       data: this.data.addressData
     }).then(res => {
-      console.log(res)
+      wx.showToast({
+        title: '保存成功',
+        icon: 'success',
+        duration: 2000
+      })
+      wx.redirectTo({
+        url: '/pages/My/address/index',
+      })
     })
   },
   updateAddress() {
@@ -97,7 +125,14 @@ Page({
       url: '/content/api/add-address',
       data: this.data.addressData
     }).then(res => {
-      console.log(res)
+      wx.showToast({
+        title: '保存成功',
+        icon: 'success',
+        duration: 2000
+      })
+      wx.redirectTo({
+        url: '/pages/My/address/index',
+      })
     })
   },
   /**
@@ -113,23 +148,7 @@ Page({
   onShow: function () {
 
   },
-  preserve(){
-    app.request({
-      url:'/content/api/add-address',
-      data: this.data.addressData
-    }).then(res=>{
-      console.log(res)
-      app.request({
-        url:' /content/api/address-default',
-        data:{
-          uid: app.globalData.userInfo.id,
-          addressId:res.data.id
-        },
-      }).then(res=>{
-        console.log(res)
-      })
-    })
-  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

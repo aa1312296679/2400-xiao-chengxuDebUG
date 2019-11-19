@@ -23,22 +23,35 @@ Page({
     var that = this
     wx.chooseImage({
       success(res) {
-        wx.getImageInfo({
-          src: res.tempFilePaths[0],
-          success(resp) {
-            that.setData({
-              imgUrl: resp.path
-            })
-            app.request({
-              url:'/content/api/upload-image',
-              data:{
-                upload: resp
-              }
-            }).then(res=>{
-              console.log(res)
-            })
+        console.log(res)
+        const tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: 'http://lck.hzlyzhenzhi.com/content/api/upload-image', //仅为示例，非真实的接口地址
+          filePath: tempFilePaths[0],
+          name: 'file',
+          success(res) {
+            console.log(res)
+            const data = res.data
+            //do something
           }
         })
+        // wx.getImageInfo({
+        //   src: res.tempFilePaths[0],
+        //   success(resp) {
+        //     console.log(resp)
+        //     that.setData({
+        //       imgUrl: resp.path
+        //     })
+        //     app.request({
+        //       url:'/content/api/upload-image',
+        //       data:{
+        //         upload: resp
+        //       }
+        //     }).then(res=>{
+        //       console.log(res)
+        //     })
+        //   }
+        // })
       }
     })
   },
