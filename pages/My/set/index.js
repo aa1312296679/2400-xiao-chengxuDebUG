@@ -30,7 +30,6 @@ Page({
     this.setData({
       uid: app.globalData.userInfo.id
     })
-    console.log(this.data.uid)
     this.getUserInfo()
   },
   // 提交
