@@ -25,8 +25,12 @@ Page({
 
   formSubmit(e){
     console.log(e)
+    let data = e.detail.value
     app.request({
-      url:'/content/api/quality-add'
+      url:'/content/api/quality-add',
+      
+    }).then(res=>{
+
     })
   },
   /**

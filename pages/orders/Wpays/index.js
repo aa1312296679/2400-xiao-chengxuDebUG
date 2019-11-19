@@ -1,18 +1,32 @@
 // pages/orders/Wcomment/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    orderInfo:[],
+    totalMoney: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this
+    app.request({
+      url:'/content/api/my-order',
+      data:{
+        uid: app.globalData.userInfo.id,
+        type :0
+      }
+    }).then(res => {
+      // console.log(res)
+      that.setData({
+        orderInfo: res.data.order
+      })
+    })
   },
 
   /**
@@ -26,7 +40,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this
+    that.data.orderInfo.map(r=>{
+      console.log(r)
+      totalMoney += Number(r.payPrice)
+    })
+    that.setData({
+      totalMoney: 100
+    })
+    console.log("执行了")
   },
 
   /**

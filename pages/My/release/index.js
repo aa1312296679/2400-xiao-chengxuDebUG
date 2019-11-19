@@ -9,7 +9,8 @@ Page({
     imgUrl:'',
     img:[
       '../../../img/home/发布商品_07.png'
-    ]
+    ],
+    imgBox:[]
   },
 
   /**
@@ -25,14 +26,26 @@ Page({
       success(res) {
         console.log(res)
         const tempFilePaths = res.tempFilePaths
-        console.log(tempFilePaths)
         wx.uploadFile({
           url: 'http://lck.hzlyzhenzhi.com/content/api/upload-image', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'upload',
+          header:{
+            'content-type':'multipart/form-data'
+          },
           success(res) {
             console.log(res)
             const data = res.data
+            //do something
+          },
+        })
+        wx.getImageInfo({
+          src: res.tempFilePaths[0],
+          success(resp) {
+            console.log(resp)
+            that.setData({
+              imgUrl: resp.path
+            })
           }
         })
       }
@@ -43,22 +56,26 @@ Page({
     var that = this
     wx.chooseImage({
       success(res) {
+        const tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: 'http://lck.hzlyzhenzhi.com/content/api/upload-image', //仅为示例，非真实的接口地址
+          filePath: tempFilePaths[0],
+          name: 'upload',
+          header: {
+            'content-type': 'multipart/form-data'
+          },
+          success(res) {
+            console.log(res)
+            const data = res.data
+            //do something
+          },
+        })
         wx.getImageInfo({
           src: res.tempFilePaths[0],
           success(resp) {
-           
-            
             that.data.img.unshift(resp.path)
              that.setData({
                img: that.data.img
-            })
-            app.request({
-              url: '/content/api/upload-image',
-              data: {
-                upload: resp
-              }
-            }).then(res => {
-              console.log(res)
             })
           }
         })
