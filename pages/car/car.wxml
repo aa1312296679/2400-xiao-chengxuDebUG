@@ -5,7 +5,7 @@
 
   <view class="s2">
     <view class="s2_top">
-    <radio>多次方汽车</radio>
+    <radio>{{info}}</radio>
      <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
     <text>查看</text>
     </view>

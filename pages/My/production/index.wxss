@@ -217,12 +217,11 @@
   color: #fff;
   font-size: 14px;
 }
-.i_btn {
+
+.i_btn{
   margin-top: 50rpx;
-}
-.i_btn text {
   background-color: #f33d1d;
-  padding: 20rpx 150rpx;
+  width: 70%;
   border-radius: 40rpx;
   color: #fff;
   font-size: 14px;

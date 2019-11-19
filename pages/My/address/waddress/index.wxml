@@ -50,5 +50,5 @@
 
 
 <view class="bto">
-<text>保存并使用</text>
+<text bindtap="preserve">保存并使用</text>
 </view>

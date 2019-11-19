@@ -149,7 +149,7 @@
   </view>
 </view>
 
-<view class="s7">
+<view class="s7" wx:if='{{guessInfo.length>0}}'>
 <view class="s7_main">
     <view class="s7_left">
       <image src="../../img/home/木马首页_20.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
@@ -163,4 +163,7 @@
       </view>
     </view>
     </view>
+  </view>
+  <view wx:else class="none">
+    暂无数据
   </view>

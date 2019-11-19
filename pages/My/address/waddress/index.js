@@ -1,4 +1,5 @@
 // pages/My/address/waddress/index.js
+const app = getApp()
 Page({
 
   /**
@@ -38,7 +39,23 @@ Page({
   onShow: function () {
 
   },
-
+  preserve(){
+    app.request({
+      url:'/content/api/add-address',
+      data: this.data.addressData
+    }).then(res=>{
+      console.log(res)
+      app.request({
+        url:' /content/api/address-default',
+        data:{
+          uid: app.globalData.userInfo.id,
+          addressId:res.data.id
+        },
+      }).then(res=>{
+        console.log(res)
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

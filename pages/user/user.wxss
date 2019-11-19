@@ -225,3 +225,8 @@
      .s7_content image {
        margin-left: 10rpx;
      }
+.none{
+  text-align: center;
+  line-height: 100rpx;
+  height: 100rpx;
+}
