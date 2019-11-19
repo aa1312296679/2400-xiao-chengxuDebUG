@@ -14,7 +14,10 @@ Page({
    */
   onLoad: function (options) {
     app.request({
-      url:'/content/api/user-quality'
+      url:'/content/api/user-quality',
+      data:{
+        uid:app.globalData.userInfo.id
+      }
     }).then(res=>{
       console.log(res)
     })
