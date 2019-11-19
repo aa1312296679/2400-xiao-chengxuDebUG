@@ -33,7 +33,7 @@ App({
       }
     })
   },
-  request({ url, data = { uid: 1 }, method = "post", header = { 'content-type': "application/x-www-form-urlencoded" }, host, complate }) {
+  request({ url, data = {}, method = "post", header = { 'content-type': "application/x-www-form-urlencoded" }, host, complate }) {
     return new Promise((resolve, reject) => {
       wx.request({
         url: (host || this.globalData.host) + url,
