@@ -64,7 +64,7 @@
 
   <view class="s2">
     <view class="s2_top">
-    <text>多次方汽车</text>
+    <text></text>
      <text>单项质保商品</text>
      <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
    
@@ -120,7 +120,7 @@
   </view> 
   </view>
 </view>
-<view class="s0">
+<view wx:if="{{isShow}}" class="s0">
   </view>
 
 
@@ -156,7 +156,7 @@
   </view>
 
 
-  <view class="info">
+  <view wx:if="{{isShow}}" class="info">
       <view class="i_content">
           <view class="i_top">
               <text>添加信息</text>

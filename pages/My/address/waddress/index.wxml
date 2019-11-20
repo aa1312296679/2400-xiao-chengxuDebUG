@@ -13,7 +13,7 @@
   <view>所在地区</view>
   <input bindinput="setarea" placeholder="所在地区" value="{{addressData.area}}"></input>
   <image class="top_image" src="../../../../img/user/编辑收货地址_07.png" style=" width: 40rpx; height: 40rpx;" mode="scaleToFill"></image>
-  <view style="margin-left: 5rpx;">定位</view>
+  <view bindtap="getUserAddress" style="margin-left: 5rpx;">定位</view>
 </view>
 <view class="address-content">
   <view>详细地址</view>

@@ -1,18 +1,31 @@
 // pages/orders/Worder/index.js
+const app =getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    orderInfo: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this
+    app.request({
+      url: '/content/api/my-order',
+      data: {
+        uid: app.globalData.userInfo.id,
+        type: 1
+      }
+    }).then(res => {
+      console.log(res)
+      that.setData({
+        orderInfo: res.data.order
+      })
+    })
   },
 
   /**

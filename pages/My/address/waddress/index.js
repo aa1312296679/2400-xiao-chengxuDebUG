@@ -18,6 +18,18 @@ Page({
       default: 0,
     }
   },
+  getUserAddress() {
+    wx.getLocation({
+      type: 'gcj02',
+      success(res) {
+        console.log(res)
+        const latitude = res.latitude
+        const longitude = res.longitude
+        const speed = res.speed
+        const accuracy = res.accuracy
+      }
+    })
+  },
   getAddressData(id) {
     const that = this
     app.request({

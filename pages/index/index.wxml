@@ -41,8 +41,10 @@
     <button>购二手车</button>
   </navigator>
   <view class="demo"> 
-    <image src="../../img/home/木马首页_13.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
-    <button open-type="contact">人工客服</button>   
+    <button open-type="contact">
+     <image src="../../img/home/木马首页_13.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+      <view>人工客服</view>
+    </button>   
   </view>
   
 </view>

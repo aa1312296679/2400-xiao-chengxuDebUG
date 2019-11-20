@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    uid: app.globalData.userInfo.id
+    uid: app.globalData.userInfo.id,
+    isShow: false,
+    listData: []
   },
 
   /**
@@ -19,7 +21,12 @@ Page({
         uid:app.globalData.userInfo.id
       }
     }).then(res=>{
-      console.log(res)
+      console.log(res.data)
+      if (res.code == 1) {
+        this.setData({
+          listData: res.data.quality
+        })
+      }
     })
   },
 
