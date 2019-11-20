@@ -1,133 +1,38 @@
 <!--pages/car.wxml-->
 <view class="s1">
   <view class="s1_main">
-  <image src="../../img/home/购物车_03.png" style=" width: 100%; height: 200rpx; " mode="scaleToFill"></image>
-
-  <view class="s2">
-    <view class="s2_top">
-    <radio>{{info}}</radio>
-     <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
-    <text>查看</text>
+    <image src="../../img/home/购物车_03.png" style=" width: 100%; height: 200rpx; " mode="scaleToFill"></image>
+    <view class="s2" wx:for='{{info}}' wx:key='{{index}}'>
+      <view class="s2_bot">
+        <radio checked="true"></radio>
+        <view class="s7">
+          <view class="s7_left">
+            <image src="../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
+          </view>
+          <view class="s7_right">
+            <h4>{{item.headMsg}}</h4>
+            <view class="content_text">库存:{{item.productNumber}}件 </view>
+            <text class="s7_text">￥{{item.price}}</text>
+            <view class="stepper">
+              <!-- 减号 -->
+              <text bindtap="delCount" data-index="{{index}}">-</text>
+              <!-- 数值 -->
+              <input type="number" value="1" />
+              <!-- 加号 -->
+              <text>+</text>
+            </view>
+          </view>
+        </view>
+      </view>
     </view>
-    <view class="s2_bot">
-      <radio  checked="true"></radio>
-      <view class="s7">
-    <view class="s7_left">
-      <image src="../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
-      <view class="content_text">库存:236件 </view>
-      <text class="s7_text">￥2600 </text>
-     <view class="stepper">  
-      <!-- 减号 -->  
-      <text  bindtap="delCount" data-index="{{index}}">-</text>  
-      <!-- 数值 -->  
-      <input type="number" value="1"  />  
-      <!-- 加号 -->  
-      <text  >+</text>  
-  </view>  
-    
-    </view>
-  </view>
-    </view>
-  </view>  
-  <view class="s2">
-    <view class="s2_top">
-    <radio>多次方汽车</radio>
-     <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
-    <text>查看</text>
-    </view>
-    <view class="s2_bot">
-      <radio  checked="true"></radio>
-      <view class="s7">
-    <view class="s7_left">
-      <image src="../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
-      <view class="content_text">库存:236件 </view>
-      <text class="s7_text">￥2600 </text>
-     <view class="stepper">  
-      <!-- 减号 -->  
-      <text  bindtap="delCount" data-index="{{index}}">-</text>  
-      <!-- 数值 -->  
-      <input type="number" value="1"  />  
-      <!-- 加号 -->  
-      <text  >+</text>  
-  </view>  
-    
-    </view>
-  </view>
-    </view>
-  </view>  
-  <view class="s2">
-    <view class="s2_top">
-    <radio>多次方汽车</radio>
-     <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
-    <text>查看</text>
-    </view>
-    <view class="s2_bot">
-      <radio  checked="true"></radio>
-      <view class="s7">
-    <view class="s7_left">
-      <image src="../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
-      <view class="content_text">库存:236件 </view>
-      <text class="s7_text">￥2600 </text>
-     <view class="stepper">  
-      <!-- 减号 -->  
-      <text  bindtap="delCount" data-index="{{index}}">-</text>  
-      <!-- 数值 -->  
-      <input type="number" value="1"  />  
-      <!-- 加号 -->  
-      <text  >+</text>  
-  </view>  
-    
-    </view>
-  </view>
-    </view>
-  </view>  
-  <view class="s2">
-    <view class="s2_top">
-    <radio>多次方汽车</radio>
-     <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
-    <text>查看</text>
-    </view>
-    <view class="s2_bot">
-      <radio  checked="true"></radio>
-      <view class="s7">
-    <view class="s7_left">
-      <image src="../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
-      <view class="content_text">库存:236件 </view>
-      <text class="s7_text">￥2600 </text>
-     <view class="stepper">  
-      <!-- 减号 -->  
-      <text  bindtap="delCount" data-index="{{index}}">-</text>  
-      <!-- 数值 -->  
-      <input type="number" value="1"  />  
-      <!-- 加号 -->  
-      <text  >+</text>  
-  </view>  
-    
-    </view>
-  </view>
-    </view>
-  </view>  
   </view>
 </view>
 <view class="s4">
-    <view class="s4_main">
+  <view class="s4_main">
     <radio>全选</radio>
     <navigator url="../pay/index">
-    <h4>结算</h4>
+      <h4>结算</h4>
     </navigator>
     <text>实付:<text>￥00</text></text>
-    </view>
+  </view>
 </view>
-
