@@ -117,3 +117,17 @@ input{
 .content3{
   height: 320rpx;
 }
+.address-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 40rpx;
+   border-bottom: 1px solid #ccc;
+}
+.address-content input{
+  width: 100%;
+}
+.address-content view{
+  width: 200rpx;
+  font-size: 14px;
+}

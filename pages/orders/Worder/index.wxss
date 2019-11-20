@@ -8,6 +8,9 @@
   line-height: 70rpx;
   color: #fff;
 }
+.s7{
+
+}
 .s1 image {
   margin-left: 20rpx;
   margin-top: 20rpx;
@@ -51,13 +54,16 @@
 .s2_top image{
   margin-left: 15rpx;
 }
+s7-left{
+  margin-right: 20rpx
+}
 .s7 {
      width: 85%;
      margin: 5rpx auto;
      display: flex;
-     justify-content: center;
      border-radius: 5px;
    }
+  
    .content_text{
      font-size: 25rpx;
      color: #ccc;

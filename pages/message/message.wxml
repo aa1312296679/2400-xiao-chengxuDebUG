@@ -1,2 +1,2 @@
 <!--pages/message.wxml-->
-<text>pages/message.wxml</text>
+<button open-type="contact">客服</button>

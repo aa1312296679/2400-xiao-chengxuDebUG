@@ -2,7 +2,8 @@ const app = getApp();
 Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    userInfo: null
+    userInfo: null,
+    guessInfo:[]
   },
   onshow() {
     this.setData({
@@ -11,10 +12,24 @@ Page({
     let that = this
   },
   onLoad: function() {
+    let that = this
+    app.request({
+      url: '/content/api/guess-you',
+      data:{
+        uid: app.globalData.userInfo.id
+      }
+    }).then(res=>{
+      console.log(res)
+      that.setData({
+        guessInfo:res.data
+      })
+    })
+
+
+
     this.setData({
       userInfo: app.globalData.userInfo
     })
-    let that = this
     // wx.login({
     //   success: function(res1) {
     //     wx.getUserInfo({

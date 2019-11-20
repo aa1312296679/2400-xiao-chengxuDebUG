@@ -1,4 +1,5 @@
 // pages/My/address/waddress/index.js
+const app = getApp()
 Page({
 
   /**
@@ -17,14 +18,135 @@ Page({
       default: 0,
     }
   },
-
+  getUserAddress() {
+    wx.getLocation({
+      type: 'gcj02',
+      success(res) {
+        console.log(res)
+        const latitude = res.latitude
+        const longitude = res.longitude
+        const speed = res.speed
+        const accuracy = res.accuracy
+      }
+    })
+  },
+  getAddressData(id) {
+    const that = this
+    app.request({
+      url: '/content/api/user-address',
+      data: {
+        uid: app.globalData.userInfo.id
+      }
+    }).then(res => {
+      res.data.map(item => {
+        if (item.id == id) {
+          that.setData({
+            ['addressData.name']: item.name,
+            ['addressData.phone']: item.phone,
+            ['addressData.address']: item.address,
+            ['addressData.default']: item.default,
+            ['addressData.area']: item.area
+          })
+        }
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    if (app.globalData.userInfo) {
+      this.setData({
+        ['addressData.uid']: app.globalData.userInfo.id
+      })
+    } else {
+      wx.reLaunch({
+        url: '/pages/login/index'
+      })
+    }
+    if (options.id) {
+      this.getAddressData(options.id)
+      this.setData({
+        ['addressData.addressId']: options.id
+      })
+    }
   },
-
+  setpeople(e) {
+    let that = this;
+    that.setData({
+      ['addressData.name']: e.detail.value,
+    })
+  },
+  setphone(e) {
+    let that = this;
+    that.setData({
+      ['addressData.phone']: e.detail.value,
+    })
+  },
+  setarea(e) {
+    let that = this;
+    that.setData({
+      ['addressData.area']: e.detail.value,
+    })
+  },
+  setaddress(e) {
+    let that = this;
+    that.setData({
+      ['addressData.address']: e.detail.value,
+    })
+  },
+  checkboxChange(e) {
+    let that = this;
+    if (e.detail.value && e.detail.value[0]) {
+      that.setData({
+        ['addressData.default']: e.detail.value[0],
+      })
+    } else {
+      that.setData({
+        ['addressData.default']: 0,
+      })
+    }
+  },
+  saveInfo() {
+    if (this.data.addressData.addressId) {
+      this.updateAddress()
+    } else {
+      this.addAddress()
+    }
+  },
+  addAddress(){
+    delete this.data.addressData.addressId
+    console.log(this.data.addressData)
+    app.request({
+      url: '/content/api/add-address',
+      data: this.data.addressData
+    }).then(res => {
+      wx.showToast({
+        title: '保存成功',
+        icon: 'success',
+        duration: 2000
+      })
+      wx.redirectTo({
+        url: '/pages/My/address/index',
+      })
+    })
+  },
+  updateAddress() {
+    app.request({
+      url: '/content/api/add-address',
+      data: this.data.addressData
+    }).then(res => {
+      wx.showToast({
+        title: '保存成功',
+        icon: 'success',
+        duration: 2000
+      })
+      wx.redirectTo({
+        url: '/pages/My/address/index',
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

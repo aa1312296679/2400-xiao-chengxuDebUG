@@ -13,7 +13,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData.userInfo)
     if (app.globalData.userInfo) {
       app.request({
         url: '/content/api/user-address',
@@ -21,7 +20,6 @@ Page({
           uid: app.globalData.userInfo.id
         }
       }).then(res =>{
-        console.log(res)
         this.setData({
           addressList:res.data
         })
@@ -33,7 +31,6 @@ Page({
     }
 
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

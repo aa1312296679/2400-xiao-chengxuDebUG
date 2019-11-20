@@ -64,7 +64,7 @@
 
   <view class="s2">
     <view class="s2_top">
-    <text>多次方汽车</text>
+    <text></text>
      <text>单项质保商品</text>
      <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
    
@@ -120,7 +120,7 @@
   </view> 
   </view>
 </view>
-<view class="s0">
+<view wx:if="{{isShow}}" class="s0">
   </view>
 
 
@@ -156,31 +156,31 @@
   </view>
 
 
-  <view class="info">
+  <view wx:if="{{isShow}}" class="info">
       <view class="i_content">
           <view class="i_top">
               <text>添加信息</text>
               <image src="../../../img/user/质保项目_03.png" style="margin-top:30rpx; margin-right:30rpx; width: 20rpx; height: 20rpx;"></image>
           </view>
           <view class="i_bot">
+            <form bindsubmit="formSubmit">
               <view>
-                <input value="品牌"></input>
+                <input placeholder="品牌" name='card'></input>
               </view>
               <view>
-                <input value="质保商品名称"></input>
+                <input placeholder="质保商品名称" name='productName'></input>
               </view>
               <view>
-                <input value="购买日期"></input>
+                <input placeholder="购买日期" name='buyTime'></input>
               </view>
               <view>
-                <input value="商品钢印日期"></input>
+                <input placeholder="商品钢印日期" name='gyTime'></input>
               </view>
               <view>
-                <input value="商品条形码"></input>
+                <input placeholder="商品条形码" name='barCode'></input>
               </view>
-          </view>
-          <view class="i_btn">
-              <text>确定</text>
-          </view>
+              <button formType="submit" class="i_btn">确定</button>
+          </form>
+        </view>
       </view>
   </view>
