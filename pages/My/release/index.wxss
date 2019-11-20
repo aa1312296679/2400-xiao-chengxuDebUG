@@ -7,6 +7,9 @@
   line-height: 70rpx;
   color: #fff;
 }
+.product-type{
+  margin-left: 80rpx
+}
 .s1 image {
   margin-left: 20rpx;
   margin-top: 20rpx;

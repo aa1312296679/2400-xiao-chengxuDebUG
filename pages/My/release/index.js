@@ -10,7 +10,44 @@ Page({
     img:[
       '../../../img/home/发布商品_07.png'
     ],
-    imgBox:[]
+    imgBox:[],
+    items: [{
+      name: '维修',
+      value: 1
+    }, {
+        name: '新车',
+        value: 2
+      }, {
+        name: '二手车',
+        value: 3
+      }, ],
+    itemss: [{
+      name: '通用',
+      value: 0
+    }, {
+        name: '男',
+        value: 1
+      }, {
+        name: '女',
+        value: 2
+      }, ],
+    productData: {
+      uid: null,
+      title: null,//       商品名称
+      catPid: null,//      商品一级分类id
+      catCid: null, //      商品二级分类id
+      price: null, //      商品价格
+      brand: null,//       商品品牌
+      headMsg: null,//     商品封面信息（图片或视频 调对应的上传接口获取存储地址）
+      voltage: null, //     商品电压值
+      mileage: null,//     商品续航里程
+      sex: 0,//      商品使用性别 0-通用 1-男 2-女
+      image: [],//      商品图片介绍（图片上传接口存储）
+      tradeAddress: null, // 商品详细地址
+      type: 1,//        商品对象    1-维修 2-新车 3-二手车
+      introduce: null,//   商品详情介绍
+      number: null//      商品库存
+    }
   },
 
   /**
@@ -18,6 +55,16 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  radioChange(e) {
+    this.setData({
+      ['productData.type']: e.detail.value
+    })
+  },
+  radioChanges(e) {
+    this.setData({
+      ['productData.sex']: e.detail.value
+    })
   },
   // 图片上传
   imgUp(){
@@ -30,12 +77,14 @@ Page({
           url: 'http://lck.hzlyzhenzhi.com/content/api/upload-image', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'upload',
-          header:{
-            'content-type':'multipart/form-data'
-          },
           success(res) {
             console.log(res)
-            const data = res.data
+            const data = JSON.parse(JSON.stringify(JSON.parse(res)))
+            console.log(data)
+            console.log(data.data.imgUrl)
+            that.setData({
+              ['productData.headMsg']: data.imgUrl
+            })
             //do something
           },
         })
@@ -56,19 +105,22 @@ Page({
     var that = this
     wx.chooseImage({
       success(res) {
+        console.log(res)
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
           url: 'http://lck.hzlyzhenzhi.com/content/api/upload-image', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'upload',
-          header: {
-            'content-type': 'multipart/form-data'
-          },
           success(res) {
             console.log(res)
-            const data = res.data
+            const data = JSON.parse(res.data)
+            that.data.productData.image.push[data.imgUrl]
+            console.log(data)
             //do something
           },
+          fail(err) {
+            console.log(err)
+          }
         })
         wx.getImageInfo({
           src: res.tempFilePaths[0],
@@ -84,9 +136,21 @@ Page({
   },
   formSubmit(e){
     console.log(e)
-    app.request({
-      url:'/content/api/product-upload'
+    console.log(this.data.productData)
+    const data = e.detail.value
+    this.setData({
+      ['productData.title']: e.title,
+      ['productData.price']: e.price,
+      ['productData.number']: e.title,
+      ['productData.brand']: e.brand,
+      ['productData.voltage']: e.voltage,
+      ['productData.mileage']: e.mileage,
+      ['introduce.introduce']: e.introduce,
+      ['introduce.tradeAddress']: e.tradeAddress,
     })
+    // app.request({
+    //   url:'/content/api/product-upload'
+    // })
     // uid       用户id
     // title       商品名称
     // catPid      商品一级分类id
