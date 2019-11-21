@@ -19,7 +19,7 @@
 
 <view class="s2">
   <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
-  <block wx:for="{{bnrUrl}}" wx:for-index="index">
+  <block wx:key="{{index}}" wx:for="{{bnrUrl}}" wx:for-index="index">
     <swiper-item>
       <image src='{{item.imageUrl + item.url}}' class='u-img-slide' mode='aspectFill'></image>
     </swiper-item>
@@ -58,6 +58,6 @@
     <text> 优选区</text>
     <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
   </view>
-  <Goods wx:for="{{goodProduct}}" productData="{{item}}"></Goods>
+  <Goods wx:key="{{index}}" wx:for="{{goodProduct}}" productData="{{item}}"></Goods>
 </view>
 

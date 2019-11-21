@@ -6,28 +6,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chooseList: []
+    chooseList: [],
+    typeOptions: []
   },
-
+  getTypeList() {
+    app.request({
+      url: '/content/api/product-all-cate'
+    }).then(res => {
+      this.setData({
+        typeOptions: res.data
+      })
+      this.getProductListById(res.data[0].id)
+    })
+  },
+  getProductList(e) {
+    this.getProductListById(e.currentTarget.dataset.id)
+  },
+  getProductListById(id) {
+    let that = this
+    app.request({
+      url: '/content/api/cate-product',
+      data: {
+        catPid: id,
+        page: 1
+      }
+    }).then(res => {
+      that.setData({
+        chooseList: res.data.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     const that = this
-    wx.request({
-      url: `${app.globalData.host}/content/api/product-access`,
-      method:'post',
-      data:{
-        type:options.type,
-      },
-      success(res){
-        console.log(res)
-        that.setData({
-          chooseList: res.data.data.product
-        })
-        console.log(that.data.chooseList)
-      }
-    })
+    this.getTypeList()
   },
 
   /**
