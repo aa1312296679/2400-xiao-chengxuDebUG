@@ -1,5 +1,6 @@
 // pages/orders/Wcomment/index.js
 const app = getApp();
+const utils = require('../../../utils/util.js')
 Page({
 
   /**
@@ -8,9 +9,45 @@ Page({
   data: {
     uid: app.globalData.userInfo.id,
     isShow: false,
-    listData: []
+    listData: [],
+    productData: null,
+    addData: {
+      uid: null,
+      productId: null,
+      gyTime: null,
+      barCode: null
+    }
   },
-
+  closeAdd() {
+    this.setData({
+      isShow: false
+    })
+  },
+  addInfo(e) {
+    console.log(e)
+    let data = this.data.listData[e.currentTarget.dataset.index]
+    data.buyTime = utils.formatTime(new Date(data.buyTime * 1000))
+    this.setData({
+      productData: data
+    })
+    this.setData({
+      isShow: true
+    })
+  },
+  afterSale(e) {
+    app.request({
+      url: '/content/api/product-after',
+      data: {
+        uid: app.globalData.userInfo.id,
+        qualityId: e.currentTarget.dataset.id
+      }
+    }).then(res => {
+      wx.showToast({
+        title: '已申请',
+        type: 'success'
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -29,15 +66,25 @@ Page({
       }
     })
   },
-
   formSubmit(e){
     console.log(e)
     let data = e.detail.value
     app.request({
       url:'/content/api/quality-add',
-      
+      data: {
+        uid: app.globalData.userInfo.id,
+        orderNumber: this.data.productData.orderNumber,
+        gyTime: data.gyTime,
+        barCode: data.barCode
+      }
     }).then(res=>{
-
+      wx.showToast({
+        title: '已提交',
+        type: 'success'
+      })
+      this.setData({
+        isShow: false
+      })
     })
   },
   /**

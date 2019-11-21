@@ -1,15 +1,15 @@
 <!--pages/My/release/index.wxml-->
 
 <view class="s0">
-<view class="space"></view>
-<view class="main">
-  <view class="s2">
-    <text>请上传封面图片或视频</text>
-    <image wx:if='{{!imgUrl}}' bindtap="imgUp" src="../../../img/home/发布商品_03.png" mode="scaleToFill" style="width:150rpx; height:150rpx"></image>
-    <image wx:else src='{{imgUrl}}' style="width:150rpx; height:150rpx"></image>
-  </view>
-  <form bindsubmit="formSubmit">
-    <view class="s3">
+  <view class="space"></view>
+  <view class="main">
+    <view class="s2">
+      <text>请上传封面图片或视频</text>
+      <image wx:if='{{!imgUrl}}' bindtap="imgUp" src="../../../img/home/发布商品_03.png" mode="scaleToFill" style="width:150rpx; height:150rpx"></image>
+      <image wx:else src='{{imgUrl}}' style="width:150rpx; height:150rpx"></image>
+    </view>
+    <form bindsubmit="formSubmit">
+      <view class="s3">
         <li>
           <text>标题</text>
           <input placeholder="请输入标题名称" name='title'></input>
@@ -19,25 +19,57 @@
           <input placeholder="请输入商品价格" name='price'></input>
         </li>
         <li>
+          <text>库存</text>
+          <input placeholder="请输入库存" name='number'></input>
+        </li>
+        <li>
           <text>品牌</text>
           <input placeholder="请输入品牌名称" name='brand'></input>
+        </li>
+        <li>
+          <text>电压值</text>
+          <input placeholder="请输入电压值" name='voltage'></input>
+        </li>
+        <li>
+          <text>续航里程</text>
+          <input placeholder="请输入续航里程" name='mileage'></input>
+        </li>
+        <li>
+          <text>使用性别</text>
+          <view class="product-type">
+            <radio-group class="radio-group" bindchange="radioChanges">
+              <radio checked="{{index===0}}" class="radio" wx:for-items="{{itemss}}" wx:key="name" value="{{item.value}}">
+                <text>{{item.name}}</text>
+              </radio>
+            </radio-group>
+          </view>
+        </li>
+        <li>
+          <text>类型</text>
+          <view class="product-type">
+            <radio-group class="radio-group" bindchange="radioChange">
+              <radio checked="{{index===0}}" class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}">
+                <text>{{item.name}}</text>
+              </radio>
+            </radio-group>
+          </view>
         </li>
         <li>
           <text>商品介绍</text>
           <input placeholder="请输入商品详细介绍" name='introduce'></input>
         </li>
         <li>
-          <text>交易地点</text>
+          <text>商品详细地址</text>
           <input placeholder="请输入商店详细地址" name='tradeAddress'></input>
         </li>
-    </view>
-    <view class="s4">
-      <p></p>
-      <h4>商品多角度图片</h4>
-      <image wx:for='{{img}}' bindtap="allImgUp" src="{{item}}" mode="scaleToFill" style="width:160rpx; height:160rpx"></image>
-    </view>
-    <button formType="submit">确认上传</button>
-  </form>
- 
-</view>
+      </view>
+      <view class="s4">
+        <p></p>
+        <h4>商品多角度图片</h4>
+        <image wx:for='{{img}}' bindtap="allImgUp" src="{{item}}" mode="scaleToFill" style="width:160rpx; height:160rpx"></image>
+      </view>
+      <button style="margin-bottom:80rpx" formType="submit">确认上传</button>
+    </form>
+
+  </view>
 </view>
