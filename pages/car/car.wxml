@@ -25,6 +25,7 @@
             </view>
           </view>
         </view>
+        <view class="del" bindtap='del' data-n='{{index}}'>X</view>
       </view>
     </checkbox-group>
   </view>
@@ -34,9 +35,7 @@
     <checkbox bindtap="allChoose" checked="{{check}}">全选</checkbox>
     <view class="toPay">
       <text>实付:<text>￥{{allMoney}}</text></text>
-     
         <h4 bindtap='toPay'>结算</h4>
-     
     </view>
   </view>
 </view>

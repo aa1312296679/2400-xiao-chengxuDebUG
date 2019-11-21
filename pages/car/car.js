@@ -97,8 +97,25 @@ Page({
 
   toPay(){
     let arr = this.data.info.filter(v => Object.keys(this.data.ids).some(r => r === v.id))
+    console.log(arr)
     wx.navigateTo({
       url: '../pay/index?info=' + arr,
+    })
+  },
+
+  del(e){
+    let that = this
+    let index = e.currentTarget.dataset.n
+    app.request({
+      url:'/content/api/cart-delete',
+      data:{
+        uid:app.globalData.userInfo.id,
+        productIds: that.data.info[index].id
+      },
+    }).then(res=>{
+      that.setData({
+        info:that.data.info
+      })
     })
   },
 

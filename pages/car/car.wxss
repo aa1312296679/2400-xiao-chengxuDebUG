@@ -11,6 +11,7 @@
   padding-top: 20rpx;
 }
 .s2{
+  position: relative;
   background-color: #fff;
   border-radius: 20rpx;
   font-size: 15px;
@@ -19,8 +20,12 @@
   padding-top: 10rpx;
   
 }
-.s2_top radio {
-  margin-left: 20rpx;
+
+.s2 .del{
+  position:absolute;
+  right: 5rpx;
+  top: 5rpx;
+  padding: 5rpx;
 }
 
 .s2_top text{
@@ -110,11 +115,6 @@
    }
      .s7_content image {
        margin-left: 10rpx;
-     }
-     .s2_bot radio {
-       margin-top: 50rpx;
-       margin-left: 20rpx;
-       float: left;
      }
  
 .s4 {
