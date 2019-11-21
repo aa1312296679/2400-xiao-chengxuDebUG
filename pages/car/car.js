@@ -6,7 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    info:[]
+    info:[],
+    allMoney: 0,
+    check: false,
+    ids: {},
+    subInfo:[]
   },
 
   /**
@@ -23,7 +27,78 @@ Page({
       that.setData({
         info:res.data
       })
-      console.log(res)
+    })
+  },
+  // 计算总价
+  getAllMoney(){
+    // let arr = this.data.info.filter(v => Object.keys(this.data.ids).some(r => r === v.id))
+    let allMoney = 0;
+    this.data.info.map(v => {
+      if (Object.keys(this.data.ids).some(r => r === v.id)) {
+        allMoney += Number(v.price) * v.number
+      }
+    })
+    this.setData({
+      allMoney
+    })
+    console.log(allMoney)
+  },
+  delCount(e){
+    let that = this
+    let index = e.currentTarget.dataset.index
+    if (that.data.info[index].number>1){
+      that.data.info[index].number --
+      that.setData({
+        info: that.data.info
+      })
+      this.getAllMoney()
+    }
+   
+  },
+
+  addCount(e){
+    let that = this
+    let index = e.currentTarget.dataset.index
+    that.data.info[index].number ++
+    that.setData({
+      info: that.data.info,
+      ids: this.data.ids
+    })
+    this.getAllMoney()
+  },
+
+  allChoose(){
+    let that = this
+    this.data.info.map(r => {
+      if (!this.data.check) {
+        this.data.ids[r.id] = !this.data.check
+      } else {
+        delete this.data.ids[r.id]
+      }
+    })
+    that.setData({
+      check: !this.data.check,
+      ids: this.data.ids
+    })
+    this.getAllMoney()
+  },
+
+  checkboxChange(e){
+    this.data.ids = {}
+    e.detail.value.map(id => {
+      this.data.ids[id] = true
+    })
+    this.setData({
+      check: e.detail.value.length === this.data.info.length,
+      subInfo: e.detail.value
+    })
+    this.getAllMoney()
+  },
+
+  toPay(){
+    let arr = this.data.info.filter(v => Object.keys(this.data.ids).some(r => r === v.id))
+    wx.navigateTo({
+      url: '../pay/index?info=' + arr,
     })
   },
 
@@ -38,41 +113,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log(this.data.subInfo)
+    this.data.info.map(r=>{
+      if(r.checked = true){
 
+      }
+    })
+    this.data.allMoney
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

@@ -2,37 +2,41 @@
 <view class="s1">
   <view class="s1_main">
     <image src="../../img/home/购物车_03.png" style=" width: 100%; height: 200rpx; " mode="scaleToFill"></image>
-    <view class="s2" wx:for='{{info}}' wx:key='{{index}}'>
-      <view class="s2_bot">
-        <radio checked="true"></radio>
-        <view class="s7">
-          <view class="s7_left">
-            <image src="../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
-          </view>
-          <view class="s7_right">
-            <h4>{{item.headMsg}}</h4>
-            <view class="content_text">库存:{{item.productNumber}}件 </view>
-            <text class="s7_text">￥{{item.price}}</text>
-            <view class="stepper">
-              <!-- 减号 -->
-              <text bindtap="delCount" data-index="{{index}}">-</text>
-              <!-- 数值 -->
-              <input type="number" value="1" />
-              <!-- 加号 -->
-              <text>+</text>
+    <checkbox-group bindchange="checkboxChange">
+      <view class="s2" wx:for='{{info}}' wx:key='{{index}}'>
+        <view class="s2_bot">
+          <checkbox checked="{{ids[item.id]}}" value="{{item.id}}" />
+          <view class="s7">
+            <view class="s7_left">
+              <image src="{{item.productImage}}" alt="" style=" width:150rpx; height: 150rpx;"></image>
+            </view>
+            <view class="s7_right">
+              <h4>{{item.title}}</h4>
+              <view class="content_text">库存:{{item.productNumber}}件 </view>
+              <text class="s7_text">￥{{item.price}}</text>
+              <view class="stepper">
+                <!-- 减号 -->
+                <text bindtap="delCount" data-index="{{index}}">-</text>
+                <!-- 数值 -->
+                <input type="number" value="{{item.number}}" />
+                <!-- 加号 -->
+                <text bindtap='addCount' data-index="{{index}}">+</text>
+              </view>
             </view>
           </view>
         </view>
       </view>
-    </view>
+    </checkbox-group>
   </view>
 </view>
 <view class="s4">
   <view class="s4_main">
-    <radio>全选</radio>
-    <navigator url="../pay/index">
-      <h4>结算</h4>
-    </navigator>
-    <text>实付:<text>￥00</text></text>
+    <checkbox bindtap="allChoose" checked="{{check}}">全选</checkbox>
+    <view class="toPay">
+      <text>实付:<text>￥{{allMoney}}</text></text>
+     
+        <h4 bindtap='toPay'>结算</h4>
+     
+    </view>
   </view>
 </view>

@@ -127,16 +127,17 @@
 }
 .s4_main{
   width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
   margin-top: 30rpx;
   margin-left: 37rpx;
   font-size: 13px;
 }
-.s4 radio {
-  float: left;
-}
-.s4  text {
-  float: right;
-  
+
+.s4 .toPay{
+  display: flex;
+  align-items: center;
 }
 .s4  text text {
   color: red;
