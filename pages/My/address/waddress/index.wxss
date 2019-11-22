@@ -14,8 +14,10 @@
   padding: 0 20rpx;
 }
 input{
+    min-width: 320rpx;
   width: 100%;
   border: none;
+  font-size: 12px
 }
 .s1 image {
   margin-left: 20rpx;
@@ -75,8 +77,8 @@ input{
   color: #fff;
   border-radius: 50rpx;
 }
-.top .top_image {
-  margin-left: 150rpx;
+ .top_image {
+  margin-left: 120rpx;
 }
 .content1 {
   height: 150rpx;
@@ -127,7 +129,11 @@ input{
 .address-content input{
   width: 100%;
 }
-.address-content view{
-  width: 200rpx;
+.address-content view:first-child{
+  min-width: 140rpx;
   font-size: 14px;
+}
+.img-add{
+  min-width: 60rpx;
+  font-size: 12px;
 }

@@ -14,22 +14,40 @@ Page({
    */
   onLoad: function (options) {
     if (app.globalData.userInfo) {
-      app.request({
-        url: '/content/api/user-address',
-        data: {
-          uid: app.globalData.userInfo.id
-        }
-      }).then(res =>{
-        this.setData({
-          addressList:res.data
-        })
-      })
+      this.getAddress()
     } else {
       wx.reLaunch({
          url: '/pages/login/index',
        })
     }
-
+  },
+  getAddress() {
+    app.request({
+      url: '/content/api/user-address',
+      data: {
+        uid: app.globalData.userInfo.id
+      }
+    }).then(res => {
+      this.setData({
+        addressList: res.data
+      })
+    })
+  },
+  delAddress(e) {
+    console.log(e)
+    app.request({
+      url: '/content/api/address-delete',
+      data: {
+        uid: app.globalData.userInfo.id,
+        addressId: e.currentTarget.dataset.id
+      }
+    }).then(res => {
+      this.getAddress()
+      wx.showToast({
+        title: '删除成功',
+        type: 'success'
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

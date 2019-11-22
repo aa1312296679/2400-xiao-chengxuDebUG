@@ -1,7 +1,5 @@
 <!--pages/nearby.wxml-->
-
-
-
+<view>位置：{{address}}</view>
 <view class="s7">
 <view class="s7_main">
     <view class="s7_left">
