@@ -29,7 +29,7 @@
     
   </view>
  <view class="space"></view>
-  <view class="s4">
+  <!-- <view class="s4">
         <h1>优惠</h1>
         <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
       <li>
@@ -44,7 +44,7 @@
         <p>限购</p>
         <text>购买1-2件时享受单件价￥3099,...</text>
       </li>
-  </view>
+  </view> -->
    <view class="space"></view>
    <view class="s5">
    <li>

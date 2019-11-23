@@ -1,14 +1,15 @@
 <!--pages/componts/goodlist/goods.wxml-->
 <view bindtap="viewDetails" class="s7">
-    <view class="s7_left">
-      <image src="{{productData.image?productData.image:'../../../img/home/木马首页_20.png'}}" alt="" style=" width: 200rpx; height: 200rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>{{productData.title}}</h4> 
-      <view class="content_text"> 17英寸 | 最大速度：240km/h</view>
-      <text class="s7_text"><text>￥{{productData.price}}  </text>760人选购</text>
-      <view class="s7_content">{{productData.brand}} <text>{{productData.tradeAddress}}</text>
+  <view class="s7_left">
+    <image src="{{productData.image?productData.image:'../../../img/home/木马首页_20.png'}}" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+  </view>
+  <view class="s7_right">
+    <h4>{{productData.title}}</h4>
+    <!-- <view class="content_text"> 17英寸 | 最大速度：240km/h</view> -->
+    <view class="s7_text"><text>￥{{productData.price}}  </text></view>
+    <view class="s7_content">{{productData.brand}}
+      <text>{{productData.tradeAddress}}</text>
       <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
-      </view>
     </view>
   </view>
+</view>

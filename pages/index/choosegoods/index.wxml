@@ -12,12 +12,12 @@
       </view>
 </view>
 
-<view class="s2">
+<!-- <view class="s2">
   <text>足迹</text>
   <text>聊天商品</text>
   <text>购物清单</text>
   <text>已购买</text>
-</view>
+</view> -->
 
   <Goods wx:for="{{chooseList}}" productData="{{item}}"></Goods>
   </view>

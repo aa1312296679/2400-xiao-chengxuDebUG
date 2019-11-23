@@ -3,7 +3,6 @@
      width: 95%;
      margin: 20rpx auto;
      display: flex;
-     justify-content: center;
      box-shadow: 3px 3px 3px #f5f5f5;
      border-radius: 5px;
    }
@@ -32,6 +31,7 @@
      }
      .s7_left {
        margin-top: 20rpx;
+       margin-right: 50rpx
      }
      .s7_right {
        margin-left: 20rpx;

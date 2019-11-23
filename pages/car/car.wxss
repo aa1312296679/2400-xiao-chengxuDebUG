@@ -11,6 +11,7 @@
   padding-top: 20rpx;
 }
 .s2{
+  position: relative;
   background-color: #fff;
   border-radius: 20rpx;
   font-size: 15px;
@@ -19,8 +20,12 @@
   padding-top: 10rpx;
   
 }
-.s2_top radio {
-  margin-left: 20rpx;
+
+.s2 .del{
+  position:absolute;
+  right: 5rpx;
+  top: 5rpx;
+  padding: 5rpx;
 }
 
 .s2_top text{
@@ -111,11 +116,6 @@
      .s7_content image {
        margin-left: 10rpx;
      }
-     .s2_bot radio {
-       margin-top: 50rpx;
-       margin-left: 20rpx;
-       float: left;
-     }
  
 .s4 {
   position: fixed;
@@ -127,16 +127,17 @@
 }
 .s4_main{
   width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
   margin-top: 30rpx;
   margin-left: 37rpx;
   font-size: 13px;
 }
-.s4 radio {
-  float: left;
-}
-.s4  text {
-  float: right;
-  
+
+.s4 .toPay{
+  display: flex;
+  align-items: center;
 }
 .s4  text text {
   color: red;

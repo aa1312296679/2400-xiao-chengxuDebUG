@@ -1,4 +1,6 @@
 // pages/My/address/waddress/index.js
+var QQMapWX = require('./../../../../utils/qqmap-wx-jssdk.js')
+var qqmapsdk
 const app = getApp()
 Page({
 
@@ -19,14 +21,24 @@ Page({
     }
   },
   getUserAddress() {
+    let that = this
     wx.getLocation({
       type: 'gcj02',
       success(res) {
-        console.log(res)
-        const latitude = res.latitude
-        const longitude = res.longitude
-        const speed = res.speed
-        const accuracy = res.accuracy
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success(res) {
+            that.setData({
+              ['addressData.area']: res.result.address
+            })
+          },
+          complete(res) {
+            console.log(res)
+          }
+        })
       }
     })
   },
@@ -55,7 +67,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    qqmapsdk = new QQMapWX({
+      key: 'XEZBZ-IYJCG-AN7QT-IPO44-KCTT3-GZF35'
+    })
     if (app.globalData.userInfo) {
       this.setData({
         ['addressData.uid']: app.globalData.userInfo.id

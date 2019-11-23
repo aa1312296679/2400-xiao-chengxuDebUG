@@ -21,6 +21,9 @@
       height: 220rpx;
       background-color: #f6f6f6;
 }
+.s7:first-child{
+  margin-top: 30rpx;
+}
    .s7_main {
      width: 95%;
      margin: 0rpx auto;

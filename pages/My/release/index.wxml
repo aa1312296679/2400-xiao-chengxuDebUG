@@ -54,6 +54,13 @@
             </radio-group>
           </view>
         </li>
+        <li wx:if="{{productData.type==1 && typeOptions.length}}">
+          <text>商品分类</text>
+          <picker style="margin-left:80rpx;width:400rpx;height:60rpx;color:#ccc" range="{{typeOptions}}" range-key="name" mode="selector" bindchange="bindTimeChange" value="{{value}}">
+            <text wx:if="{{type}}">{{type}}</text>
+            <text wx:else>请选择分类</text>
+          </picker>
+        </li>
         <li>
           <text>商品介绍</text>
           <input placeholder="请输入商品详细介绍" name='introduce'></input>
@@ -70,6 +77,5 @@
       </view>
       <button style="margin-bottom:80rpx" formType="submit">确认上传</button>
     </form>
-
   </view>
 </view>

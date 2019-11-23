@@ -42,7 +42,10 @@ Page({
       url:'/content/api/alter-msg',
       data: subData
     }).then(res=>{
-      console.log(res)
+      wx.showToast({
+        title: '保存成功',
+        type: 'success'
+      })
     })
   },
   getUserInfo() {

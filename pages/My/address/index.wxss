@@ -17,6 +17,7 @@
 .content {
   height: 180rpx;
   border-bottom: 1px solid #ccc;
+  padding: 0 30rpx
 }
 .content radio{
   margin-top: 50rpx;

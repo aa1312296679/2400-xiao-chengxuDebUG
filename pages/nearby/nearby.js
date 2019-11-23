@@ -1,18 +1,23 @@
 // pages/nearby.js
+var QQMapWX = require('./../../utils/qqmap-wx-jssdk.js')
+var qqmapsdk
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    address: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    qqmapsdk = new QQMapWX({
+      key: 'XEZBZ-IYJCG-AN7QT-IPO44-KCTT3-GZF35'
+    })
   },
 
   /**
@@ -26,7 +31,37 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this
+    wx.getLocation({
+      type: 'gcj02 ',
+      isHighAccuracy: false,
+      success(res) {
+        console.log(res)
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success(res) {
+            that.setData({
+              address: res.result.address
+            })
+            app.request({
+              url: '/content/api/nearby-shop',
+              data: {
+                page: 1,
+                area: res.result.address
+              }
+            }).then(res1 => {
+              console.log(res1)
+            })
+          },
+          complete(res) {
+            console.log(res)
+          }
+        })
+      }
+    })
   },
 
   /**

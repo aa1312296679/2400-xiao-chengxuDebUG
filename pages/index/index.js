@@ -68,8 +68,8 @@ Page({
     }
   },
   search(e){
-    console.log(e)
     let search = e.detail.value
+    let that = this
     wx.request({
       url: `${app.globalData.host}/content/api/index-search`,
       method:'post',
@@ -78,6 +78,11 @@ Page({
       },
       success(res){
         console.log(res)
+        if (res.data.code === 1) {
+          that.setData({
+            goodProduct: res.data.data
+          })
+        }
       }
     })
   },

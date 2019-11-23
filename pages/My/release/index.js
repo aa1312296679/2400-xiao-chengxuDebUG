@@ -46,15 +46,19 @@ Page({
       tradeAddress: null, // 商品详细地址
       type: 1,//        商品对象    1-维修 2-新车 3-二手车
       introduce: null,//   商品详情介绍
-      number: null//      商品库存
-    }
+      number: 0,//      商品库存
+    },
+    typeOptions: [],
+    value: 0,
+    type: '',
+    typeId: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getTypeList()
   },
   radioChange(e) {
     this.setData({
@@ -64,6 +68,15 @@ Page({
   radioChanges(e) {
     this.setData({
       ['productData.sex']: e.detail.value
+    })
+  },
+  bindTimeChange(e) {
+    const data = Number(e.detail.value)
+    console.log(e)
+    console.log(this.data.typeOptions[data].id)
+    this.setData({
+      type: this.data.typeOptions[data].name,
+      typeId: this.data.typeOptions[data].id
     })
   },
   // 图片上传
@@ -77,13 +90,13 @@ Page({
           url: 'http://lck.hzlyzhenzhi.com/content/api/upload-image', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'upload',
+          header: {
+            "Content-Type": "multipart/form-data"
+          },
           success(res) {
-            console.log(res)
-            const data = JSON.parse(JSON.stringify(JSON.parse(res)))
-            console.log(data)
-            console.log(data.data.imgUrl)
+            const data = JSON.parse(res.data)
             that.setData({
-              ['productData.headMsg']: data.imgUrl
+              ['productData.headMsg']: data.data.imageUrl
             })
             //do something
           },
@@ -100,7 +113,16 @@ Page({
       }
     })
   },
-
+  getTypeList() {
+    app.request({
+      url: '/content/api/product-all-cate'
+    }).then(res => {
+      this.setData({
+        typeOptions: res.data
+      })
+      console.log(this.data.typeOptions)
+    })
+  },
   allImgUp(){
     var that = this
     wx.chooseImage({
@@ -112,10 +134,8 @@ Page({
           filePath: tempFilePaths[0],
           name: 'upload',
           success(res) {
-            console.log(res)
             const data = JSON.parse(res.data)
-            that.data.productData.image.push[data.imgUrl]
-            console.log(data)
+            that.data.productData.image.push(data.data.imageUrl)
             //do something
           },
           fail(err) {
@@ -136,21 +156,52 @@ Page({
   },
   formSubmit(e){
     console.log(e)
-    console.log(this.data.productData)
+    let that = this
     const data = e.detail.value
     this.setData({
-      ['productData.title']: e.title,
-      ['productData.price']: e.price,
-      ['productData.number']: e.title,
-      ['productData.brand']: e.brand,
-      ['productData.voltage']: e.voltage,
-      ['productData.mileage']: e.mileage,
-      ['introduce.introduce']: e.introduce,
-      ['introduce.tradeAddress']: e.tradeAddress,
+      ['productData.title']: data.title,
+      ['productData.uid']: app.globalData.userInfo.id,
+      ['productData.price']: data.price,
+      ['productData.number']: data.number,
+      ['productData.brand']: data.brand,
+      ['productData.voltage']: data.voltage,
+      ['productData.mileage']: data.mileage,
+      ['productData.introduce']: data.introduce,
+      ['productData.tradeAddress']: data.tradeAddress,
+      ['productData.catPid']: that.data.typeId
     })
-    // app.request({
-    //   url:'/content/api/product-upload'
-    // })
+    console.log(this.data.productData)
+    app.request({
+      url:'/content/api/product-upload',
+      data: that.data.productData
+    }).then(res => {
+      wx.showToast({
+        title: '添加成功',
+        type: 'success'
+      })
+      wx.navigateBack()
+      that.setData({
+        ['productData.title']: null,
+        ['productData.uid']: null,
+        ['productData.price']: null,
+        ['productData.number']: 0,
+        ['productData.brand']: null,
+        ['productData.voltage']: null,
+        ['productData.mileage']:null,
+        ['productData.introduce']: null,
+        ['productData.tradeAddress']: null,
+        ['productData.catPid']: '',
+        ['productData.image']: [],
+        ['productData.headMsg']: null,
+        img: [
+          '../../../img/home/发布商品_07.png'
+        ],
+        imgUrl: '',
+        type: '',
+        typeId: null,
+        value: 0
+      })
+    })
     // uid       用户id
     // title       商品名称
     // catPid      商品一级分类id
