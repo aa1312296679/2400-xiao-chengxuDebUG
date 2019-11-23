@@ -23,8 +23,8 @@
       <li>
         <image src="../../img/home/商品详情_03.png" mode="scaleToFill" style="width:30rpx; height:12px"></image>
         <view style="color:red;font-weight:bold;font-size: 16px;">{{productData.price}}</view>
-        <text>开通VIP会员卡。享受满700减50优惠卷</text>
-        <image class="s3_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
+        <!-- <text>开通VIP会员卡。享受满700减50优惠卷</text> -->
+        <!-- <image class="s3_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image> -->
       </li>
     
   </view>
@@ -47,16 +47,16 @@
   </view> -->
    <view class="space"></view>
    <view class="s5">
-   <li>
+   <!-- <li>
       <h1>已选</h1>
       <text>靠背版白色，1件，可选服务于</text>
       <image class="s5_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
       <p></p>
-    </li>
+    </li> -->
     <li>
       <h1>送至</h1>
       <image src="../../img/home/商品详情_07.png" mode="scaleToFill" style="width:30rpx; height:18px; margin-right:10rpx;"></image>
-      <text>四川成都市金牛区星汉北路金府...</text>
+      <text bindtap="chooseAddress">{{userInfo.userAddress.area}}{{userInfo.userAddress.address}}</text>
       <p>现货</p>
     </li>
     <li>
@@ -103,17 +103,21 @@
 <view class="bottom">
     <li>
       <view>
-      <image src="../../img/home/商品详情_21.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
+      <navigator url="/pages/shop/index">
+         <image src="../../img/home/商品详情_21.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
       <text>店铺</text>
+      </navigator>
       </view>
       <view>
-      <image src="../../img/home/商品详情_18.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
+      <navigator open-type="switchTab" url="/pages/car/car">
+       <image src="../../img/home/商品详情_18.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
       <text>购物车</text>
+      </navigator>
       </view> 
     </li>
     <li>
       <view>
-      <text>加入购物车</text>
+      <text bindtap="goCart">加入购物车</text>
       <text bindtap="goBuy" id="pay">立即购买</text>
       </view>
     </li>   
@@ -128,7 +132,7 @@
             <text>￥3099.00</text>
             <h1>编号:49927298515</h1>
             </li>
-            <image bindtap="closeBuy" src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
+            <image bindtap="closePlate" src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
         </view>
         <!-- <view class="color">
           <h1>颜色</h1>
@@ -147,12 +151,14 @@
               <!-- 减号 -->  
               <text  bindtap="delCount" data-index="{{index}}     ">-</text>  
               <!-- 数值 -->  
-              <input type="number" value="1"  />  
+              <input disabled type="number" value="{{num}}"  />  
               <!-- 加号 -->  
-              <text  >+</text>  
+              <text bindtap="addCount">+</text>  
           </view>  
         </view>
-
+        <view wx:if="{{!type}}" class="remark">
+          <textarea value="{{remark}}" placeholder="订单备注"></textarea>
+        </view>
         <!-- <view class="safe">
           <h1>保障服务</h1>
           <view>

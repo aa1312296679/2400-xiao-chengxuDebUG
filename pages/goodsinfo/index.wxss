@@ -7,6 +7,18 @@
   line-height: 70rpx;
   color: #fff;
 }
+.remark{
+  text-align: center;
+  margin-top: 30rpx
+}
+.remark textarea{
+  width: 94%;
+  font-size: 26rpx;
+  padding: 10rpx 3%;
+  text-align: left;
+  border: 1rpx solid #eee;
+  height: 80rpx;
+}
 .s1 image {
   margin-left: 20rpx;
   margin-top: 20rpx;
@@ -254,7 +266,7 @@ float: left;
 }
 .choose {
   position: fixed;
-  height: 40%;
+  /* height: 50%; */
   width: 100%;
   bottom: 0rpx;
   background-color: #fff;
@@ -399,4 +411,5 @@ float: left;
   margin-top: 40rpx;
   border-radius: 40rpx;
   color: #fff;
+  margin-bottom: 30rpx;
 }
