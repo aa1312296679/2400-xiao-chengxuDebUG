@@ -5,7 +5,7 @@
   <view class="search">
     <view class="df search_arr">
       <icon class="searchcion" size='15' color="#fff" type='search'></icon>
-      <input class="search_input" placeholder-style="color:#fff" placeholder="         搜索" />
+      <input confirm-type="search" bindconfirm="searchData" class="search_input" placeholder-style="color:#fff" placeholder="         搜索" />
     </view>
   </view>
 </view>

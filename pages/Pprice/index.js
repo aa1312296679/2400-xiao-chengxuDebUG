@@ -7,19 +7,39 @@ Page({
    */
   data: {
     chooseList: [],
-    typeOptions: []
+    typeOptions: [],
+    typeId: null
+  },
+  searchData(e) {
+    let that = this
+    let search = e.detail.value
+    app.request({
+      url: '/content/api/product-access',
+      data: {
+        type: 1,
+        search: search
+      }
+    }).then(res => {
+      that.setData({
+        chooseList: res.data.data
+      })
+    })
   },
   getTypeList() {
     app.request({
       url: '/content/api/product-all-cate'
     }).then(res => {
       this.setData({
-        typeOptions: res.data
+        typeOptions: res.data,
+        typeId: res.data[0].id
       })
       this.getProductListById(res.data[0].id)
     })
   },
   getProductList(e) {
+    this.setData({
+      typeId: e.currentTarget.dataset.id
+    })
     this.getProductListById(e.currentTarget.dataset.id)
   },
   getProductListById(id) {
