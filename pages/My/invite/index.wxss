@@ -59,49 +59,45 @@
   text-align: center;
 }
 .s2_content{
-  display: flex;
+  display: flex; 
+  margin-top: 20rpx;
   justify-content: space-between;
   flex-wrap: wrap;
   position: relative;
 }
+
+.s2_content button{
+  width: 350rpx;
+  padding: 0;
+  margin: 10rpx 0;
+  background-color: #74a7ff;
+}
+
+.s2_content button::after{
+  border: none;
+
+}
+
 .s2_content text {
-  display: block;
-  width: 300rpx;
-	height: 90rpx;
-  margin-top: 30rpx;
-  padding-left: 30rpx;
-  line-height: 90rpx;
-	background-color: #74a7ff;
 	border-radius: 20rpx;
   color: #fff;
+  margin-left: 40rpx;
   font-size: 13px;
 }
 .s2_content image {
   position: absolute;
+  width: 80%;
+  left: 20rpx;
+  top:10%;
 }
-.s2_content li:nth-child(1) image {
-  top: 40rpx;
-  left: 25rpx;
-}
-.s2_content li:nth-child(2) image {
-  top: 40rpx;
-  left: 400rpx;
-}
-.s2_content li:nth-child(3) image {
-  top: 160rpx;
-  left: 30rpx;
-}
-.s2_content li:nth-child(4) image {
-  top: 160rpx;
-  left: 410rpx;
-}
-.s2_content li:nth-child(2) text {
+
+.s2_content button:nth-child(2){
   background-color: #c98ef3;
 }
-.s2_content li:nth-child(3) text {
+.s2_content button:nth-child(3){
   background-color: #f9b051;
 }
-.s2_content li:nth-child(4) text {
+.s2_content button:nth-child(4) {
   background-color: #2ed0e8;
 }
 .s3 {
@@ -147,4 +143,21 @@
   float: right;
   margin-right: 30rpx;
   margin-top: 30rpx;
+}
+
+.dia{
+  position: fixed;
+  left: 20%;
+  top:40%;
+  width: 60%;
+  background-color: #eee;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dia input{
+  padding-left: 20rpx;
+  background-color: white;
 }

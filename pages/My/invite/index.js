@@ -1,18 +1,40 @@
 // pages/My/invite/index.js
+const app =getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    info:[],
+    dia:false,
+    code:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.request({
+      url:'/content/api/my-share',
+      data:{
+        uid:app.globalData.userInfo.id
+      }
+    }).then(res=>{
+      console.log(res)
+    })
+  },
+  showDia(){
+    this.setData({
+      dia: true
+    })
+  },
 
+  submitCode(e){
+    this.setData({
+      dia:false
+    })
+    console.log(e)
   },
 
   /**
