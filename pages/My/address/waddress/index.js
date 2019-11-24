@@ -18,7 +18,26 @@ Page({
       name: null,
       phone: null,
       default: 0,
+      label: '家'
+    },
+    labelIndex: 0,
+  },
+  selectLabel(e) {
+    const index = e.currentTarget.dataset.index
+    this.setData({
+      labelIndex: index
+    })
+    let text = ''
+    if (index == 0) {
+      text = '家'
+    } else if (index == 1) {
+      text = '公司'
+    } else if (index == 2) {
+      text = '学校'
     }
+    this.setData({
+      ['addressData.label']: text
+    })
   },
   getUserAddress() {
     let that = this

@@ -24,10 +24,10 @@
     <view class="top">
     <h3 style="margin-top:0rpx;">标签</h3>
     <view class="label">
-    <text>家</text>
-    <text>公司</text>
-    <text>学校</text>
-    <text>+</text>
+    <text class="{{labelIndex==0?'active-label':''}}" bindtap="selectLabel" data-index="0">家</text>
+    <text class="{{labelIndex==1?'active-label':''}}" bindtap="selectLabel" data-index="1">公司</text>
+    <text class="{{labelIndex==2?'active-label':''}}" bindtap="selectLabel" data-index="2">学校</text>
+    <!-- <text>+</text> -->
     </view>
     </view>
     <view class="top">

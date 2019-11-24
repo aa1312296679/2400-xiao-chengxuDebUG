@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    address: ''
+    address: '',
+    list: []
   },
 
   /**
@@ -19,7 +20,16 @@ Page({
       key: 'XEZBZ-IYJCG-AN7QT-IPO44-KCTT3-GZF35'
     })
   },
-
+  mapAddress(e) {
+    console.log(e)
+    const index = Number(e.currentTarget.dataset.index)
+    const data = this.data.list[index]
+    wx.openLocation({
+      latitude: data.location.lat,
+      longitude: data.location.lng,
+      name: data.name
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -50,10 +60,25 @@ Page({
               url: '/content/api/nearby-shop',
               data: {
                 page: 1,
-                area: res.result.address
+                area: res.result.address_component.district
+                //  res.result.address_component.province + res.result.address_component.city + 
               }
             }).then(res1 => {
-              console.log(res1)
+              res1.data.map(item => {
+                const address = item.province+item.city+item.area+item.address
+                qqmapsdk.geocoder({
+                  address: address,
+                  success(res) {
+                    item.location = res.result.location
+                  }
+                })
+              })
+              if (res1.code === 1) {
+                that.setData({
+                  list: res1.data
+                })
+                console.log(that.data.list)
+              }
             })
           },
           complete(res) {

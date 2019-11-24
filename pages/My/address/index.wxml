@@ -2,12 +2,12 @@
 
 
 <view wx:for="{{addressList}}" class="content"> 
-    <radio checked="true"></radio>
+    <!-- <radio checked="true"></radio> -->
     <view class="top">
       <h2>{{item.name}}</h2>
       <p>{{item.phone}}</p>
       <text wx:if="{{item.default==1}}">默认</text>
-      <text>公司</text>
+      <text wx:if="{{item.label}}">{{item.label}}</text>
       <view class="address-list">
       {{item.area}}
       <navigator url="{{'/pages/My/address/waddress/index?id='+item.id}}">

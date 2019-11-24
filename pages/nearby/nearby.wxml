@@ -1,116 +1,24 @@
 <!--pages/nearby.wxml-->
-<view>位置：{{address}}</view>
-<view class="s7">
-<view class="s7_main">
+<view wx:for="{{list}}" wx:key="{{index}}" class="s7">
+  <view class="s7_main">
     <view class="s7_left">
-      <image src="../../img/home/附近的人_03.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+      <image :src="item.headImage?item.headImage:'../../img/home/附近的人_03.png'" alt="" style=" width: 200rpx; height: 200rpx;"></image>
     </view>
     <view class="s7_right">
-      <h4>多次方汽车</h4> 
+      <h4>{{item.name}}</h4>
       <view class="content_text">
-         <image src="../../img/home/附近的人_035.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
-         <text>:15884817250</text> 
+        <image src="../../img/home/附近的人_035.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
+        <text>:{{item.phone}}</text>
       </view>
+      <view style="font-size: 24rpx">营业时间：{{item.shopTime}}</view>
       <view class="content_text">
-         <image src="../../img/home/附近的人_003.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
-         <text>:2km</text> 
+        <image src="../../img/home/附近的人_003.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
+        <text>:2km</text>
       </view>
     </view>
-    <view class="s7_r">
-    <image src="../../img/home/附近的人_06.png" mode="scaleToFill" style=" width: 80rpx; height: 80rpx;"></image>
-    <text>一键导航</text>
-    </view>
+    <view data-index="{{index}}" bindtap="mapAddress" class="s7_r">
+      <image src="../../img/home/附近的人_06.png" mode="scaleToFill" style=" width: 80rpx; height: 80rpx;"></image>
+      <text>一键导航</text>
     </view>
   </view>
-
-  <view class="s7">
-<view class="s7_main">
-    <view class="s7_left">
-      <image src="../../img/home/附近的人_03.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>多次方汽车</h4> 
-      <view class="content_text">
-         <image src="../../img/home/附近的人_035.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
-         <text>:15884817250</text> 
-      </view>
-      <view class="content_text">
-         <image src="../../img/home/附近的人_003.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
-         <text>:2km</text> 
-      </view>
-    </view>
-    <view class="s7_r">
-    <image src="../../img/home/附近的人_06.png" mode="scaleToFill" style=" width: 80rpx; height: 80rpx;"></image>
-    <text>一键导航</text>
-    </view>
-    </view>
-  </view>
-
-  <view class="s7">
-<view class="s7_main">
-    <view class="s7_left">
-      <image src="../../img/home/附近的人_03.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>多次方汽车</h4> 
-      <view class="content_text">
-         <image src="../../img/home/附近的人_035.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
-         <text>:15884817250</text> 
-      </view>
-      <view class="content_text">
-         <image src="../../img/home/附近的人_003.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
-         <text>:2km</text> 
-      </view>
-    </view>
-    <view class="s7_r">
-    <image src="../../img/home/附近的人_06.png" mode="scaleToFill" style=" width: 80rpx; height: 80rpx;"></image>
-    <text>一键导航</text>
-    </view>
-    </view>
-  </view>
-
-  <view class="s7">
-<view class="s7_main">
-    <view class="s7_left">
-      <image src="../../img/home/附近的人_03.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>多次方汽车</h4> 
-      <view class="content_text">
-         <image src="../../img/home/附近的人_035.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
-         <text>:15884817250</text> 
-      </view>
-      <view class="content_text">
-         <image src="../../img/home/附近的人_003.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
-         <text>:2km</text> 
-      </view>
-    </view>
-    <view class="s7_r">
-    <image src="../../img/home/附近的人_06.png" mode="scaleToFill" style=" width: 80rpx; height: 80rpx;"></image>
-    <text>一键导航</text>
-    </view>
-    </view>
-  </view>
-
-  <view class="s7">
-<view class="s7_main">
-    <view class="s7_left">
-      <image src="../../img/home/附近的人_03.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>多次方汽车</h4> 
-      <view class="content_text">
-         <image src="../../img/home/附近的人_035.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
-         <text>:15884817250</text> 
-      </view>
-      <view class="content_text">
-         <image src="../../img/home/附近的人_003.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
-         <text>:2km</text> 
-      </view>
-    </view>
-    <view class="s7_r">
-    <image src="../../img/home/附近的人_06.png" mode="scaleToFill" style=" width: 80rpx; height: 80rpx;"></image>
-    <text>一键导航</text>
-    </view>
-    </view>
-  </view>
+</view>

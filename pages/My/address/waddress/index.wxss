@@ -93,7 +93,7 @@ input{
 .label {
   display: inline-block;
   margin-left: 100rpx;
-  width: 70%;
+  /* width: 70%; */
 }
 
 .label text {
@@ -109,8 +109,8 @@ input{
 .label text:nth-child(4) {
   margin-top: 20rpx;
 }
-.label text:nth-child(2) {
-  background-color: rgba(16, 120, 238, 0.63);
+.active-label {
+  background-color: rgba(16, 120, 238, 0.63) !important;
 }
 .content3 h3{
   display: block;
