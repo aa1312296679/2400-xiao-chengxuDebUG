@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    uid: app.globalData.userInfo.id,
+    uid: null,
     isShow: false,
     listData: [],
     productData: null,
@@ -52,19 +52,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.request({
-      url:'/content/api/user-quality',
-      data:{
-        uid:app.globalData.userInfo.id
-      }
-    }).then(res=>{
-      console.log(res.data)
-      if (res.code == 1) {
-        this.setData({
-          listData: res.data.quality
-        })
-      }
-    })
+    if (this.data.uid){
+      app.request({
+        url: '/content/api/user-quality',
+        data: {
+          uid: app.globalData.userInfo.id
+        }
+      }).then(res => {
+        console.log(res.data)
+        if (res.code == 1) {
+          this.setData({
+            listData: res.data.quality
+          })
+        }
+      })
+    }
   },
   formSubmit(e){
     console.log(e)

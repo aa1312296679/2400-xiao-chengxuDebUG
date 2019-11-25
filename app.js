@@ -51,9 +51,7 @@ App({
     })
   },
   globalData: {
-    userInfo: {
-      id: 1
-    },
+    userInfo:wx.getStorageSync('userInfo'),
     host: 'http://lck.hzlyzhenzhi.com'
   }
 })
