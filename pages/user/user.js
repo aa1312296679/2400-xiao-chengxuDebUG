@@ -55,8 +55,8 @@ Page({
     })
   },
   onGotUserInfo(res) {
-    let user = res.detail.userInfo
-    user.id = 1
+    let userInfo = res.detail.userInfo
+    userInfo.id = 1
     wx.setStorage({
       key: 'userInfo',
       data: res.detail.userInfo,
@@ -64,30 +64,30 @@ Page({
     this.setData({
       userInfo: res.detail.userInfo
     })
-    // wx.login({
-    //   success(res1) {
-    //     let jsonData = {
-    //       code: res1.code,
-    //       avatar: userInfo.avatarUrl,
-    //       province: userInfo.province,
-    //       city: userInfo.city,
-    //       nickname: userInfo.nickName,
-    //       area: userInfo.country,
-    //       gender: userInfo.gender
-    //     }
-    //     wx.request({
-    //       url: `${app.globalData.host}/content/api/weixin-login`,
-    //       method: 'post',
-    //       header: {
-    //         'content-type': 'application/x-www-form-urlencoded'
-    //       },
-    //       data: jsonData,
-    //       success(resp) {
-    //         console.log(resp)
-    //       }
-    //     })
-    //   }
-    // })
+    wx.login({
+      success(res1) {
+        let jsonData = {
+          code: res1.code,
+          avatar: userInfo.avatarUrl,
+          province: userInfo.province,
+          city: userInfo.city,
+          nickname: userInfo.nickName,
+          area: userInfo.country,
+          gender: userInfo.gender
+        }
+        wx.request({
+          url: `${app.globalData.host}/content/api/weixin-login`,
+          method: 'post',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          data: jsonData,
+          success(resp) {
+            console.log(resp)
+          }
+        })
+      }
+    })
   },
   bindGetUserInfo(e) {
     console.log(e.detail.userInfo)
