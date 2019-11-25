@@ -1,54 +1,22 @@
-// pages/My/invite/index.js
-const app =getApp();
+// pages/My/inviteWeb/inviteWeb.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info:{},
-    dia:false,
+    webUrl:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    app.request({
-      url:'/content/api/my-share',
-      data:{
-        uid:app.globalData.userInfo.id
-      }
-    }).then(res=>{
-      this.setData({
-        info:res.data
-      })
-      console.log(res)
-    })
-  },
-  showDia(){
+    let url = wx.getStorageSync('url')
+    console.log(url)
     this.setData({
-      dia: true
+      webUrl: url
     })
-  },
-
-  showCode(){
-    let that = this
-    wx.setStorage({
-      key: 'url',
-      data: that.data.info.shareUrl,
-    })
-    wx.navigateTo({
-      url: '../inviteWeb/inviteWeb',
-    })
-  },
-
-  submitCode(e){
-    this.setData({
-      dia:false
-    })
-    console.log(e)
   },
 
   /**
@@ -97,8 +65,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return {
-      path: 'pages/My/invite/index?code=' + app.globalData.userInfo.id
-    }
+
   }
 })

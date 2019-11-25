@@ -201,9 +201,6 @@
    }
    .s7_text {
      font-size: 15px;
-     color: #7c7a7a;
-   }
-   .s7_text text{
      color: red;
      font-weight: 650;
    }

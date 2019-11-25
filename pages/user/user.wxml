@@ -1,143 +1,143 @@
 <!--pages/user.wxml-->
 <view class="s1_1">
-<view class="s1">
-  <view class="s1_top">
-    <text>木马app</text>
-    <image src="../../img/home/木马首页_03.png" style=" float:right; width: 30px; height: 30px;"></image>
-  </view>
-  <view wx:if='{{!userInfo}}'>
-    <!-- <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">登录</button> -->
-    <button class="login-btn" bindtap="userlogin">登录</button>
-  </view>
-  <view wx:else>
-  已登录
-    <!-- <view>
+  <view class="s1">
+    <view class="s1_top">
+      <text>木马app</text>
+      <image src="../../img/home/木马首页_03.png" style=" float:right; width: 30px; height: 30px;"></image>
+    </view>
+    <view wx:if='{{!userInfo}}'>
+      <!-- <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">登录</button> -->
+      <button class="login-btn" bindtap="userlogin">登录</button>
+    </view>
+    <view wx:else>
+      已登录
+      <!-- <view>
       <image src="{{userInfo.avatarUrl}}" style="width: 65px; height: 65px;" ></image>
       <view style="color:#fff;">{{userInfo.nickName}}</view>
     </view> -->
-    <view class="s1_content">
-      <image src="../../img/user/个人中心_06.png" style="width: 15px; height: 15px;"></image>
-      <text>159256542013  </text>
-      <image src="../../img/user/个人中心_09.png" style="width: 12px; height: 12px;"></image>
+      <view class="s1_content">
+        <image src="../../img/user/个人中心_06.png" style="width: 15px; height: 15px;"></image>
+        <text>159256542013  </text>
+        <image src="../../img/user/个人中心_09.png" style="width: 12px; height: 12px;"></image>
+      </view>
     </view>
-  </view>
     <view class="s1_bottom">
       <view class="s1_b_top">
-        <image src="../../img/user/个人中心_07.png" style="width: 30px; height: 25px;" ></image>
+        <image src="../../img/user/个人中心_07.png" style="width: 30px; height: 25px;"></image>
         <text style="color:#000;">花费0.0元/天，预计省000元/年 </text>
-        <text class="s1_b_text">立即开通</text> 
+        <text class="s1_b_text">立即开通</text>
       </view>
 
       <view class="s1_b_bot">
         <view class="s1_b_bot_left">
-        <image src="../../img/user/个人中心_11.png" style="width: 40px; height: 30px;"></image>
-        <text>优惠卷：0张</text>
+          <image src="../../img/user/个人中心_11.png" style="width: 40px; height: 30px;"></image>
+          <text>优惠卷：0张</text>
         </view>
         <view>
-        <image src="../../img/user/个人中心_13.png" style="width: 40px; height: 30px;"></image>
-        <text>积分：0分</text>
+          <image src="../../img/user/个人中心_13.png" style="width: 40px; height: 30px;"></image>
+          <text>积分：0分</text>
         </view>
       </view>
     </view>
-</view>
+  </view>
 </view>
 <view class="s2">
-<view class="s2_content">
-  <text>我的订单</text>
-  <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
-   <navigator url="../../pages/orders/orders/index">
-  <text class="orders">查看全部订单</text>
-  </navigator>
-  <view class="s3">
-  <navigator url="../../pages/orders/Wpays/index">
-      <image src="../../img/user/个人中心_18.png" style="width: 30px; height: 25px;"></image>
+  <view class="s2_content">
+    <text>我的订单</text>
+    <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+    <navigator url="../../pages/orders/orders/index">
+      <text class="orders">查看全部订单</text>
+    </navigator>
+    <view class="s3">
+      <navigator url="../../pages/orders/Wpays/index">
+        <image src="../../img/user/个人中心_18.png" style="width: 30px; height: 25px;"></image>
       </navigator>
       <navigator url="../../pages/orders/Worder/index">
-      <image src="../../img/user/个人中心_20.png" style="width: 26px; height: 25px;"></image>
+        <image src="../../img/user/个人中心_20.png" style="width: 26px; height: 25px;"></image>
       </navigator>
       <navigator url="../../pages/orders/Rorder/index">
-      <image src="../../img/user/个人中心_22.png" style="width: 26px; height: 25px;"></image>
+        <image src="../../img/user/个人中心_22.png" style="width: 26px; height: 25px;"></image>
       </navigator>
-       <navigator url="../../pages/orders/Wcomment/index">
-      <image src="../../img/user/个人中心_24.png" style="width: 28px; height: 25px;"></image>
+      <navigator url="../../pages/orders/Wcomment/index">
+        <image src="../../img/user/个人中心_24.png" style="width: 28px; height: 25px;"></image>
       </navigator>
       <navigator url="../../pages/orders/Wservice/index">
-      <image src="../../img/user/个人中心_26.png" style="width: 26px; height: 25px;"></image>
+        <image src="../../img/user/个人中心_26.png" style="width: 26px; height: 25px;"></image>
       </navigator>
     </view>
     <view class="s3_text">
       <navigator url="../../pages/orders/Wpays/index">
-      <text>待付款</text>
+        <text>待付款</text>
       </navigator>
       <navigator url="../../pages/orders/Worder/index">
-      <text>待接单</text>
+        <text>待接单</text>
       </navigator>
       <navigator url="../../pages/orders/Rorder/index">
-      <text>已接单</text>
+        <text>已接单</text>
       </navigator>
       <navigator url="../../pages/orders/Wcomment/index">
-      <text>待评论</text>
+        <text>待评论</text>
       </navigator>
       <navigator url="../../pages/orders/Wservice/index">
-      <text>待售后</text>
+        <text>待售后</text>
       </navigator>
     </view>
-</view>
+  </view>
 </view>
 
 <view class="s4">
   <view class="s4_4">
-  <text class="s4_4_text"></text>
-  <view class="s4_content">
-  <navigator url="../../pages/My/production/index">
-    <image src="../../img/user/个人中心_42.png" style="width: 40px; height: 40px;"></image>
-    </navigator>
-    <navigator url="../../pages/My/release/index">
-      <image src="../../img/user/个人中心_34.png" style="width: 40px; height: 40px;"></image>
+    <text class="s4_4_text"></text>
+    <view class="s4_content">
+      <navigator url="../../pages/My/production/index">
+        <image src="../../img/user/个人中心_42.png" style="width: 40px; height: 40px;"></image>
+      </navigator>
+      <navigator url="../../pages/My/release/index">
+        <image src="../../img/user/个人中心_34.png" style="width: 40px; height: 40px;"></image>
       </navigator>
       <navigator url="../../pages/My/assemble/index">
-      <image src="../../img/user/个人中心_37.png" style="width: 40px; height: 40px;"></image>
+        <image src="../../img/user/个人中心_37.png" style="width: 40px; height: 40px;"></image>
       </navigator>
       <navigator url="../../pages/My/invite/index">
-       <image src="../../img/user/个人中心_39.png" style="width: 40px; height: 40px;"></image>
+        <image src="../../img/user/个人中心_39.png" style="width: 40px; height: 40px;"></image>
       </navigator>
-      </view>
-      
-      
-  <view class="s4_text">
-  <navigator url="../../pages/My/production/index">
-  <text>质保商品</text>
-  </navigator>
-  <navigator url="../../pages/My/release/index">
-  <text>发布商品</text>
-  </navigator>
-  <navigator url="../../pages/My/assemble/index">
-  <text>我的拼团</text>
-  </navigator>
-  <navigator url="../../pages/My/invite/index">
-  <text>邀请有奖</text>
-  </navigator>
-  </view>
-<view class="s4_content">
- <navigator url="../../pages/My/address/index">
-      <image src="../../img/user/个人中心_49.png" style="width: 40px; height: 40px;"></image>
-  </navigator>
+    </view>
+
+
+    <view class="s4_text">
+      <navigator url="../../pages/My/production/index">
+        <text>质保商品</text>
+      </navigator>
+      <navigator url="../../pages/My/release/index">
+        <text>发布商品</text>
+      </navigator>
+      <navigator url="../../pages/My/assemble/index">
+        <text>我的拼团</text>
+      </navigator>
+      <navigator url="../../pages/My/invite/index">
+        <text>邀请有奖</text>
+      </navigator>
+    </view>
+    <view class="s4_content">
+      <navigator url="../../pages/My/address/index">
+        <image src="../../img/user/个人中心_49.png" style="width: 40px; height: 40px;"></image>
+      </navigator>
       <image src="../../img/user/个人中心_51.png" style="width: 40px; height: 40px;"></image>
       <image src="../../img/user/个人中心_53.png" style="width: 40px; height: 40px;"></image>
       <navigator url="../../pages/My/set/index">
-      <image src="../../img/user/个人中心_55.png" style="width: 40px; height: 40px;"></image>
+        <image src="../../img/user/个人中心_55.png" style="width: 40px; height: 40px;"></image>
       </navigator>
     </view>
-  <view class="s4_text">
-  <navigator url="../../pages/My/address/index">
-  <text>地址管理</text>
-   </navigator>
-  <text>关于我们</text>
-  <text>意见反馈</text>
-  <navigator url="../../pages/My/set/index">
-  <text>我的设置</text>
-  </navigator>
-  </view>
+    <view class="s4_text">
+      <navigator url="../../pages/My/address/index">
+        <text>地址管理</text>
+      </navigator>
+      <text>关于我们</text>
+      <text>意见反馈</text>
+      <navigator url="../../pages/My/set/index">
+        <text>我的设置</text>
+      </navigator>
+    </view>
   </view>
 </view>
 <view class="s5">
@@ -150,20 +150,21 @@
 </view>
 
 <view class="s7" wx:if='{{guessInfo.length>0}}'>
-<view class="s7_main">
+  <view class="s7_main" wx:for='{{guessInfo}}' wx:key='index'>
     <view class="s7_left">
-      <image src="../../img/home/木马首页_20.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+      <image src="{{item.headMsg}}" alt="" style=" width: 200rpx; height: 200rpx;"></image>
     </view>
     <view class="s7_right">
-      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配本...</h4> 
-      <view class="content_text"> 17英寸 | 最大速度：240km/h</view>
-      <text class="s7_text"><text>￥495  </text>760人选购</text>
-      <view class="s7_content">途虎汽车配件旗舰店 <text>成都</text>
-      <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+      <h4>{{item.title}}</h4>
+      <view class="content_text">{{item.introduce}}</view>
+      <text class="s7_text">￥{{item.price}}</text>
+      <view class="s7_content">
+        <text>{{item.tradeAddress}}</text>
+        <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
       </view>
     </view>
-    </view>
   </view>
-  <view wx:else class="none">
-    暂无数据
-  </view>
+</view>
+<view wx:else class="none">
+  暂无数据
+</view>

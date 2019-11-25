@@ -1,0 +1,4 @@
+<!--pages/My/inviteWeb/inviteWeb.wxml-->
+<view>
+  <web-view src='{{webUrl}}'></web-view>  
+</view>

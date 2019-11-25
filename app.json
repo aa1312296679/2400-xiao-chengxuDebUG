@@ -31,7 +31,8 @@
     "pages/vip/vipcenter/index",
     "pages/shop/index",
     "pages/service/index",
-    "pages/goodsinfo/index"
+    "pages/goodsinfo/index",
+    "pages/My/inviteWeb/inviteWeb"
   ],
   "window": {
     "backgroundTextStyle": "light",

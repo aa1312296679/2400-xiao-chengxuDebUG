@@ -8,7 +8,7 @@
       <text>活动规则</text>
     </view>
     <p class="space"></p>
-    <text class="main_text">邀请码：12345</text>
+    <text class="main_text">邀请码：{{info.inviteCode}}</text>
   </view>
 </view>
 
@@ -39,38 +39,18 @@
   <input placeholder="请输入邀请码" confirm-type='done' bindconfirm='submitCode'></input>
 </view>
 
-<view wx:if='{{code}}'>
-  <image url='{{}}'></image>
-</view>
-
 <view class="s3">
   <view class="s3_main">
     <p></p>
     <text>我的邀请</text>
   </view>
-  <view class="s3_content">
-    <image src="../../../img/user/邀请有奖_011.png" style=" width: 120rpx; height: 110rpx;" mode="scaleToFill"></image>
+  <view class="s3_content" wx:for='{{info.myShare}}' wx:key='index'>
+    <image wx:if='{{item.avatar}}' src="{{item.avatar}}"></image>
+    <image wx:else src="../../../img/user/邀请有奖_011.png" style=" width: 120rpx; height: 110rpx;" mode="scaleToFill"></image>
     <view class="s3_text">
-      <text>火星村民</text>
+      <text>{{item.nickname}}</text>
       <text>使用详情</text>
     </view>
     <image class="specal" src="../../../img/user/矢量智能箭头 拷贝 5.png" style=" width: 20rpx; height: 30rpx;" mode="scaleToFill"></image>
   </view>
-  <view class="s3_content">
-    <image src="../../../img/user/邀请有奖_07.png" style=" width: 120rpx; height: 110rpx;" mode="scaleToFill"></image>
-    <view class="s3_text">
-      <text>小可爱</text>
-      <text>使用详情</text>
-    </view>
-    <image class="specal" src="../../../img/user/矢量智能箭头 拷贝 5.png" style=" width: 20rpx; height: 30rpx;" mode="scaleToFill"></image>
-  </view>
-  <view class="s3_content">
-    <image src="../../../img/user/邀请有奖_10.png" style=" width: 120rpx; height: 110rpx;" mode="scaleToFill"></image>
-    <view class="s3_text">
-      <text>潜龙勿用</text>
-      <text>使用详情</text>
-    </view>
-    <image class="specal" src="../../../img/user/矢量智能箭头 拷贝 5.png" style=" width: 20rpx; height: 30rpx;" mode="scaleToFill"></image>
-  </view>
-
 </view>
