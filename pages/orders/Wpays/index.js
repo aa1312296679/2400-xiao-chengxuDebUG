@@ -22,7 +22,7 @@ Page({
         type :0
       }
     }).then(res => {
-      // console.log(res)
+      console.log(res)
       that.setData({
         orderInfo: res.data.order
       })
@@ -41,12 +41,12 @@ Page({
    */
   onShow: function () {
     let that = this
+    let totalMoney = 0
     that.data.orderInfo.map(r=>{
-      console.log(r)
       totalMoney += Number(r.payPrice)
     })
     that.setData({
-      totalMoney: 100
+      totalMoney: totalMoney
     })
     console.log("执行了")
   },

@@ -12,39 +12,39 @@ Page({
     })
   },
   onLoad: function() {
+    console.log(app.globalData.userInfo)
     let that = this
     this.setData({
       userInfo: app.globalData.userInfo
     })
-    if(this.data.uid){
+    if (this.data.userInfo && this.data.userInfo.id){
       app.request({
         url: '/content/api/guess-you',
         data: {
           uid: app.globalData.userInfo.id
         }
       }).then(res => {
-        console.log(res)
         that.setData({
           guessInfo: res.data
         })
       })
+      wx.getSetting({
+        success(res) {
+          if (res.authSetting['scope.userInfo']) {
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+            wx.getUserInfo({
+              success(res) {
+                res.userInfo.phone = app.globalData.userInfo.phone
+                that.setData({
+                  userInfo: res.userInfo
+                })
+              }
+            })
+          }
+        }
+      })
     }
-   
-  
-    // wx.getSetting({
-    //   success(res) {
-    //     if (res.authSetting['scope.userInfo']) {
-    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-    //       wx.getUserInfo({
-    //         success(res) {
-    //           that.setData({
-    //             userInfo: res.userInfo
-    //           })
-    //         }
-    //       })
-    //     }
-    //   }
-    // })
+    console.log(this.data.userInfo)
   },
   onshow() {
     console.log(app.globalData.userInfo)
@@ -83,7 +83,7 @@ Page({
           },
           data: jsonData,
           success(resp) {
-            console.log(resp)
+            app.globalData.userInfo = resp.data.data
           }
         })
       }
