@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    orderInfo: []
+    orderInfo: [],
+    page: 1
   },
 
   /**
@@ -67,7 +68,22 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    let that = this
+    this.setData({
+      page: ++this.data.page
+    })
+    app.request({
+      url: '/content/api/my-order',
+      data: {
+        uid: app.globalData.userInfo.id,
+        type: 1,
+        page: that.data.page
+      }
+    }).then(res => {
+      that.setData({
+        orderInfo: that.data.orderInfo.concat(res.data.order)
+      })
+    })
   },
 
   /**

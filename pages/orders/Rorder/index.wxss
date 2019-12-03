@@ -33,8 +33,12 @@
   margin-top: 20rpx;
   position: relative;
 }
-
-.s2_top text{
+.s2_top{
+  text-align: right;
+  color: red;
+  padding: 8rpx 20rpx
+}
+/* .s2_top text{
   margin-top: 5rpx;
   float: left;
   font-size: 13px;
@@ -49,7 +53,7 @@
 }
 .s2_top image{
   margin-left: 15rpx;
-}
+} */
 .s7 {
      width: 85%;
      margin: 5rpx auto;

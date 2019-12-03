@@ -2,106 +2,59 @@
 
 <view class="content">
   <view class="main">
-<view class="s2">
-    <view class="s2_top">
-    <text>多次方汽车</text>
-     <text>正在配送</text>
-     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
-   
+    <view wx:for="{{orderList}}" wx:key="{{item.id}}" class="s2">
+      <view class="s2_top">
+        <!-- <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image> -->
+<text wx:if="{{item.typeStatus==0}}">待付款</text>
+        <text wx:if="{{item.typeStatus==1}}">待接单</text>
+        <text wx:if="{{item.typeStatus==2}}">正在配送</text>
+        <text wx:if="{{item.typeStatus==3}}">待评价</text>
+        <text wx:if="{{item.typeStatus==4}}">待售后</text>
+      </view>
+      <view class="s2_bot">
+        <view class="s7">
+          <view class="s7_left">
+            <image src="{{item.productImage?item.productImage:'../../../img/home/木马首页_20.png'}}" alt="" style=" width:150rpx; height: 150rpx;"></image>
+          </view>
+          <view class="s7_right">
+            <h4>{{item.productTitle}}</h4>
+            <!-- <view class="content_text">普通轮胎X1 </view> -->
+            <view class="s7_text">￥{{item.totalPrice}} </view>
+            <view wx:if="{{item.typeStatus==0}}" class="stepper">
+              <!-- <text>查看物流</text> -->
+              <text data-id="{{item.id}}" bindtap="userPay">付款</text>
+            </view>
+            <view wx:if="{{item.typeStatus==1}}" class="stepper">
+              <!-- <text>查看物流</text> -->
+              <text bindtap="userCui">催接单</text>
+            </view>
+            <view wx:if="{{item.typeStatus==2}}" class="stepper">
+              <!-- <text>查看物流</text> -->
+              <text data-id="{{item.id}}" bindtap="userShou">确认收货</text>
+            </view>
+            <view wx:if="{{item.typeStatus==3}}" class="stepper">
+              <!-- <text>查看物流</text> -->
+              <text data-id="{{item.id}}" bindtap="showEvaluate">评价</text>
+            </view>
+            <view wx:if="{{item.typeStatus==4}}" class="stepper">
+              <!-- <text>查看物流</text> -->
+              <!-- <text>确认收货</text> -->
+            </view>
+          </view>
+        </view>
+      </view>
     </view>
-    <view class="s2_bot">
-      <view class="s7">
-    <view class="s7_left">
-      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
-      <view class="content_text">普通轮胎X1 </view>
-      <text class="s7_text">￥2600 </text>
-     <view class="stepper">  
-      <text>查看物流</text>
-      <text>确认收货</text>
-  </view>  
-    </view>
-  </view>
-    </view>
-  </view>  
 
-  <view class="s2">
-    <view class="s2_top">
-    <text>多次方汽车</text>
-     <text>正在配送</text>
-     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
-   
-    </view>
-    <view class="s2_bot">
-      <view class="s7">
-    <view class="s7_left">
-      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
-      <view class="content_text">普通轮胎X1 </view>
-      <text class="s7_text">￥2600 </text>
-     <view class="stepper">  
-      <text>售后</text>
-      <text>评价</text>
-  </view>  
-    </view>
   </view>
-    </view>
-  </view>  
-  
-
-  <view class="s2">
-    <view class="s2_top">
-    <text>多次方汽车</text>
-     <text>正在配送</text>
-     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
-   
-    </view>
-    <view class="s2_bot">
-      <view class="s7">
-    <view class="s7_left">
-      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
-      <view class="content_text">普通轮胎X1 </view>
-      <text class="s7_text">￥2600 </text>
-     <view class="stepper">  
-      <text>查看物流</text>
-      <text>确认收货</text>
-  </view>  
-    </view>
-  </view>
-    </view>
-  </view>  
-
-  <view class="s2">
-    <view class="s2_top">
-    <text>多次方汽车</text>
-     <text>正在配送</text>
-     <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
-   
-    </view>
-    <view class="s2_bot">
-      <view class="s7">
-    <view class="s7_left">
-      <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配速腾朗逸明...</h4> 
-      <view class="content_text">普通轮胎X1 </view>
-      <text class="s7_text">￥2600 </text>
-     <view class="stepper">  
-      <text>查看物流</text>
-      <text>确认收货</text>
-  </view>  
-    </view>
-  </view>
-    </view>
-  </view>  
-
 </view>
+
+<view wx:if="{{isShow}}" class="dialog">
+  <view>
+  <form bindsubmit="userEvaluate">
+   <textarea name='evaluate' placeholder="请输入评价内容"></textarea>
+     <view>
+      <button formType="submit">确认</button>
+    </view>
+  </form>
   </view>
+</view>

@@ -7,7 +7,8 @@ Page({
    */
   data: {
     orderInfo:[],
-    totalMoney: 0
+    totalMoney: 0,
+    page: 1
   },
   cancalOrder(e) {
     app.request({
@@ -131,7 +132,22 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    let that = this
+    this.setData({
+      page: ++this.data.page
+    })
+    app.request({
+      url: '/content/api/my-order',
+      data: {
+        uid: app.globalData.userInfo.id,
+        type: 0,
+        page: that.data.page
+      }
+    }).then(res => {
+      that.setData({
+        orderInfo: that.data.orderInfo.concat(res.data.order)
+      })
+    })
   },
 
   /**

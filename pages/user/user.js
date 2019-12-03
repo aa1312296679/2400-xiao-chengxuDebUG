@@ -6,17 +6,15 @@ Page({
     guessInfo:[],
     uid:null
   },
-  onshow() {
-    this.setData({
-      userInfo: app.globalData.userInfo
-    })
-  },
+
   onLoad: function() {
     console.log(app.globalData.userInfo)
     let that = this
     this.setData({
       userInfo: app.globalData.userInfo
     })
+    console.log('信息')
+    console.log(app.globalData.userInfo)
     if (this.data.userInfo && this.data.userInfo.id){
       app.request({
         url: '/content/api/guess-you',
@@ -47,8 +45,10 @@ Page({
     }
     console.log(this.data.userInfo)
   },
-  onshow() {
-    console.log(app.globalData.userInfo)
+  onShow() {
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
   },
   userlogin() {
     wx.redirectTo({
@@ -57,7 +57,7 @@ Page({
   },
   onGotUserInfo(res) {
     let userInfo = res.detail.userInfo
-    userInfo.id = 1
+    let that = this
     wx.setStorage({
       key: 'userInfo',
       data: res.detail.userInfo,
@@ -85,9 +85,24 @@ Page({
           data: jsonData,
           success(resp) {
             app.globalData.userInfo = resp.data.data
+            app.request({
+              url: '/content/api/guess-you',
+              data: {
+                uid: app.globalData.userInfo.id
+              }
+            }).then(res => {
+              that.setData({
+                guessInfo: res.data
+              })
+            })
           }
         })
       }
+    })
+  },
+  viewDetails(e) {
+    wx.redirectTo({
+      url: '/pages/goodsinfo/index?id=' + e.currentTarget.dataset.id,
     })
   },
   userVip() {
