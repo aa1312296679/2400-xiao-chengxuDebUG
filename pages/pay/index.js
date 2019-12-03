@@ -1,18 +1,25 @@
 // pages/pay/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    car:[],
+    totalMoney:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    let info = options.info
+    info = JSON.parse(info)
+    this.setData({
+      car: info.arr,
+      totalMoney: info.totalMoney
+    })
   },
 
   /**

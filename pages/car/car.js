@@ -96,10 +96,14 @@ Page({
   },
 
   toPay(){
-    let arr = this.data.info.filter(v => Object.keys(this.data.ids).some(r => r === v.id))
-    console.log(arr)
+    let obj = {
+      totalMoney: this.data.allMoney,
+      arr:this.data.info.filter(v => Object.keys(this.data.ids).some(r => r === v.id))
+    }
+    console.log(obj)
+    obj = JSON.stringify(obj)
     wx.navigateTo({
-      url: '../pay/index?info=' + arr,
+      url: '../pay/index?info=' + obj,
     })
   },
 
