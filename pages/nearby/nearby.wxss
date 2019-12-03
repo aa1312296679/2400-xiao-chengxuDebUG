@@ -1,4 +1,10 @@
 /* pages/nearby.wxss */
+.no-data{
+  margin-top: 140rpx;
+  color: #666;
+  font-size: 24rpx;
+  text-align: center
+}
 .s1 {
       height: 80rpx;
       background-color: #ec2312;

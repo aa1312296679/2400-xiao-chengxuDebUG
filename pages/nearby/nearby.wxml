@@ -1,4 +1,5 @@
 <!--pages/nearby.wxml-->
+<view wx:if="{{show && list.length}}">
 <view wx:for="{{list}}" wx:key="{{index}}" class="s7">
   <view class="s7_main">
     <view class="s7_left">
@@ -21,4 +22,8 @@
       <text>一键导航</text>
     </view>
   </view>
+</view>
+</view>
+<view class="no-data" wx:if="{{show}}">
+  抱歉！您的附近没有店铺~~
 </view>

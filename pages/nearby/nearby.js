@@ -9,7 +9,8 @@ Page({
    */
   data: {
     address: '',
-    list: []
+    list: [],
+    show: false
   },
 
   /**
@@ -79,6 +80,9 @@ Page({
                 })
                 console.log(that.data.list)
               }
+              that.setData({
+                show: true
+              })
             })
           },
           complete(res) {
