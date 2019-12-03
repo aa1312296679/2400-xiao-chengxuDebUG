@@ -113,8 +113,19 @@ Page({
         productIds: that.data.info[index].id
       },
     }).then(res=>{
-      that.setData({
-        info:that.data.info
+      wx.showToast({
+        title: '删除成功',
+        type: 'success'
+      })
+      app.request({
+        url: '/content/api/user-cart',
+        data: {
+          uid: app.globalData.userInfo.id
+        }
+      }).then(res => {
+        that.setData({
+          info: res.data
+        })
       })
     })
   },
