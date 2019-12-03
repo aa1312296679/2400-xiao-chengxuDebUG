@@ -31,7 +31,7 @@ Page({
   userShou(e) {
     let that = this
     app.request({
-      url: '/content/api/user-sure',
+      url: '/content/api/member-sure-product',
       data: {
         uid: app.globalData.userInfo.id,
         orderId: e.currentTarget.dataset.id
@@ -48,7 +48,6 @@ Page({
           type: 2
         }
       }).then(res => {
-        console.log(res)
         that.setData({
           orderInfo: res.data.order
         })
