@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    show: false,
     motto: 'Hello World',
     userInfo: {},
     isShow: false,
@@ -23,7 +24,8 @@ Page({
     num: 1,
     productId: null,
     addressId: null,
-    remark: null
+    remark: null,
+    comment: []
   },
 
   /**
@@ -31,7 +33,6 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    options.id = 1
     if (app.globalData.userInfo && app.globalData.userInfo.id) {
       this.setData({
         productId: options.id
@@ -43,11 +44,43 @@ Page({
           uid: app.globalData.userInfo.id
         }
       }).then(res => {
+        console.log(res)
+        if (res.data.comment && res.data.comment.comment.length) {
+          this.setData({
+            comment: res.data.comment.comment
+          })
+        }
         this.setData({
           productData: res.data.product,
-          userInfo: res.data,
-          addressId: res.data.userAddress.id
+          show: true
         })
+        if (options.addressId) {
+          const that = this
+          app.request({
+            url: '/content/api/user-address',
+            data: {
+              uid: app.globalData.userInfo.id
+            }
+          }).then(res => {
+            res.data.map(item => {
+              if (item.id == options.addressId) {
+                res.data.userAddress = item
+                that.setData({ 
+                  addressId: options.addressId,
+                  userInfo: res.data
+                })
+              }
+            })
+          })
+          this.setData({
+            addressId: options.addressId
+          })
+        } else if (res.data.userAddress) {
+          this.setData({
+            addressId: res.data.userAddress.id,
+            userInfo: res.data
+          })
+        }
       })
     }else {
       app.request({
@@ -58,8 +91,14 @@ Page({
       }).then(res => {
         console.log(res)
         this.setData({
-          productData: res.data.product
+          productData: res.data.product,
+          show: true
         })
+        if (res.data.comment && res.data.comment.comment.length) {
+          this.setData({
+            comment: res.data.comment.comment
+          })
+        }
       })
     }
   },
@@ -85,7 +124,7 @@ Page({
   },
   chooseAddress() {
     wx.navigateTo({
-      url: '/pages/My/address/index?type=shop',
+      url: '/pages/My/address/index?type=shop&productId='+this.data.productId,
     })
   },
   /**
@@ -117,29 +156,48 @@ Page({
         }
       }).then(res => {
         wx.showToast({
-          title: '加入成功',
+          title: '已加入购物车',
           type:'success'
         })
       })
-    } else {
-      app.request({
-        url: '/content/api/create-order',
-        data: {
-          uid: app.globalData.userInfo.id,
-          productId: that.data.productId,
-          number: that.data.num,
-          integral: 0,
-          couponId: 0,
-          type: 2,
-          remark: that.data.remark,
-          addressId: that.data.addressId
-        }
-      }).then(res => {
-        wx.showToast({
-          title: '下单成功',
-          type:'success'
-        })
-      })
+    } else { 
+       app.request({
+         url: '/content/api/create-order',
+         data: {
+           uid: app.globalData.userInfo.id,
+           productId: that.data.productId,
+           number: that.data.num,
+           integral: 0,
+           couponId: 0,
+           type: 2,
+           remark: that.data.remark,
+           addressId: that.data.addressId
+         }
+       }).then(res => {
+         console.log(res)
+        //  if (that.data.productData.type != 1) {
+           wx.requestPayment({
+             timeStamp: res.data.timeStamp.toString(),
+             nonceStr: res.data.nonceStr,
+             package: res.data.package,
+             signType: 'MD5',
+             paySign: res.data.paySign,
+             success: (res) => {
+               wx.showToast({
+                 title: '支付成功',
+                 type: 'success'
+               })
+             },
+             complete: (data) => {
+               console.log(data)
+             }
+           })
+        //   } else {
+        //   wx.navigateTo({
+        //     url: '/pages/pay/index?id=' + that.data.productId + '&orderId='+res.data.orderId,
+        //   })
+        // }
+       })
     }
     this.setData({
       isShow: false

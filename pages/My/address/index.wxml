@@ -1,7 +1,7 @@
 <!--pages/My/address/index.wxml-->
 
 
-<view wx:for="{{addressList}}" class="content"> 
+<view data-id="{{item.id}}" bindtap="goToShop" wx:for="{{addressList}}" class="content"> 
     <!-- <radio checked="true"></radio> -->
     <view class="top">
       <h2>{{item.name}}</h2>
@@ -10,7 +10,7 @@
       <text wx:if="{{item.label}}">{{item.label}}</text>
       <view class="address-list">
       {{item.area}}
-      <navigator url="{{'/pages/My/address/waddress/index?id='+item.id}}">
+      <navigator url="/pages/My/address/waddress/index?id={{item.id}}&type={{type}}&productId={{productId}}">
     <image src="../../../img/home/收货地址_03.png" style=" width: 40rpx; height: 40rpx;" mode="scaleToFill"></image>   
       </navigator>
       <icon data-id="{{item.id}}" bindtap="delAddress" style="margin-left:30rpx;margin-top:6rpx" type="cancel" size="28"/>
@@ -18,7 +18,7 @@
     </view>
 </view>
 <view class="bto">
-<navigator url="waddress/index">
+<navigator url="waddress/index?type={{type}}&productId={{productId}}">
 <text>新建收货地址</text>
 </navigator>
 </view>

@@ -34,6 +34,7 @@ Page({
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
               success(res) {
+                console.log(res)
                 res.userInfo.phone = app.globalData.userInfo.phone
                 that.setData({
                   userInfo: res.userInfo
@@ -84,6 +85,37 @@ Page({
           data: jsonData,
           success(resp) {
             app.globalData.userInfo = resp.data.data
+          }
+        })
+      }
+    })
+  },
+  userVip() {
+    app.request({
+      url: '/content/api/member-apply-add',
+      data: {
+        uid: app.globalData.userInfo.id,
+        month: 12,
+        money: 100
+      }
+    }).then(res =>{
+      if (res.code == 1) {
+        let timeStamp = Date.parse(new Date())
+        timeStamp = timeStamp.toString()
+        wx.requestPayment({
+          timeStamp: res.data.timeStamp.toString(),
+          nonceStr: res.data.nonceStr,
+          package: res.data.package,
+          signType: 'MD5',
+          paySign: res.data.paySign,
+          success: (res) => {
+            wx.showToast({
+              title: '支付成功',
+              type: 'success'
+            })
+          },
+          complete: (data) => {
+            console.log(data)
           }
         })
       }

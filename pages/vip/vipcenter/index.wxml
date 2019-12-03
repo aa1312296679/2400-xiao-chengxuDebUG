@@ -1,15 +1,14 @@
 <!--pages/vip/vipcenter/index.wxml-->
-<view class="s1">
-  <image src="../../../img/home/全部订单_03.png" mode="scaleToFill"></image>
-  <text>会员中心</text>
+<view class="mask" wx:if="{{ismask}}"></view>
+<view class="space">
 </view>
 <view class="s2">
-<image style="width:100%; height:350rpx;" src="../../../img/user/会员中心_03.jpg" mode="scaleToFill"></image>
+<image style="width:100%; height:350rpx;" src="../../../img/user/会员中心1_02.jpg" mode="scaleToFill"></image>
 
 <view class="s2_content">
     <image style="float:left;width:80rpx; height:75rpx;" src="../../../img/user/会员中心_003.jpg" mode="scaleToFill"></image>
     <text>夏季死去的花</text>
-     <image style="width:40rpx; height:35rpx; " src="../../../img/user/会员中心_03.png" mode="scaleToFill"></image>
+     <image style="width:35rpx; height:28rpx; margin-left: 20rpx; " src="../../../img/user/会员中心_03.png" mode="scaleToFill"></image>
      <view>你的会员将在2019-10-30到期></view>
      <view>已为您节省0.00元</view>
 
@@ -28,22 +27,27 @@
 <view class="s3">
     <text>会员卡特权</text>
     <view class="s3_content">
-      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心_06.jpg" mode="scaleToFill"></image>
-      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心_08.jpg" mode="scaleToFill"></image>
-      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心_10.jpg" mode="scaleToFill"></image>
-      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心_12.jpg" mode="scaleToFill"></image>
+      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心1_03.jpg" mode="scaleToFill"></image>
+      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心1_05.jpg" mode="scaleToFill"></image>
+      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心1_07.jpg" mode="scaleToFill"></image>
+      <image style="width:110rpx; height:110rpx;" src="../../../img/user/会员中心1_09.jpg" mode="scaleToFill"></image>
     </view>
-    <view class="s3_content">
+    <view class="s3_content ">
       <text>专享卷</text>
       <text>专享服务</text>
       <text>消费返积分</text>
       <text>更多特权</text>
     </view>
-    <view class="speal">每年省不低于00元</view>
+    <view class=" s3_content speal">
+      <text>每年省不低于00元</text>
+      <text>下单即省</text>
+      <text>积分可抵现</text>
+      <text>敬请期待</text>
+    </view>
 </view>
 <view class="s4">
   <image style="width:120rpx; height:50rpx;" src="../../../img/user/会员中心_19.png" mode="scaleToFill"></image>
-  <text>00元/年开通会员</text>
+  <text bindtap="goBuy">00元/年开通会员</text>
 </view>
 <view class="s6">
   <image style="width:40rpx; height:40rpx;" src="../../../img/user/会员中心_07.jpg" mode="scaleToFill"></image>
@@ -51,9 +55,74 @@
   <image style="width:40rpx; height:40rpx;" src="../../../img/user/会员中心_07.jpg" mode="scaleToFill"></image>
 </view>
 <view class="s7">
-  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心_19.jpg" mode="scaleToFill"></image>
-  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心_19.jpg" mode="scaleToFill"></image>
-  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心_19.jpg" mode="scaleToFill"></image>
-  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心_19.jpg" mode="scaleToFill"></image>
+  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心1_16.png" mode="scaleToFill"></image>
+  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心1_16.png" mode="scaleToFill"></image>
+  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心1_16.png" mode="scaleToFill"></image>
+  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心1_16.png" mode="scaleToFill"></image>
 </view>
 
+<view wx:if="{{isShow}}" class="choose">
+    <view class="choose_content">
+        <view class="c_header">
+        <li>
+          <text style="margin-top:20rpx; margin-bottom:20rpx; font-size:18px;">开通VIP享受特权</text>
+           <image bindtap="closePlate" src="../../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx; margin-top:10rpx;"></image>
+           </li>
+            <li>
+              <text>专享劵</text>
+              <text>专享免服务费</text>
+              <text>消费返积分</text>
+              <text>更多特权</text>
+            </li>
+            <text class="spacel">敬请期待</text>
+
+
+           
+        </view>
+        <view class="bto">
+          <li>
+            <view class="bto_l">
+            <h1>连续包月</h1>
+            <text>每月扣款时送专享免服务费卷5张</text>
+            </view>
+            <view>
+              <p>￥20</p>
+              <span>￥15</span>
+            </view>
+          </li>
+          <li>
+            <view class="bto_l">
+            <h1>12个月(年费)</h1>
+            <text></text>
+            </view>
+            <view>
+              <p></p>
+              <span>￥240</span>
+            </view>
+          </li>
+          <li>
+            <view class="bto_l">
+            <h1>3个月</h1>
+            <text>送专享免服务费卷20张</text>
+            </view>
+            <view>
+              <p>￥60</p>
+              <span>￥45</span>
+            </view>
+          </li>
+          <li>
+            <view class="bto_l">
+            <h1>11个月</h1>
+            <text></text>
+            </view>
+            <view>
+              <p></p>
+              <span>￥20</span>
+            </view>
+          </li>
+          <li>
+            <text>查看《<text>营私协议</text>》与《<text>VIP服务协议</text>》</text>
+          </li>
+        </view>
+        </view>
+</view>

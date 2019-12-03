@@ -6,13 +6,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addressList: []
+    addressList: [],
+    type: null,
+    productId: null
   },
-
+editAddress() {
+  wx.chooseAddress({
+    success(res) {
+      console.log(res.userName)
+      console.log(res.postalCode)
+      console.log(res.provinceName)
+      console.log(res.cityName)
+      console.log(res.countyName)
+      console.log(res.detailInfo)
+      console.log(res.nationalCode)
+      console.log(res.telNumber)
+    }
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    if (options.type) {
+      this.setData({
+        type: options.type,
+        productId: options.productId
+      })
+    }
     if (app.globalData.userInfo) {
       this.getAddress()
     } else {
@@ -32,6 +54,13 @@ Page({
         addressList: res.data
       })
     })
+  },
+  goToShop(e) {
+    if (this.data.type === 'shop') {
+      wx.navigateTo({
+        url: '/pages/goodsinfo/index?addressId=' + e.currentTarget.dataset.id + '&id=' + this.data.productId,
+      })
+    }
   },
   delAddress(e) {
     console.log(e)
@@ -60,7 +89,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log(this.data.type)
   },
 
   /**

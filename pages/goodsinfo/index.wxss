@@ -126,6 +126,11 @@ float: left;
   padding-bottom: 40rpx; 
   border-bottom: 1px solid #ccc; 
 }
+.flex-layout{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
 .s5_bot{
   align-items: center;
 }
@@ -138,9 +143,8 @@ float: left;
 }
 
 .s6 {
-  height: 150rpx;
   padding-top: 40rpx;
-  
+  margin-bottom: 20rpx;
 }
 .s6 li:nth-child(1){
  margin-left: 10rpx;

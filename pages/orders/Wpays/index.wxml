@@ -12,16 +12,16 @@
       <view class="s2_bot">
         <view class="s7">
           <view class="s7_left">
-            <image src="../../../img/home/木马首页_20.png" alt="" style=" width:150rpx; height: 150rpx;"></image>
+            <image src="{{item.productImage?item.productImage:'../../../img/home/木马首页_20.png'}}" alt="" style=" width:150rpx; height: 150rpx;"></image>
           </view>
           <view class="s7_right">
             <h4 wx:if='{{item.extInfo}}'>{{item.extInfo}}</h4>
             <view class="content_text">{{item.productTitle}} X {{item.number}} </view>
             <text class="s7_text">￥{{item.payPrice}} </text>
             <view class="stepper">
-              <text class="btn2">修改地址</text>
-              <text class="btn1">取消订单</text>
-              <text class="btn">付款</text>
+              <!-- <text class="btn2">修改地址</text> -->
+              <text data-id="{{item.id}}" bindtap="cancalOrder" class="btn1">取消订单</text>
+              <text data-id="{{item.id}}" bindtap="userPay" class="btn">付款</text>
             </view>
           </view>
         </view>
@@ -29,8 +29,8 @@
     </view>
   </view>
 </view>
-<view class="s5">
+<!-- <view class="s5">
   <radio checked="true">全选</radio>
   <h4>合并计算</h4>
-  <text>￥{{totalMoney}}</text>
-</view>
+  <text>￥{{totalMoney>0?totalMoney:0}}</text>
+</view> -->

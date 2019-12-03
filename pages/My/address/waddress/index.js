@@ -8,6 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    productId: null,
+    type: null,
     addressData: {
       uid: null,
       addressId: null,
@@ -85,7 +87,14 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
+    console.log(options)
+    if (options.type) {
+      this.setData({
+        type: options.type,
+        productId: options.productId
+      })
+    }
     qqmapsdk = new QQMapWX({
       key: 'XEZBZ-IYJCG-AN7QT-IPO44-KCTT3-GZF35'
     })
@@ -148,7 +157,7 @@ Page({
       this.addAddress()
     }
   },
-  addAddress(){
+  addAddress() {
     delete this.data.addressData.addressId
     console.log(this.data.addressData)
     app.request({
@@ -160,9 +169,15 @@ Page({
         icon: 'success',
         duration: 2000
       })
-      wx.redirectTo({
-        url: '/pages/My/address/index',
-      })
+      if (this.data.type === 'shop') {
+        wx.redirectTo({
+          url: '/pages/My/address/index?type=' + this.data.type + '&productId=' + this.data.productId,
+        })
+      } else {
+        wx.redirectTo({
+          url: '/pages/My/address/index',
+        })
+      }
     })
   },
   updateAddress() {
@@ -175,57 +190,63 @@ Page({
         icon: 'success',
         duration: 2000
       })
-      wx.redirectTo({
-        url: '/pages/My/address/index',
-      })
+      if (this.data.type === 'shop') {
+        wx.redirectTo({
+          url: '/pages/My/address/index?type=' + this.data.type + '&productId=' + this.data.productId,
+        })
+      } else {
+        wx.redirectTo({
+          url: '/pages/My/address/index',
+        })
+      }
     })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

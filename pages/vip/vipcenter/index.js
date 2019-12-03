@@ -1,18 +1,27 @@
 // pages/vip/vipcenter/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    isShow: false,
+    ismask: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.request({
+      url: '/content/api/member-recharge',
+      data: {
+        uid: app.globalData.userInfo.id
+      }
+    }).then(res => {
+      console.log(res)
+    })
   },
 
   /**
@@ -21,7 +30,18 @@ Page({
   onReady: function () {
 
   },
-
+  goBuy() {
+    this.setData({
+      isShow: true,
+      ismask: true,
+    })
+  },
+  closePlate() {
+    this.setData({
+      isShow: false,
+      ismask: false,
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

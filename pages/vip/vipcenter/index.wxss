@@ -1,4 +1,16 @@
 /* pages/vip/vipcenter/index.wxss */
+.mask {
+  width:100%;
+  height:100%;
+  position:absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 88;
+  top:0;
+  left:0;
+}
+.space {
+  height: 30rpx;
+}
 .s1 {
   width: 100%;
   background-color: #d4a481;
@@ -55,6 +67,9 @@
 .s2_bot1 text:nth-child(2) {
   margin-left: 80rpx;
 }
+.s3>text {
+  margin-left: 40rpx;
+}
 .s3_content {
   display: flex;
   margin-top: 20rpx;
@@ -67,10 +82,12 @@
 .s3_content text:nth-child(2) {
   margin-left: 50rpx;
 }
-.speal {
+.speal text:nth-child(1){
   font-size: 12px;
-  width: 110rpx;
-  margin-left: 40rpx;
+  width: 80rpx;
+  color: #ccc;
+}
+.speal text{
   color: #ccc;
 }
 .s4 {
@@ -79,12 +96,12 @@
 }
 .s4 text {
   display: block;
-  width: 80%;
+  width: 95%;
   text-align: center;
+  margin: 0 auto;
   height: 80rpx;
   line-height: 80rpx;
   color: #fff;
-  margin-left: 80rpx;
   background-color: #f5cc5e;
   border-radius: 30rpx;
 }
@@ -103,4 +120,79 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.choose {
+  position: fixed;
+  /* height: 50%; */
+  width: 100%;
+  bottom: 0rpx;
+  background-color: #fff;
+  display: block;
+  z-index: 9999;
+}
+.choose_content {
+  width: 100%;
+  margin: 0 auto;
+}
+.c_header {
+  background-color: #ee2b5a;
+  height: 180rpx;
+  color: #fcc1af;
+}
+
+.c_header li {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0rpx 30rpx;
+  font-size: 15px;
+}
+
+.c_header  .spacel{
+  float: right;
+  margin-right: 20rpx;
+}
+.bto{
+  height: 500rpx;
+}
+.bto li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  height: 80rpx;
+  border-bottom: 1px solid #f6f6f6;
+}
+.bto li view {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bto .bto_l {
+  width: 70%;
+}
+
+.bto li text {
+  color: #7a7a7a;
+  font-size: 13px;
+  width: 100%;
+}
+.bto li p {
+  color: #7a7a7a;
+  font-size: 14px;
+  margin-top: 5rpx;
+  text-decoration:line-through;
+}
+.bto li span {
+  background-color: #f15048;
+  width: 120rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 30rpx;
+  margin-left: 10rpx;
+  font-size: 14px;
+  line-height: 50rpx;
+}
+.bto li text text {
+  color: #f15048;
 }

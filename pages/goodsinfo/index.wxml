@@ -7,29 +7,38 @@
 
 
 <view class="s0">
-<view class="s2">
-     <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
-  <block wx:for="{{bnrUrl}}" wx:for-index="index">
-    <swiper-item>
-      <image src='{{item.url}}' class='u-img-slide' mode='aspectFill' style="width:100%; height:720rpx;   background-size: 100%;"></image>
-    </swiper-item>
-  </block>
-</swiper>
+  <view wx:if="{{productData.image.length && show}}" class="s2">
+    <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+      <block wx:for="{{productData.image}}" wx:for-index="index">
+        <swiper-item>
+          <image src='{{item}}' class='u-img-slide' mode='aspectFill' style="width:100%; height:720rpx;   background-size: 100%;"></image>
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
-<view class="main">
-  
-  <view class="s3">
+   <view wx:else class="s2">
+    <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+      <block wx:for="{{bnrUrl&&show}}" wx:for-index="index">
+        <swiper-item>
+          <image src='{{item.url}}' class='u-img-slide' mode='aspectFill' style="width:100%; height:720rpx;   background-size: 100%;"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="main">
+
+    <view class="s3">
       <h3>{{productData.title}}</h3>
       <li>
         <image src="../../img/home/商品详情_03.png" mode="scaleToFill" style="width:30rpx; height:12px"></image>
-        <view style="color:red;font-weight:bold;font-size: 16px;">{{productData.price}}</view>
+        <view style="color:red;font-weight:bold;font-size: 16px;">￥{{productData.price}}</view>
         <!-- <text>开通VIP会员卡。享受满700减50优惠卷</text> -->
         <!-- <image class="s3_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image> -->
       </li>
-    
-  </view>
- <view class="space"></view>
-  <!-- <view class="s4">
+
+    </view>
+    <view class="space"></view>
+    <!-- <view class="s4">
         <h1>优惠</h1>
         <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
       <li>
@@ -45,96 +54,103 @@
         <text>购买1-2件时享受单件价￥3099,...</text>
       </li>
   </view> -->
-   <view class="space"></view>
-   <view class="s5">
-   <!-- <li>
+    <view class="space"></view>
+    <view class="s5">
+      <!-- <li>
       <h1>已选</h1>
       <text>靠背版白色，1件，可选服务于</text>
       <image class="s5_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
       <p></p>
     </li> -->
-    <li>
-      <h1>送至</h1>
-      <image src="../../img/home/商品详情_07.png" mode="scaleToFill" style="width:30rpx; height:18px; margin-right:10rpx;"></image>
-      <text bindtap="chooseAddress">{{userInfo.userAddress.area}}{{userInfo.userAddress.address}}</text>
-      <p>现货</p>
-    </li>
-    <li>
-      <h1>运费</h1>
-      <text>在线支付运费50元</text>
-    </li>
-    <li class="s5_bot">
-    <image src="../../img/home/商品详情_11.png" mode="scaleToFill" style="width:35rpx; height:18px; margin-right:10rpx;"></image>
-      <text>店铺发货&售后</text>
-      <image src="../../img/home/商品详情_14.png" mode="scaleToFill" style="width:35rpx; height:18px; margin-right:10rpx;"></image>
-      <text>不支持7天无理由退货</text>
-    </li>
-   </view> 
-  <view class="space"></view>
-  <view class="s6">
-    <li>
-      <p></p>
-      <h1>评价</h1>
-      <text>3100+</text>     
-      <image class="s3_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
-      <h2>好评度94%</h2>
-    </li>
       <li>
+        <h1>送至</h1>
+        <image src="../../img/home/商品详情_07.png" mode="scaleToFill" style="width:30rpx; height:18px; margin-right:10rpx;"></image>
+        <text wx:if="{{userInfo.userAddress}}" bindtap="chooseAddress">{{userInfo.userAddress.area}}{{userInfo.userAddress.address}}</text>
+        <text wx:else bindtap="chooseAddress" style="color: #666">请选择收货地址</text>
+        <p>现货</p>
+      </li>
+      <!-- <li>
+        <h1>运费</h1>
+        <text>在线支付运费50元</text>
+      </li> -->
+      <li class="s5_bot">
+        <image src="../../img/home/商品详情_11.png" mode="scaleToFill" style="width:35rpx; height:18px; margin-right:10rpx;"></image>
+        <text>店铺发货&售后</text>
+        <image src="../../img/home/商品详情_14.png" mode="scaleToFill" style="width:35rpx; height:18px; margin-right:10rpx;"></image>
+        <text>不支持7天无理由退货</text>
+      </li>
+    </view>
+    <view class="space"></view>
+    <view class="s6">
+      <li>
+        <p></p>
+        <h1>评价</h1>
+        <text></text>
+        <image class="s3_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
+        <h2></h2>
+      </li>
+      <!-- <li>
         <text>外观漂亮</text>
         <text>柔软舒适</text>
         <text>时尚大气</text>
         <text>动力强劲</text>
-      </li>
-  </view>
- <view class="s7">
-    <image src="../../img/home/商品详情_003.png" mode="scaleToFill" style="width:350rpx; height:120rpx"></image>
-    <text>车子质量：棒棒哒 电池续航：耐跑哈 外形外观：很漂亮 骑行体验：好驾驭很便捷哟使用场景： 哪哪都觉得...</text>
-    <li>
+      </li> -->
+    </view>
+    <view wx:for="{{comment}}" wx:key="{{index}}" class="s7">
+      <view>
+        <image wx:if="{{item.avatar}}" src="{{item.avatar}}" mode="scaleToFill" style="width:100rpx; height:100rpx;margin-right:20rpx"></image>
+        <text style="font-size:34rpx;font-weight:bold">{{item.nickname}}</text>
+      </view>
+      <view class="flex-layout">
+        <text>{{item.evaluate}}</text>
+        <text>{{item.evalTime}}</text>
+      </view>
+      <!-- <li>
       <image src="../../img/home/商品详情_007.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
     <image src="../../img/home/商品详情_09.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
     <image src="../../img/home/商品详情_011.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
-    </li>
-    <h1>白色</h1>
-      <text class="advice">查看全部评价</text>
- </view> 
-</view>
+    </li> -->
+      <!-- <h1>白色</h1>
+      <text class="advice">查看全部评价</text> -->
+    </view>
+  </view>
 </view>
 
 <view class="bottom">
-    <li>
-      <view>
+  <li>
+    <view>
       <navigator url="/pages/shop/index">
-         <image src="../../img/home/商品详情_21.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
-      <text>店铺</text>
+        <image src="../../img/home/商品详情_21.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
+        <text>店铺</text>
       </navigator>
-      </view>
-      <view>
+    </view>
+    <view>
       <navigator open-type="switchTab" url="/pages/car/car">
-       <image src="../../img/home/商品详情_18.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
-      <text>购物车</text>
+        <image src="../../img/home/商品详情_18.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
+        <text>购物车</text>
       </navigator>
-      </view> 
-    </li>
-    <li>
-      <view>
+    </view>
+  </li>
+  <li>
+    <view>
       <text bindtap="goCart">加入购物车</text>
       <text bindtap="goBuy" id="pay">立即购买</text>
-      </view>
-    </li>   
+    </view>
+  </li>
 </view>
 
 
 <view wx:if="{{isShow}}" class="choose">
-    <view class="choose_content">
-        <view class="c_header">
-            <image src="../../img/home/商品详情_02.jpg" mode="scaleToFill" style="width:200rpx; height:180rpx"></image>
-            <li>
-            <text>￥3099.00</text>
-            <h1>编号:49927298515</h1>
-            </li>
-            <image bindtap="closePlate" src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
-        </view>
-        <!-- <view class="color">
+  <view class="choose_content">
+    <view class="c_header">
+      <image src="{{productData.headMsg?productData.headMsg:'../../img/home/商品详情_02.jpg'}}" mode="scaleToFill" style="width:200rpx; height:180rpx"></image>
+      <li>
+        <text>￥{{productData.price}}</text>
+        <!-- <h1>编号:49927298515</h1> -->
+      </li>
+      <image bindtap="closePlate" src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
+    </view>
+    <!-- <view class="color">
           <h1>颜色</h1>
             <li>
               <text>靠背版白色</text>
@@ -145,21 +161,21 @@
               <text>尾箱版蓝色</text>
             </li>           
         </view> -->
-        <view class="number">
-          <text>数量</text>
-          <view class="stepper">  
-              <!-- 减号 -->  
-              <text  bindtap="delCount" data-index="{{index}}     ">-</text>  
-              <!-- 数值 -->  
-              <input disabled type="number" value="{{num}}"  />  
-              <!-- 加号 -->  
-              <text bindtap="addCount">+</text>  
-          </view>  
-        </view>
-        <view wx:if="{{!type}}" class="remark">
-          <textarea value="{{remark}}" placeholder="订单备注"></textarea>
-        </view>
-        <!-- <view class="safe">
+    <view class="number">
+      <text>数量</text>
+      <view class="stepper">
+        <!-- 减号 -->
+        <text bindtap="delCount" data-index="{{index}}     ">-</text>
+        <!-- 数值 -->
+        <input disabled type="number" value="{{num}}" />
+        <!-- 加号 -->
+        <text bindtap="addCount">+</text>
+      </view>
+    </view>
+    <view wx:if="{{!type}}" class="remark">
+      <textarea value="{{remark}}" placeholder="订单备注"></textarea>
+    </view>
+    <!-- <view class="safe">
           <h1>保障服务</h1>
           <view>
           <image src="../../img/home/购买选择_07.png" mode="scaleToFill" style="width:30rpx; height:25rpx"></image>
@@ -190,6 +206,6 @@
           </li>
         </view> -->
 
-        <text bindtap="closeBuy" class="yes">确定</text>
-    </view>
+    <text bindtap="closeBuy" class="yes">确定</text>
+  </view>
 </view>
