@@ -61,8 +61,8 @@ Page({
             data: {
               uid: app.globalData.userInfo.id
             }
-          }).then(res => {
-            res.data.map(item => {
+          }).then(res1 => {
+            res1.data.map(item => {
               if (item.id == options.addressId) {
                 res.data.userAddress = item
                 that.setData({ 
