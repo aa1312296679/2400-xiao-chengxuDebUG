@@ -1,0 +1,11 @@
+/* pages/points/pointsRule/index.wxss */
+view {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}
+view text {
+  display: block;
+  font-size: 12px;
+  margin-top: 20rpx;
+}

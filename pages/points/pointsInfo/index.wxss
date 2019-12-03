@@ -1,0 +1,23 @@
+/* pages/points/pointsInfo/index.wxss */
+.space {
+  height: 20rpx;
+  background-color: #fff;
+}
+.content{
+  background-color: #fff;
+}
+.main {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+.main text {
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+  letter-spacing: 1px;
+}
+.main p {
+  font-size: 14px;
+  color: #7a7a7a;
+}

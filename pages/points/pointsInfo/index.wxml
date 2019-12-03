@@ -1,0 +1,13 @@
+<!--pages/points/pointsInfo/index.wxml-->
+<view class="space"></view>
+<view class="content">
+  <view class="main">
+    <image src="/img/home/积分_03.jpg" style="width:100%; height:400rpx;"></image>
+    <text>—— 积分兑换 超值优惠卷 ——</text>
+    <p>积分所兑换优惠卷不能与店铺优惠叠加使用. 有效期为三个月</p>
+    <image src="/img/home/积分_07.jpg" style="width:100%; height:200rpx; margin-top:10rpx;"></image>
+    <image src="/img/home/积分_07.jpg" style="width:100%; height:200rpx; margin-top:20rpx;"></image>
+    <image src="/img/home/积分_07.jpg" style="width:100%; height:200rpx; margin-top:20rpx;"></image>
+  </view>
+</view>
+
