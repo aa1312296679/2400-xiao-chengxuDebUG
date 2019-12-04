@@ -1,7 +1,7 @@
 <!--pages/goodsinfo/index.wxml-->
 
 <view class="s1">
-  <image src="../../img/home/全部订单_03.png" mode="scaleToFill"></image>
+  <!-- <image src="../../img/home/全部订单_03.png" mode="scaleToFill"></image> -->
   <text>商品详情</text>
 </view>
 
@@ -96,7 +96,8 @@
         <text>动力强劲</text>
       </li> -->
     </view>
-    <view wx:for="{{comment}}" wx:key="{{index}}" class="s7">
+    <view class="evaluate">
+        <view wx:for="{{comment}}" wx:key="{{index}}" class="s7">
       <view>
         <image wx:if="{{item.avatar}}" src="{{item.avatar}}" mode="scaleToFill" style="width:100rpx; height:100rpx;margin-right:20rpx"></image>
         <text style="font-size:34rpx;font-weight:bold">{{item.nickname}}</text>
@@ -112,6 +113,7 @@
     </li> -->
       <!-- <h1>白色</h1>
       <text class="advice">查看全部评价</text> -->
+    </view>
     </view>
   </view>
 </view>

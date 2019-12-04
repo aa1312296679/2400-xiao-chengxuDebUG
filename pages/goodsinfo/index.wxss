@@ -187,8 +187,12 @@ float: left;
   font-size: 13px;
   border-radius: 15rpx;
 }
+.evaluate{
+padding:0 20px 160rpx 20rpx
+}
 .s7 {
-  height: 700rpx;
+  /* height: 700rpx; */
+  margin: 16rpx 0
 }
 .s7 text {
   display: block;

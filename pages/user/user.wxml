@@ -50,19 +50,38 @@
     </navigator>
     <view class="s3">
       <navigator url="../../pages/orders/Wpays/index">
+        <view class="s3_view">
         <image src="../../img/user/个人中心_18.png" style="width: 30px; height: 25px;"></image>
+        <view wx:if="{{orderNumber && orderNumber[0]&&orderNumber[0].number>0}}" class="order_num">{{orderNumber[0].number}}</view>
+        </view>
       </navigator>
       <navigator url="../../pages/orders/Worder/index">
-        <image src="../../img/user/个人中心_20.png" style="width: 26px; height: 25px;"></image>
+      <view class="s3_view">
+           <image src="../../img/user/个人中心_20.png" style="width: 26px; height: 25px;"></image>
+          <view wx:if="{{orderNumber && orderNumber[1]&&orderNumber[1].number>0}}" class="order_num">{{orderNumber[1].number}}</view>
+      </view>
+   
       </navigator>
       <navigator url="../../pages/orders/Rorder/index">
-        <image src="../../img/user/个人中心_22.png" style="width: 26px; height: 25px;"></image>
+      <view class="s3_view">
+          <image src="../../img/user/个人中心_22.png" style="width: 26px; height: 25px;"></image>
+          <view wx:if="{{orderNumber && orderNumber[2]&&orderNumber[2].number>0}}" class="order_num">{{orderNumber[2].number}}</view>
+      </view>
+    
       </navigator>
       <navigator url="../../pages/orders/Wcomment/index">
-        <image src="../../img/user/个人中心_24.png" style="width: 28px; height: 25px;"></image>
+      <view class="s3_view">
+      <image src="../../img/user/个人中心_24.png" style="width: 28px; height: 25px;"></image>
+      <view wx:if="{{orderNumber && orderNumber[3]&&orderNumber[3].number>0}}" class="order_num">{{orderNumber[3].number}}</view>
+      </view>
+        
       </navigator>
       <navigator url="../../pages/orders/Wservice/index">
-        <image src="../../img/user/个人中心_26.png" style="width: 26px; height: 25px;"></image>
+      <view class="s3_view">
+      <image src="../../img/user/个人中心_26.png" style="width: 26px; height: 25px;"></image>
+   <view wx:if="{{orderNumber && orderNumber[4]&&orderNumber[4].number>0}}" class="order_num">{{orderNumber[4].number}}</view>
+      </view>
+        
       </navigator>
     </view>
     <view class="s3_text">

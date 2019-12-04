@@ -23,13 +23,21 @@ Page({
       url: '../logs/logs'
     })
   },
+  goToUrl(e) {
+    console.log(e)
+    if (e.currentTarget.dataset.imageurl) {
+      wx.navigateTo({
+        url: e.currentTarget.dataset.imageurl,
+      })
+    }
+  },
   onLoad: function () {
     var that = this
     wx.request({
       url: `${app.globalData.host}/content/api/home-index`,
       method:'post',
       data:{
-        page:3
+        page: 1
       },
       success(res){
         that.setData({

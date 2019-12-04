@@ -96,15 +96,23 @@ Page({
   },
 
   toPay(){
-    let obj = {
-      totalMoney: this.data.allMoney,
-      arr:this.data.info.filter(v => Object.keys(this.data.ids).some(r => r === v.id))
+    const temp = this.data.info.filter(v => Object.keys(this.data.ids).some(r => r === v.id))
+    if (temp.length) {
+      let obj = {
+        totalMoney: this.data.allMoney,
+        arr: temp
     }
-    console.log(obj)
-    obj = JSON.stringify(obj)
-    wx.navigateTo({
-      url: '../pay/index?info=' + obj,
-    })
+      console.log(obj)
+      obj = JSON.stringify(obj)
+      wx.navigateTo({
+        url: '../pay/index?info=' + obj,
+      })
+    } else {
+      wx.showToast({
+        title: ' 您购物车里没有需要结算的商品',
+        icon: 'none'
+      })
+    }
   },
 
   del(e){
@@ -145,6 +153,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let that = this
+    app.request({
+      url: '/content/api/user-cart',
+      data: {
+        uid: app.globalData.userInfo.id
+      }
+    }).then(res => {
+      that.setData({
+        info: res.data
+      })
+    })
     console.log(this.data.subInfo)
     this.data.info.map(r=>{
       if(r.checked = true){

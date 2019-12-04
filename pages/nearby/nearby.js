@@ -42,12 +42,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
     let that = this
     wx.getLocation({
       type: 'gcj02 ',
       isHighAccuracy: false,
       success(res) {
         console.log(res)
+        let loc = {
+          lat: res.latitude,
+          lng: res.longitude
+        }
         qqmapsdk.reverseGeocoder({
           location: {
             latitude: res.latitude,
@@ -61,32 +68,57 @@ Page({
               url: '/content/api/nearby-shop',
               data: {
                 page: 1,
-                area: res.result.address_component.district
-                //  res.result.address_component.province + res.result.address_component.city + 
+                // province: res.result.address_component.province,
+                // city: res.result.address_component.city,
+                // // area: res.result.address_component.district
+                // area: res.result.address_component.district
+                province: '四川省',
+                city: '成都市',
+                area: '武侯区'
               }
             }).then(res1 => {
-              res1.data.map(item => {
-                const address = item.province+item.city+item.area+item.address
-                qqmapsdk.geocoder({
-                  address: address,
-                  success(res) {
-                    item.location = res.result.location
-                  }
-                })
-              })
               if (res1.code === 1) {
-                that.setData({
-                  list: res1.data
+                res1.data.map((item, index) => {
+                  const address = item.province + item.city + item.area + item.address
+                  qqmapsdk.geocoder({
+                    address: address,
+                    success(res) {
+                      item.location = res.result.location
+                      if (item.location) {
+                        qqmapsdk.calculateDistance({
+                          from: '',
+                          to: item.location.lat + ',' + item.location.lng,
+                          success: (res2) => {
+                            item.distance = res2.result.elements[0].distance / 1000
+                            that.setData({
+                              list: res1.data
+                            })
+                            if (index === res1.data.length - 1) {
+                              wx.hideLoading()
+                              that.setData({
+                                show: true
+                              })
+                            }
+                          },
+                          complete() {
+                           
+                          }
+                        })
+                      }
+                    },
+                    complete() {
+                      wx.hideLoading()
+                    }
+                  })
                 })
-                console.log(that.data.list)
+              } else {
+                wx.hideLoading()
               }
-              that.setData({
-                show: true
-              })
             })
           },
           complete(res) {
             console.log(res)
+            wx.hideLoading()
           }
         })
       }

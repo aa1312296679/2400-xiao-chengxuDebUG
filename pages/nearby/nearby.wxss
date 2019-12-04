@@ -1,4 +1,8 @@
 /* pages/nearby.wxss */
+.address{
+  font-size: 24rpx;
+  color: #444
+}
 .no-data{
   margin-top: 140rpx;
   color: #666;

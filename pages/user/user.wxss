@@ -126,6 +126,22 @@
   margin-left: 20rpx;
   margin-top: 20rpx;
 }
+.s3_view{
+  position: relative;
+}
+.order_num{
+  position: absolute;
+  right: -14rpx;
+  min-width: 40rpx;
+  height: 40rpx;
+  background-color: red;
+  color: #fff;
+  top: -14rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
 .s3_text {
   display: flex;
   justify-content: space-around;

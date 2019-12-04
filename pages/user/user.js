@@ -4,7 +4,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     userInfo: null,
     guessInfo:[],
-    uid:null
+    uid:null,
+    orderNumber: []
   },
 
   onLoad: function() {
@@ -46,9 +47,25 @@ Page({
     console.log(this.data.userInfo)
   },
   onShow() {
+    let that = this
     this.setData({
       userInfo: app.globalData.userInfo
     })
+    if (this.data.userInfo.id) {
+      app.request({
+        url: '/content/api/my-order-number',
+        data: {
+          uid: app.globalData.userInfo.id
+        }
+      }).then(res => {
+        if (res.code === 1) {
+          console.log(res)
+          that.setData({
+            orderNumber: res.data
+          })
+        }
+      })
+    }
   },
   userlogin() {
     wx.redirectTo({
