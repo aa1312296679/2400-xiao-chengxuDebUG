@@ -1,1 +1,36 @@
 /* pages/My/about/index.wxss */
+.main {
+  width: 90%;
+  margin: 0 auto;
+}
+.top {
+  height: 400rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.top text {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+.heard {
+    margin-bottom: 40rpx;
+}
+.heard text::before{
+  display: inline-block;
+  content: "";
+  width: 10rpx;
+  height: 33rpx;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+  background-color: #0eaaed;
+}
+.main text {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 14px;
+  line-height: 50rpx;
+}

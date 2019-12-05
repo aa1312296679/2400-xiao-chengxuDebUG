@@ -23,20 +23,24 @@
       <view class="s1_b_top">
         <image src="../../img/user/个人中心_07.png" style="width: 30px; height: 25px;"></image>
         <text style="color:#000;">花费100元/年，预计省200元/年 </text>
-        <!-- <navigator url="/pages/vip/vipcenter/index"> -->
+        <navigator url="/pages/vip/vipcenter/index">
         <text bindtap="userVip" class="s1_b_text">立即开通</text>
-        <!-- </navigator> -->
+        </navigator>
       </view>
 
       <view class="s1_b_bot">
+      <navigator url="../../pages/coupon/coupon/index">
         <view class="s1_b_bot_left">
           <image src="../../img/user/个人中心_11.png" style="width: 40px; height: 30px;"></image>
           <text>优惠卷：0张</text>
         </view>
+          </navigator>
+      <navigator url="../../pages/points/pointsInfo/index">
         <view>
           <image src="../../img/user/个人中心_13.png" style="width: 40px; height: 30px;"></image>
           <text>积分：0分</text>
         </view>
+        </navigator>
       </view>
     </view>
   </view>
@@ -141,8 +145,12 @@
       <navigator url="../../pages/My/address/index">
         <image src="../../img/user/个人中心_49.png" style="width: 40px; height: 40px;"></image>
       </navigator>
+       <navigator url="../../pages/My/about/index">
       <image src="../../img/user/个人中心_51.png" style="width: 40px; height: 40px;"></image>
+      </navigator>
+      <navigator url="../../pages/My/advice/index">
       <image src="../../img/user/个人中心_53.png" style="width: 40px; height: 40px;"></image>
+      </navigator>
       <navigator url="../../pages/My/set/index">
         <image src="../../img/user/个人中心_55.png" style="width: 40px; height: 40px;"></image>
       </navigator>
@@ -151,8 +159,12 @@
       <navigator url="../../pages/My/address/index">
         <text>地址管理</text>
       </navigator>
+      <navigator url="../../pages/My/about/index">
       <text>关于我们</text>
+      </navigator>
+      <navigator url="../../pages/My/advice/index">
       <text>意见反馈</text>
+      </navigator>
       <navigator url="../../pages/My/set/index">
         <text>我的设置</text>
       </navigator>

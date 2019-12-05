@@ -1,9 +1,41 @@
 /* pages/message.wxss */
-button{
-  background-color: transparent;
-  border: 1px solid rgb(241,58,28);
-  text-align: left;
-  padding: 0 15rpx;
+.head {
+  display: flex;
+  justify-content: space-around;
+  height: 120rpx;
+}
+.space {
+  height: 15rpx;
+  background-color: #f6f6f6;
+}
+.head li {
+  display: flex;  
+  align-items: center;
+}
+.head li text {
+  margin-left: 20rpx;
+}
+.main {
   width: 90%;
-  margin: 30rpx 5%;
+  margin: 0 auto;
+  font-size: 14px;
+}
+.main span {
+  display: inline-block;
+  content: "";
+  width: 10rpx;
+  height: 35rpx;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  background-color: #f66106;
+  border-radius: 15rpx 15rpx 15rpx 15rpx;
+
+}
+.main view {
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+.main view text {
+  font-size: 12px;
+  display: block;
 }

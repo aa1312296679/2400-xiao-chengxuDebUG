@@ -421,3 +421,66 @@ padding:0 20px 160rpx 20rpx
   color: #fff;
   margin-bottom: 30rpx;
 }
+
+/* 优惠券弹窗 */
+.ok {
+  display: block;
+  width: 95%;
+  background-color: #f6cc5e;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  margin-bottom: 30rpx;
+}
+.c_head {
+  text-align: center;
+  padding-top: 20rpx;
+}
+.c_head image {
+  float: right;
+  margin-right: 20rpx;
+}
+.mid {
+  position: relative;
+}
+.mid_a {
+  position: absolute;
+  top: 35rpx;
+}
+.mid_a text {
+  font-size: 25px;
+  color: #fff;
+  margin-left: 100rpx;
+}
+.mid_a p {
+  display: block;
+  font-size: 11px;
+  margin-left: 70rpx;
+  margin-top: 5rpx;
+  color: #fff;
+}
+.mid_a span {
+  position: absolute;
+  top: 10rpx;
+  left: 250rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #feca49;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ed2502;
+}
+.mid h6 {
+  font-size: 9px;
+  color: #fff;
+  position: absolute;
+  right: 75rpx;
+  top: 85rpx;
+}

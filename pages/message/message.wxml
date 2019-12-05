@@ -1,2 +1,43 @@
 <!--pages/message.wxml-->
-<button open-type="contact">官方客服</button>
+
+<view>
+  <image src="../../img/home/serve.jpg" style="width:100%; height: 360rpx;"></image>
+  <view class="head">
+  <li>
+    <image src="../../img/home/make.png" style="width:70rpx; height: 70rpx;"></image>
+    <text>在线客服</text>
+    </li>
+    <li>
+    <image src="../../img/home/tel.png" style="width:70rpx; height: 70rpx;"></image>
+    <text>在线客服</text>
+    </li>
+  </view>
+  <view class="space"></view>
+
+
+  <view class="main">
+    <span></span>
+    <text>客服简介</text>
+    <view>
+      <text>仁马客户服务，咨询电话8008200469 </text>
+      <text>服务时间：8:00——20:00（除大年初一~初三外）。</text>
+      <text>她承担了五大职能：</text>
+      <text>1.受理用户的各类咨询、查询的服务平台</text>
+      <text>2.受理用户的各项故障报修的业务平台</text>
+      <text>3.受理用户的投诉、意见和建议</text>
+      <text>4.集团新业务、产品的推介和宣</text>
+      <text>5.客户服务过程的监督、检查和评价</text>
+      <text style="margin-top:20rpx;">仁马有线客服拥有一支充满活力、充满激情、乐于奉</text>
+      <text>献、团结奋进的队伍，秉持着“贴心服务，用户满意”</text>
+      <text>的服务理念，在平凡的岗位上默默耕耘，为仁马用户提</text>
+      <text>供“真诚、优质、规范、高效”的服务。</text>
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+    </view>
+  </view>
+  
+</view>
+

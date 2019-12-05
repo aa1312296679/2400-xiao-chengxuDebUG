@@ -1,2 +1,22 @@
 <!--pages/My/advice/index.wxml-->
-<text>pages/My/advice/index.wxml</text>
+<view class="content">
+  <view class="space"></view>
+  <view class="main">
+      <view class="top">
+          <text>为提高沟通效率，建议您添加客服微信或拨打客服电话</text>
+          <view>
+            <image src="/img/user/chat.png" style="width: 30rpx; height:30rpx;" ></image>
+            <text>微信:15985468523</text>
+              <image src="/img/user/phone.png" style="width: 30rpx; height:30rpx;" ></image>
+            <text>电话:15985468523</text>
+          </view>
+      </view>
+      <p class="space"></p>
+      <view class="bot">
+        <text>请留下您的意见或者建议</text>
+        <image src="../../../img/home/发布商品_07.png" style="width: 200rpx; height:180rpx;" ></image>
+      </view>
+      <p class="space1"></p>
+      <button class="btn">提交</button>
+  </view>
+</view>

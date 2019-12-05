@@ -1,2 +1,18 @@
 <!--pages/My/about/index.wxml-->
-<text>pages/My/about/index.wxml</text>
+<view class="top" style="background-color:#f13a1c;">
+  <image src="/img/home/lightphone.png" style="width:300rpx; height:300rpx"></image>
+  <text>点击电话图标即可拨打服务热线</text>
+</view>
+
+  <view class="main">
+    <view class="heard">
+    <text>公司简介</text>
+    </view>
+   
+   <text>家政团队 Housekeeping team</text>
+   <text>e家政家政团队由保洁师和家居工程技师组成，现拥有3000+人员。业务范围已覆盖全国60+座城市。“不求海量的用户，只求服务好每一位客户”是e家政秉承的服务宗旨。</text>
+   <text style="margin-top: 40rpx;">母婴团队Maternal and infant services item</text>
+   <text>e家政母婴团队包由月嫂、育儿嫂、催乳师、产后康复师、小儿推拿师组成。现有员工制月嫂300余人，月服务单量超过6000单。所有服务人员定期参加e家政职业技术学校的培训，不断提高自己的专业水平和服务意识，以保证e家政的服务质量成为行业标杆。 </text>
+   <text style="margin-top: 40rpx;">甲醛治理团队 Formaldehyde management team </text>
+   <text>自主研发超微纳米光触媒、天然萃取生物触媒、纳米银除菌剂，并获得CMA机构、江苏省疾控中心检验通过。采用国内先进的检测、治理仪器，签约服务，已为企事业单位、学校、大型购物中心、居民住宅等10万余用户提供健康环境。 </text>
+  </view>

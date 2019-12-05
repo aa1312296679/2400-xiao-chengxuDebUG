@@ -1,4 +1,4 @@
-/* pages/My/advice/index.wxss */
+/* pages/evaluate/index.wxss */
 .content {
   background-color: #f6f6f6;
   font-size: 15px;
@@ -23,19 +23,28 @@
 
 .main>view {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  height: 150rpx;
+  height: 240rpx;
 }
-.top>text {
-  margin-top: 20rpx;
+.top {
+  border-radius: 40rpx;
+  width: 100%;
 }
-.top view{
+.top image {
+  margin: 20rpx;
+}
+.top view {
   display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 150rpx;
+  margin-top: 20rpx;
+  color: #000;
 }
-.top view text {
-  margin-right: 40rpx;
+.top view p {
+  color: #7a7a7a;
 }
+
+
 .top view image {
   margin-right: 10rpx;
 }
@@ -45,24 +54,39 @@
   margin-top: 10rpx;
   height: 400rpx;
 }
+.main .bot textarea {
+  border-top: 1px solid #f6f6f6;
+  margin-top: 10rpx;
+  padding-top: 20rpx;
+}
+.main .bot image{ 
+    width: 100rpx;
+    height: 100rpx;
+}
 .bot text::before{
   display: inline-block;
   content: "";
-  width: 8rpx;
-  height: 30rpx;
+  width: 10rpx;
+  height: 35rpx;
   margin-top: 10rpx;
   margin-right: 10rpx;
-  background-color: #ff2e14;
+  background-color: #f66106;
+  border-radius: 15rpx 15rpx 15rpx 15rpx;
 }
-.main .bot image {
-  display: block;
-  margin-top: 80rpx;
+.bot_m {
+  position: absolute;
+  display: flex;
+  bottom: 45%;
+}
+.bot_m image{
+  margin-left: 30rpx;
 }
 .main .btn{
-    background-color: #ff2e14;
+    background-color: #f5cd5f;
     color: #fff;
     border-radius: 50rpx;
     height: 100rpx;
     line-height: 100rpx;
     overflow: hidden;
 }
+
