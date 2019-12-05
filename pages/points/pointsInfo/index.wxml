@@ -5,9 +5,32 @@
     <image src="/img/home/积分_03.jpg" style="width:100%; height:400rpx;"></image>
     <text>—— 积分兑换 超值优惠卷 ——</text>
     <p>积分所兑换优惠卷不能与店铺优惠叠加使用. 有效期为三个月</p>
-    <image src="/img/home/积分_07.jpg" style="width:100%; height:200rpx; margin-top:10rpx;"></image>
-    <image src="/img/home/积分_07.jpg" style="width:100%; height:200rpx; margin-top:20rpx;"></image>
-    <image src="/img/home/积分_07.jpg" style="width:100%; height:200rpx; margin-top:20rpx;"></image>
+     <view class="mid">
+          <view class="mid_d">
+              <image src="../../../img/home/coupon_4.png" style="width: 97%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
+              <view class="mid_a">
+                <text>10</text>
+                <p>1000积分</p>
+                <span>立即兑换</span>
+              </view>
+          </view>
+           <view class="mid_d">
+              <image src="../../../img/home/coupon_4.png" style="width: 97%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
+              <view class="mid_a">
+                <text>10</text>
+                <p>1000积分</p>
+                <span>立即兑换</span>
+              </view>
+          </view>
+          <view class="mid_d">
+              <image src="../../../img/home/coupon_4.png" style="width: 97%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
+              <view class="mid_a">
+                <text>10</text>
+                <p>1000积分</p>
+                <span>立即兑换</span>
+              </view>
+          </view>
+      </view>
   </view>
 </view>
 

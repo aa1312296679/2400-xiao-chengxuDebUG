@@ -1,0 +1,76 @@
+<!--pages/coupon/coupon/index.wxml-->
+<view class="content">
+  <view class="main">
+      <view class="header">
+          <image src="../../../img/home/linging.png" style="width: 30rpx; height:30rpx;"></image>
+          <text>省钱攻略：积分兑换优惠卷可跨店使用</text>
+      </view>
+      <view class="top">
+          <text>积分已兑换优惠卷<text>3</text>张</text>
+          <p>店铺优惠卷已领4张</p>
+      </view>
+
+      <view class="mid">
+          <view class="mid_d">
+              <image src="../../../img/home/coupon.png" style="width: 98%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
+              <view class="mid_a">
+                <text>10</text>
+                <p>满200可用</p>
+                <span>立即使用</span>
+              </view>
+              
+          </view>
+           <view class="mid_d">
+              <image src="../../../img/home/coupon.png" style="width: 98%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
+              <view class="mid_a">
+                <text>10</text>
+                <p>满200可用</p>
+                <span>立即使用</span>
+              </view>
+          </view>
+          <view class="mid_d">
+              <image src="../../../img/home/coupon.png" style="width: 98%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
+              <view class="mid_a">
+                <text>10</text>
+                <p>满200可用</p>
+                <span>立即使用</span>
+              </view>
+          </view>
+
+          <view class="mid_f">
+            <view class="mid_f_c">
+              <image src="../../../img/home/coupon_2.png" style="width: 100%; height:150rpx; margin-left:0rpx; margin-top: 20rpx;"></image>
+                <view>
+                  <text>￥20</text>
+                  <p>单笔订单满150元可用</p>
+                  <span>立即使用</span>
+                </view>
+              </view>
+              <view class="mid_f_c">
+              <image src="../../../img/home/coupon_2.png" style="width: 100%; height:150rpx; margin-left:0rpx; margin-top: 20rpx;"></image>
+                <view>
+                  <text>￥20</text>
+                  <p>单笔订单满150元可用</p>
+                  <span>立即使用</span>
+                </view>
+              </view>
+              <view class="mid_f_c">
+              <image src="../../../img/home/coupon_2.png" style="width: 100%; height:150rpx; margin-left:0rpx; margin-top: 20rpx;"></image>
+                <view>
+                  <text>￥20</text>
+                  <p>单笔订单满150元可用</p>
+                  <span>立即使用</span>
+                </view>
+              </view>
+              <view class="mid_f_c">
+              <image src="../../../img/home/coupon_2.png" style="width: 100%; height:150rpx; margin-left:0rpx; margin-top: 20rpx;"></image>
+                <view>
+                  <text>￥20</text>
+                  <p>单笔订单满150元可用</p>
+                  <span>立即使用</span>
+                </view>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>
