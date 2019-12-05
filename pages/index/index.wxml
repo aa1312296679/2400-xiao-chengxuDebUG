@@ -10,8 +10,8 @@
           <input bindconfirm="search" confirm-type="search" class="search_input" placeholder-style="color:#fff" placeholder="        搜索"/>  
         </view>  
       </view>
-      <view>
-        <text class="s1_right">{{content}}</text>
+      <view class="gundong">
+       <marquee class="s1_right" text="{{content}}"></marquee> 
       </view>
       <image src="../../img/home/木马首页_03.png" style=" width: 40px; height: 40px; margin:6px;" mode="scaleToFill"></image>  
     </view>  

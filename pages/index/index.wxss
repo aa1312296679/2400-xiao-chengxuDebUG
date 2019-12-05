@@ -50,11 +50,13 @@
       margin-top: 30rpx;
     }  
     .s1_right {
-      width: 50rpx;
+      width: 60rpx;
+      height: 50px;
+      overflow: hidden;
       float: right;
       font-size: 24rpx;
       color: #fff;
-      margin-left: 15rpx;
+      margin-left: 25rpx;
     }
     .u-wrp-bnr {
       width: 95%;

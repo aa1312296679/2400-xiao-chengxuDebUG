@@ -1,0 +1,12 @@
+/* pages/componts/marquee/index.wxss */
+.marquee_container {
+  position: relative;  
+  width: 100%;
+}
+
+.marquee_text {
+  position: absolute;
+  width: 100%;
+  white-space: wrap;
+  top: 0;
+}
