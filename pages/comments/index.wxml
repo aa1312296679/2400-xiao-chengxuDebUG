@@ -1,0 +1,80 @@
+<!--pages/comments/inedx.wxml-->
+<image src="/img/home/threebei.png" style="width:100%; height:100rpx;" ></image>
+<view class="s6">
+    <li>
+      <p></p>
+      <h1>只看当前商品</h1>   
+      <h2>好评度97%</h2>
+    </li>
+      <li>
+        <text>全部900+</text>
+        <text>最新</text>
+        <text>好评200+</text>
+        <text>中评4</text>
+        <text>差评4</text>
+        <text>有图30+</text>
+        <text>追加评论7+</text>
+      </li>
+  </view>
+  <view class="space"></view>
+  <view class="comments">
+    <image src="/img/home/touxian1.png" style="width:100rpx; height:100rpx;" ></image>
+    <view>
+    <li>
+      <h1>sunn可爱晴天</h1>
+      <image src="/img/home/tubiao2.png" style="width:50rpx; height:35rpx; margin-left:10rpx;" ></image>
+    </li>
+    <li>
+      <text>2019-11-16</text>
+      <text>浅黑色75/88AL</text>
+    </li>
+    </view>
+    <image src="/img/home/tubiao1.png" style="width:30rpx; height:30rpx;" ></image>
+    <text class="c_text">衣服比想象中的还好，很暖和，很百搭，包包还很多，正面一-边3个包包，还有个内包，- -件衣服总共7个包，很实用，很大气，一起不知道这个品牌，朋友说这个是以纯的线上品牌，于是就来试一试，没想到体验很好，以后就在这个店买衣服了</text>
+    <view class="c_img">
+      <image src="/img/home/clothes.png" style="width:200rpx; height:200rpx;" ></image>
+      <image src="/img/home/clothes.png" style="width:200rpx; height:200rpx;margin-left: 20rpx;" ></image>
+    </view> 
+  </view>
+    <view class="comments">
+    <image src="/img/home/touxian1.png" style="width:100rpx; height:100rpx;" ></image>
+    <view>
+    <li>
+      <h1>sunn可爱晴天</h1>
+      <image src="/img/home/tubiao2.png" style="width:50rpx; height:35rpx; margin-left:10rpx;" ></image>
+    </li>
+    <li>
+      <text>2019-11-16</text>
+      <text>浅黑色75/88AL</text>
+    </li>
+    </view>
+    <image src="/img/home/tubiao1.png" style="width:30rpx; height:30rpx;" ></image>
+    <text class="c_text">衣服比想象中的还好，很暖和，很百搭，包包还很多，正面一-边3个包包，还有个内包，- -件衣服总共7个包，很实用，很大气，一起不知道这个品牌，朋友说这个是以纯的线上品牌，于是就来试一试，没想到体验很好，以后就在这个店买衣服了</text>
+    <view class="c_img">
+      <image src="/img/home/clothes.png" style="width:200rpx; height:200rpx;" ></image>
+      <image src="/img/home/clothes.png" style="width:200rpx; height:200rpx;margin-left: 20rpx;" ></image>
+    </view> 
+  </view>
+
+<view class="bottom">
+    <li>
+      <view>
+      <navigator url="/pages/shop/index">
+         <image src="../../img/home/商品详情_21.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
+      <text>店铺</text>
+      </navigator>
+      </view>
+      <view>
+      <navigator open-type="switchTab" url="/pages/car/car">
+       <image src="../../img/home/商品详情_18.png" mode="scaleToFill" style="width:60rpx; height:50rpx"></image>
+      <text>购物车</text>
+      </navigator>
+      </view> 
+    </li>
+    <li>
+      <view>
+      <text bindtap="goCart">加入购物车</text>
+      <text bindtap="goBuy" id="pay">立即购买</text>
+      </view>
+    </li>   
+</view>
