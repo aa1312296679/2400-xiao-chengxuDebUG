@@ -39,11 +39,22 @@
 .top view image {
   margin-right: 10rpx;
 }
+.img-list{
+  display: flex;
+  align-items: center;
+}
+.img-list image{
+  margin-right: 15rpx
+}
+.img-user{
+  width: 120rpx;
+  height: 120rpx
+}
 .main .bot {
   display: block;
   margin-left: 20rpx;
   margin-top: 10rpx;
-  height: 400rpx;
+  /* height: 400rpx; */
 }
 .bot text::before{
   display: inline-block;
@@ -57,6 +68,9 @@
 .main .bot image {
   display: block;
   margin-top: 80rpx;
+}
+.bot textarea{
+  height: 140rpx
 }
 .main .btn{
     background-color: #ff2e14;

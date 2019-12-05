@@ -24,7 +24,7 @@
         <image src="../../img/user/个人中心_07.png" style="width: 30px; height: 25px;"></image>
         <text style="color:#000;">花费100元/年，预计省200元/年 </text>
         <navigator url="/pages/vip/vipcenter/index">
-        <text bindtap="userVip" class="s1_b_text">立即开通</text>
+        <text class="s1_b_text">立即开通</text>
         </navigator>
       </view>
 

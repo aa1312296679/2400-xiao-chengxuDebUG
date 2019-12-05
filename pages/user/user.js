@@ -102,6 +102,18 @@ Page({
           data: jsonData,
           success(resp) {
             app.globalData.userInfo = resp.data.data
+            const code = wx.getStorage({
+              key: 'code',
+              success: function(userd) {
+                app.request({
+                  url: '/content/api/share-success',
+                  data: {
+                    uid: resp.data.data.id,
+                    pid: userd
+                  }
+                }).then(res =>{})
+              },
+            })
             app.request({
               url: '/content/api/guess-you',
               data: {

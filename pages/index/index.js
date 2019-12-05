@@ -31,7 +31,13 @@ Page({
       })
     }
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    if (options.code) {
+      wx.setStorage({
+        key: 'code',
+        data: options.code,
+      })
+    }
     var that = this
     wx.request({
       url: `${app.globalData.host}/content/api/home-index`,

@@ -29,6 +29,7 @@
 .s0 {
   background-color: #fff;
   height: 1200rpx;
+  padding-bottom: 100rpx;
 }
 .main {
   width: 100%;

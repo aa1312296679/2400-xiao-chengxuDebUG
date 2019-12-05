@@ -14,18 +14,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    app.request({
-      url:'/content/api/my-share',
-      data:{
-        uid:app.globalData.userInfo.id
-      }
-    }).then(res=>{
-      this.setData({
-        info:res.data
+    if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
+      console.log(options)
+      app.request({
+        url: '/content/api/my-share',
+        data: {
+          uid: app.globalData.userInfo.id
+        }
+      }).then(res => {
+        this.setData({
+          info: res.data
+        })
+        console.log(res)
       })
-      console.log(res)
-    })
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+      wx.navigateBack()
+    }
   },
   showDia(){
     this.setData({
@@ -98,7 +106,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      path: 'pages/My/invite/index?code=' + app.globalData.userInfo.id
+      path: 'pages/index/index?code=' + app.globalData.userInfo.id
     }
   }
 })

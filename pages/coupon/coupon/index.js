@@ -1,18 +1,51 @@
 // pages/coupon/coupon/index.js
+const app =getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    couponList: [],
+    couponList1: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
+      let that = this
+      app.request({
+        url: '/content/api/coupon-message',
+        data: {
+          uid: app.globalData.userInfo.id
+        }
+      }).then(res => {
+        console.log(res)
+        let temp = []
+        let temp1 = []
+        if (res.data.coupons && res.data.coupons.length) {
+          res.data.coupons.map(item => {
+            if (item.integral && Number(item.integral) > 0) {
+              temp.push(item) // 积分
+            } else {
+              temp1.push(item)
+            }
+          })
+        }
+        that.setData({
+          couponList: temp,
+          couponList1: temp1
+        })
+      })
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+      wx.navigateBack()
+    }
   },
 
   /**

@@ -2,8 +2,8 @@
 <!-- 
 <view class="s1">
   <!-- <image src="../../img/home/全部订单_03.png" mode="scaleToFill"></image> -->
-  <!-- <text>商品详情</text>
-</view> --> 
+<!-- <text>商品详情</text>
+</view> -->
 
 
 <view class="s0">
@@ -16,7 +16,7 @@
       </block>
     </swiper>
   </view>
-   <view wx:else class="s2">
+  <view wx:else class="s2">
     <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
       <block wx:for="{{bnrUrl&&show}}" wx:for-index="index">
         <swiper-item>
@@ -97,24 +97,27 @@
       </li> -->
     </view>
     <view class="evaluate">
-        <view wx:for="{{comment}}" wx:key="{{index}}" class="s7">
-      <view>
-        <image wx:if="{{item.avatar}}" src="{{item.avatar}}" mode="scaleToFill" style="width:100rpx; height:100rpx;margin-right:20rpx"></image>
-        <text style="font-size:34rpx;font-weight:bold">{{item.nickname}}</text>
-      </view>
-      <view class="flex-layout">
-        <text>{{item.evaluate}}</text>
-        <text>{{item.evalTime}}</text>
-      </view>
-      <!-- <li>
+      <view wx:for="{{comment}}" wx:key="{{index}}" class="s7">
+        <view>
+          <image wx:if="{{item.avatar}}" src="{{item.avatar}}" mode="scaleToFill" style="width:100rpx; height:100rpx;margin-right:20rpx"></image>
+          <text style="font-size:34rpx;font-weight:bold">{{item.nickname}}</text>
+        </view>
+        <view class="flex-layout">
+          <text>{{item.evaluate}}</text>
+          <text>{{item.evalTime}}</text>
+        </view>
+        <!-- <li>
       <image src="../../img/home/商品详情_007.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
     <image src="../../img/home/商品详情_09.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
     <image src="../../img/home/商品详情_011.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
     </li> -->
-      <!-- <h1>白色</h1>
+        <!-- <h1>白色</h1>
       <text class="advice">查看全部评价</text> -->
+      </view>
     </view>
-    </view>
+    <!-- <view style="text-align:center" wx:else>
+      暂无评价
+    </view> -->
   </view>
 </view>
 
@@ -214,58 +217,58 @@
 
 <!-- 优惠卷弹窗 -->
 <view wx:if="" class="choose">
-    <view class="choose_content">
-        <view class="c_head">
-        <text>优惠卷</text>
-           <image bindtap="closePlate" src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
-        </view>
-        <view class="head_content">
-          <view class="mid">
-              <image src="../../img/home/coupon_1.png" style="width: 98%; height:120rpx; margin-left:5rpx; margin-top: 20rpx;"></image>
-              <view class="mid_a">
-                <text>￥20</text>
-                <p>单笔订单满150元可用</p>
-                <span>领</span>
-              </view>
-              <h6>2019.11.10-2019.11.20.</h6>
-          </view>
-          <view class="mid">
-              <image src="../../img/home/coupon_1.png" style="width: 98%; height:120rpx; margin-left:5rpx; margin-top: 20rpx;"></image>
-              <view class="mid_a">
-                <text>￥20</text>
-                <p>单笔订单满150元可用</p>
-                <span>领</span>
-              </view>
-              <h6>2019.11.10-2019.11.20.</h6>
-          </view>
-          <view class="mid">
-              <image src="../../img/home/coupon_1.png" style="width: 98%; height:120rpx; margin-left:5rpx; margin-top: 20rpx;"></image>
-              <view class="mid_a">
-                <text>￥20</text>
-                <p>单笔订单满150元可用</p>
-                <span>领</span>
-              </view>
-              <h6>2019.11.10-2019.11.20.</h6>
-          </view>
-          <view class="mid">
-              <image src="../../img/home/coupon_1.png" style="width: 98%; height:120rpx; margin-left:5rpx; margin-top: 20rpx;"></image>
-              <view class="mid_a">
-                <text>￥20</text>
-                <p>单笔订单满150元可用</p>
-                <span>领</span>
-              </view>
-              <h6>2019.11.10-2019.11.20.</h6>
-          </view>
-          <view class="mid">
-              <image src="../../img/home/coupon_1.png" style="width: 98%; height:120rpx; margin-left:5rpx; margin-top: 20rpx;"></image>
-              <view class="mid_a">
-                <text>￥20</text>
-                <p>单笔订单满150元可用</p>
-                <span>领</span>
-              </view>
-              <h6>2019.11.10-2019.11.20.</h6>
-          </view>
-        </view>
-        <text bindtap="closeBuy" class="ok">完成</text>
+  <view class="choose_content">
+    <view class="c_head">
+      <text>优惠卷</text>
+      <image bindtap="closePlate" src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
     </view>
+    <view class="head_content">
+      <view class="mid">
+        <image src="../../img/home/coupon_1.png" style="width: 98%; height:120rpx; margin-left:5rpx; margin-top: 20rpx;"></image>
+        <view class="mid_a">
+          <text>￥20</text>
+          <p>单笔订单满150元可用</p>
+          <span>领</span>
+        </view>
+        <h6>2019.11.10-2019.11.20.</h6>
+      </view>
+      <view class="mid">
+        <image src="../../img/home/coupon_1.png" style="width: 98%; height:120rpx; margin-left:5rpx; margin-top: 20rpx;"></image>
+        <view class="mid_a">
+          <text>￥20</text>
+          <p>单笔订单满150元可用</p>
+          <span>领</span>
+        </view>
+        <h6>2019.11.10-2019.11.20.</h6>
+      </view>
+      <view class="mid">
+        <image src="../../img/home/coupon_1.png" style="width: 98%; height:120rpx; margin-left:5rpx; margin-top: 20rpx;"></image>
+        <view class="mid_a">
+          <text>￥20</text>
+          <p>单笔订单满150元可用</p>
+          <span>领</span>
+        </view>
+        <h6>2019.11.10-2019.11.20.</h6>
+      </view>
+      <view class="mid">
+        <image src="../../img/home/coupon_1.png" style="width: 98%; height:120rpx; margin-left:5rpx; margin-top: 20rpx;"></image>
+        <view class="mid_a">
+          <text>￥20</text>
+          <p>单笔订单满150元可用</p>
+          <span>领</span>
+        </view>
+        <h6>2019.11.10-2019.11.20.</h6>
+      </view>
+      <view class="mid">
+        <image src="../../img/home/coupon_1.png" style="width: 98%; height:120rpx; margin-left:5rpx; margin-top: 20rpx;"></image>
+        <view class="mid_a">
+          <text>￥20</text>
+          <p>单笔订单满150元可用</p>
+          <span>领</span>
+        </view>
+        <h6>2019.11.10-2019.11.20.</h6>
+      </view>
+    </view>
+    <text bindtap="closeBuy" class="ok">完成</text>
+  </view>
 </view>

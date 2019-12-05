@@ -12,11 +12,16 @@
           </view>
       </view>
       <p class="space"></p>
-      <view class="bot">
-        <text>请留下您的意见或者建议</text>
-        <image src="../../../img/home/发布商品_07.png" style="width: 200rpx; height:180rpx;" ></image>
+      <form bindsubmit="bindFormSubmit">
+            <view class="bot">
+        <textarea name='content' value="{{contentData.content}}" placeholder="请留下您的意见或者建议"></textarea>
+        <view class="img-list">
+         <image class="img-user" wx:for="{{images}}" wx:key="{{index}}" src="{{item}}"></image>
+        </view>
+        <image bindtap="uploadImg" src="../../../img/home/发布商品_07.png" style="width: 200rpx; height:180rpx;" ></image>
       </view>
       <p class="space1"></p>
-      <button class="btn">提交</button>
+      <button form-type="submit" class="btn">提交</button>
+      </form>
   </view>
 </view>
