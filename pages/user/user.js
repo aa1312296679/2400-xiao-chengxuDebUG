@@ -5,7 +5,9 @@ Page({
     userInfo: null,
     guessInfo:[],
     uid:null,
-    orderNumber: []
+    orderNumber: [],
+    integral: 0,
+    couponNumber: 0
   },
 
   onLoad: function() {
@@ -53,6 +55,19 @@ Page({
     })
     if (this.data.userInfo.id) {
       app.request({
+        url: '/content/api/user-personal',
+        data: {
+          uid: app.globalData.userInfo.id
+        }
+      }).then(res => {
+        if (res.code === 1) {
+          that.setData({
+            couponNumber: res.data.couponNumber,
+            integral: res.data.integral
+          })
+        }
+      })
+      app.request({
         url: '/content/api/my-order-number',
         data: {
           uid: app.globalData.userInfo.id
@@ -65,6 +80,39 @@ Page({
           })
         }
       })
+      let that = this
+      this.setData({
+        userInfo: app.globalData.userInfo
+      })
+      if (this.data.userInfo && this.data.userInfo.id) {
+        app.request({
+          url: '/content/api/guess-you',
+          data: {
+            uid: app.globalData.userInfo.id
+          }
+        }).then(res => {
+          that.setData({
+            guessInfo: res.data
+          })
+        })
+        wx.getSetting({
+          success(res) {
+            if (res.authSetting['scope.userInfo']) {
+              // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+              wx.getUserInfo({
+                success(res) {
+                  console.log(res)
+                  res.userInfo.phone = app.globalData.userInfo.phone
+                  that.setData({
+                    userInfo: res.userInfo
+                  })
+                }
+              })
+            }
+          }
+        })
+      }
+      console.log(this.data.userInfo)
     }
   },
   userlogin() {
@@ -123,6 +171,32 @@ Page({
               that.setData({
                 guessInfo: res.data
               })
+            })
+            app.request({
+              url: '/content/api/my-order-number',
+              data: {
+                uid: app.globalData.userInfo.id
+              }
+            }).then(res => {
+              if (res.code === 1) {
+                console.log(res)
+                that.setData({
+                  orderNumber: res.data
+                })
+              }
+            })
+            app.request({
+              url: '/content/api/user-personal',
+              data: {
+                uid: app.globalData.userInfo.id
+              }
+            }).then(res => {
+              if (res.code === 1) {
+                that.setData({
+                  couponNumber: res.data.couponNumber,
+                  integral: res.data.integral
+                })
+              }
             })
           }
         })

@@ -79,6 +79,7 @@
 }
 .s7 {
   background-color: #fff;
+  position: relative
 }
    .s7_main {
      width: 95%;
@@ -137,7 +138,7 @@
     float: right;
     position: absolute;
     right: 20rpx;
-    top: 160rpx;
+    top: 30rpx;
 }  
   
 /*加号和减号*/  

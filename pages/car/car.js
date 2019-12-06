@@ -105,7 +105,7 @@ Page({
       console.log(obj)
       obj = JSON.stringify(obj)
       wx.navigateTo({
-        url: '../pay/index?info=' + obj,
+        url: '/pages/orders/writeorder/index?info=' + obj,
       })
     } else {
       wx.showToast({
@@ -153,6 +153,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.removeStorage({
+      key: 'key',
+      success(res) {
+        console.log(res)
+      }
+    })
     let that = this
     app.request({
       url: '/content/api/user-cart',

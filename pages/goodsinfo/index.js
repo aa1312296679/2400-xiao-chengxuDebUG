@@ -32,6 +32,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this
     console.log(options)
     if (app.globalData.userInfo && app.globalData.userInfo.id) {
       this.setData({

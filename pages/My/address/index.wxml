@@ -18,7 +18,7 @@
     </view>
 </view>
 <view class="bto">
-<navigator url="waddress/index?type={{type}}&productId={{productId}}">
+<navigator url="waddress/index?buy={{buy}}&type={{type}}&productId={{productId}}">
 <text>新建收货地址</text>
 </navigator>
 </view>

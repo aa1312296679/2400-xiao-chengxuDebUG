@@ -10,6 +10,7 @@ Page({
   data: {
     productId: null,
     type: null,
+    buy: null,
     addressData: {
       uid: null,
       addressId: null,
@@ -95,6 +96,12 @@ Page({
         productId: options.productId
       })
     }
+    if (options.buy) {
+      this.setData({
+        buy: options.buy,
+        productId: options.productId
+      })
+    }
     qqmapsdk = new QQMapWX({
       key: 'XEZBZ-IYJCG-AN7QT-IPO44-KCTT3-GZF35'
     })
@@ -171,7 +178,7 @@ Page({
       })
       if (this.data.type === 'shop') {
         wx.redirectTo({
-          url: '/pages/My/address/index?type=' + this.data.type + '&productId=' + this.data.productId,
+          url: '/pages/My/address/index?type=' + this.data.type + '&productId=' + this.data.productId + '&buy=' + this.data.buy,
         })
       } else {
         wx.redirectTo({

@@ -32,13 +32,13 @@
       <navigator url="../../pages/coupon/coupon/index">
         <view class="s1_b_bot_left">
           <image src="../../img/user/个人中心_11.png" style="width: 40px; height: 30px;"></image>
-          <text>优惠卷：0张</text>
+          <text>优惠卷：{{couponNumber}}张</text>
         </view>
           </navigator>
       <navigator url="../../pages/points/pointsInfo/index">
         <view>
           <image src="../../img/user/个人中心_13.png" style="width: 40px; height: 30px;"></image>
-          <text>积分：0分</text>
+          <text>积分：{{integral}}分</text>
         </view>
         </navigator>
       </view>

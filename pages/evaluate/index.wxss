@@ -10,6 +10,21 @@
   height: 30rpx;
   background-color: #f6f6f6;
 }
+.img_list{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.img_list image{
+  width: 200rpx;
+  height: 2000rpx;
+  margin-right: 18rpx
+}
+.img_list video{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 18rpx
+}
 .space1 {
   display: block;
   height: 250rpx;
@@ -52,12 +67,14 @@
   display: block;
   margin-left: 20rpx;
   margin-top: 10rpx;
-  height: 400rpx;
+  background-color: #fff;
+  /* height: 400rpx; */
 }
 .main .bot textarea {
   border-top: 1px solid #f6f6f6;
   margin-top: 10rpx;
   padding-top: 20rpx;
+  height: 140rpx
 }
 .main .bot image{ 
     width: 100rpx;

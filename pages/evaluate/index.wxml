@@ -3,25 +3,37 @@
 <view class="content">
   <view class="space"></view>
   <view class="main">
-      <view class="top">
-      <image src='../../img/home/木马首页_20.png' alt="" style=" width: 200rpx; height: 200rpx;"></image> 
-          <view>
-          <text>米其林汽车轮胎 浩悦4 PRIMACY 4 215/55R17 94V 适配本...</text>
-          <p>分类 ：替换胎</p>  
-          </view>       
+    <view class="top">
+      <image src="{{img?img:'../../img/home/木马首页_20.png'}}" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+      <view>
+        <text>{{title}}...</text>
+        <!-- <p>分类 ：替换胎</p>   -->
+      </view>
     </view>
+    <form bindsubmit="formSubmit">
       <p class="space"></p>
       <view class="bot">
         <text>填写评价</text>
-        <textarea placeholder="请在此处填写你对本商品的看法">
-        
+        <textarea name="comment" placeholder="请在此处填写你对本商品的看法">
+
         </textarea>
         <view class="bot_m">
-        <image src="../../img/home/相机.png" style="width:150rpx; height:150rpx;"></image>
-        <image src="../../img/home/添加视频.png" style="width:150rpx; height:150rpx;"></image>
+          <view style="display:block">
+            <view wx:if="{{img.length}}" class="img_list">
+              <image class="img-user" wx:for="{{images}}" wx:key="{{index}}" src="{{item}}"></image>
+            </view>
+          </view>
+             <view style="display:block">
+            <view wx:if="{{videos.length}}" class="img_list">
+              <video class="img-user" wx:for="{{videos}}" wx:key="{{index}}" src="{{item}}"></video>
+            </view>
+          </view>
+          <image bindtap="uploadImg" src="../../img/home/发布商品_07.png" style="width:150rpx; height:150rpx;"></image>
+          <image bindtap="uploadVid" src="../../img/home/发布商品_07.png" style="width:150rpx; height:150rpx;"></image>
         </view>
       </view>
       <p class="space1"></p>
-      <button class="btn">发布</button>
+      <button form-type="submit" class="btn">发布</button>
+    </form>
   </view>
 </view>

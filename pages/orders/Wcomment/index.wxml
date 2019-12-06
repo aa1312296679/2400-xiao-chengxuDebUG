@@ -21,7 +21,9 @@
       
      <view class="stepper">  
       <!-- <text>售后</text> -->
-      <text data-id="{{item.id}}" bindtap="showEvaluate" class="btn">评价</text>
+      <navigator url="/pages/evaluate/index?id={{item.id}}&productImage={{item.productImage}}&productTitle={{item.productTitle}}">
+        <text data-id="{{item.id}}" class="btn">评价</text>
+      </navigator>
   </view>  
     </view>
   </view>

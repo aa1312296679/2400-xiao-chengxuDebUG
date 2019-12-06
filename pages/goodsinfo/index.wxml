@@ -114,6 +114,9 @@
         <!-- <h1>白色</h1>
       <text class="advice">查看全部评价</text> -->
       </view>
+          <view wx:if="{{comment.length}}">
+      <navigator url="/pages/comments/index?id={{productId}}"><button>全部评论</button></navigator>
+    </view>
     </view>
     <!-- <view style="text-align:center" wx:else>
       暂无评价
@@ -166,20 +169,20 @@
               <text>尾箱版蓝色</text>
             </li>           
         </view> -->
-    <view class="number">
-      <text>数量</text>
-      <view class="stepper">
+    <!-- <view class="number"> -->
+      <!-- <text>数量</text> -->
+      <!-- <view class="stepper"> -->
         <!-- 减号 -->
-        <text bindtap="delCount" data-index="{{index}}     ">-</text>
+        <!-- <text bindtap="delCount" data-index="{{index}}     ">-</text> -->
         <!-- 数值 -->
-        <input disabled type="number" value="{{num}}" />
+        <!-- <input disabled type="number" value="{{num}}" /> -->
         <!-- 加号 -->
-        <text bindtap="addCount">+</text>
+        <!-- <text bindtap="addCount">+</text>
       </view>
-    </view>
-    <view wx:if="{{!type}}" class="remark">
+    </view> -->
+    <!-- <view wx:if="{{!type}}" class="remark">
       <textarea value="{{remark}}" placeholder="订单备注"></textarea>
-    </view>
+    </view> -->
     <!-- <view class="safe">
           <h1>保障服务</h1>
           <view>
@@ -210,8 +213,8 @@
               <text>延保至4年 ￥209.0</text>
           </li>
         </view> -->
-
-    <text bindtap="closeBuy" class="yes">确定</text>
+ <!-- bindtap="closeBuy" -->
+    <navigator url="/pages/orders/writeorder/index?id={{productId}}"><text class="yes">确定</text></navigator>
   </view>
 </view>
 
