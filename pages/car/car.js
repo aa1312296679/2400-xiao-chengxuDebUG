@@ -154,7 +154,7 @@ Page({
    */
   onShow: function () {
     wx.removeStorage({
-      key: 'key',
+      key: 'info',
       success(res) {
         console.log(res)
       }

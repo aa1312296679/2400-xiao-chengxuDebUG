@@ -17,88 +17,102 @@ Page({
     total: 0
   },
   userSubmit(e) {
-    let that = this
-    if (that.data.type == 1) {
-      let products = []
-      that.data.productList.map(item => {
-        let obj = ['id'>=item.id,'number'>=item.number]
-        products.push(obj)
-      })
-      app.request({
-        url: '/content/api/create-order-by-cart',
-        data: {
-          uid: app.globalData.userInfo.id,
-          products: products,
-          integral: 0,
-          couponId: 0,
-          type: 2,
-          remark: e.detail.value.content,
-          addressId: that.data.addressId
-        }
-      }).then(res =>{
-        console.log(res)
-        wx.requestPayment({
-          timeStamp: res.data.timeStamp.toString(),
-          nonceStr: res.data.nonceStr,
-          package: res.data.package,
-          signType: 'MD5',
-          paySign: res.data.paySign,
-          success: (res) => {
-            wx.showToast({
-              title: '支付成功',
-              type: 'success'
-            })
-            setTimeout(_ => {
-              wx.switchTab({
-                url: '/pages/index/index',
-              })
-            })
-          },
-          complete: (data) => {
-            console.log(data)
-          }
-        })
+    if (!this.data.addressId) {
+      wx.showToast({
+        title: '请选择收货地址',
+        icon: 'none'
       })
     } else {
-      app.request({
-        url: '/content/api/create-order',
-        data: {
-          uid: app.globalData.userInfo.id,
-          productId: that.data.productId,
-          number: that.data.num,
-          integral: 0,
-          couponId: 0,
-          type: 2,
-          remark: e.detail.value.content,
-          addressId: that.data.addressId
-        }
-      }).then(res => {
-        console.log(res)
-        //  if (that.data.productData.type != 1) {
-        wx.requestPayment({
-          timeStamp: res.data.timeStamp.toString(),
-          nonceStr: res.data.nonceStr,
-          package: res.data.package,
-          signType: 'MD5',
-          paySign: res.data.paySign,
-          success: (res) => {
-            wx.showToast({
-              title: '支付成功',
-              type: 'success'
-            })
-            setTimeout(_ => {
-              wx.switchTab({
-                url: '/pages/index/index',
-              })
-            })
-          },
-          complete: (data) => {
-            console.log(data)
+      let that = this
+      if (that.data.type == 1) {
+        let products = ''
+        that.data.productList.map((item, index) => {
+          if (that.data.productList.length>1) {
+            if (index < that.data.productList.length - 1) {
+              products += `'${item.id}-${item.number},`
+            } else {
+              products += `${item.id}-${item.number}'`
+            }
+          } else {
+            products += `'${item.id}-${item.number}'`
           }
         })
-      })
+        app.request({
+          url: '/content/api/create-order-by-cart',
+          data: {
+            uid: app.globalData.userInfo.id,
+            products: products,
+            integral: 0,
+            couponId: 0,
+            type: 2,
+            remark: e.detail.value.content ? e.detail.value.content:'',
+            addressId: that.data.addressId
+          }
+        }).then(res => {
+          console.log(res)
+          wx.requestPayment({
+            timeStamp: res.data.timeStamp.toString(),
+            nonceStr: res.data.nonceStr,
+            package: res.data.package,
+            signType: 'MD5',
+            paySign: res.data.paySign,
+            success: (res) => {
+              wx.showToast({
+                title: '支付成功',
+                type: 'success'
+              })
+              setTimeout(_ => {
+                wx.switchTab({
+                  url: '/pages/index/index',
+                })
+              })
+            },
+            complete: (data) => {
+              console.log(data)
+            }
+          })
+        })
+      } else {
+        app.request({
+          url: '/content/api/create-order',
+          data: {
+            uid: app.globalData.userInfo.id,
+            productId: that.data.productId,
+            number: that.data.num,
+            integral: 0,
+            couponId: 0,
+            type: 2,
+            remark: e.detail.value.content ? e.detail.value.content : '',
+            addressId: that.data.addressId
+          }
+        }).then(res => {
+          console.log(res)
+          //  if (that.data.productData.type != 1) {
+          wx.requestPayment({
+            timeStamp: res.data.timeStamp.toString(),
+            nonceStr: res.data.nonceStr,
+            package: res.data.package,
+            signType: 'MD5',
+            paySign: res.data.paySign,
+            success: (res) => {
+              wx.showToast({
+                title: '支付成功',
+                type: 'success'
+              })
+              setTimeout(_ => {
+                wx.switchTab({
+                  url: '/pages/index/index',
+                })
+              })
+            },
+            complete: (data) => {
+              console.log(data)
+            }
+          })
+        })
+      }
+
     }
- 
   },
   chooseAddress() {
     if (this.data.type == 1) {
@@ -297,7 +311,7 @@ Page({
         } else {
           console.log(options)
           if (app.globalData.userInfo && app.globalData.userInfo.id) {
-            ththatis.setData({
+            that.setData({
               productId: options.id
             })
             app.request({
@@ -330,11 +344,11 @@ Page({
                     }
                   })
                 })
-                this.setData({
+                that.setData({
                   addressId: options.addressId
                 })
               } else if (res.data.userAddress) {
-                this.setData({
+                that.setData({
                   addressId: res.data.userAddress.id,
                   userInfo: res.data,
                   show:true
@@ -349,7 +363,7 @@ Page({
               }
             }).then(res => {
               console.log(res)
-              this.setData({
+              that.setData({
                 productData: res.data.product
               })
             })

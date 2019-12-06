@@ -8,6 +8,14 @@
   height: 15rpx;
   background-color: #f6f6f6;
 }
+.service button::after{
+  border:none
+}
+.service button{
+  background-color: transparent;
+  border: none;
+  outline: none
+}
 .head li {
   display: flex;  
   align-items: center;

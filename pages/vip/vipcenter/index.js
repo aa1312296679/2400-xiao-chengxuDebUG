@@ -9,7 +9,9 @@ Page({
     isShow: false,
     ismask: false,
     name: '',
-    userInfo:null
+    userInfo:null,
+    memberData: null,
+    personalData: null
   },
   userVip(e) {
     console.log(e)
@@ -85,6 +87,11 @@ Page({
         }
       }).then(res => {
         console.log(res)
+        if (res.code === 1) {
+          that.setData({
+            memberData: res.data
+          })
+        }
       })
       app.request({
         url: '/content/api/user-personal',
@@ -94,6 +101,9 @@ Page({
       }).then(res => {
         console.log('个人中心')
         console.log(res)
+        that.setData({
+          personalData: res.data
+        })
       })
     } else {
       wx.showToast({

@@ -109,9 +109,9 @@
             <text>优惠券</text>
             <text>0张可用</text>
           </li>
-          <li>
+          <!-- <li>
             <text>使用00积分抵扣￥00元</text>
-          </li>
+          </li> -->
           <view class="message">
             <text>备注</text>
             <input name="content" placeholder="请先和商家协商一致"></input>

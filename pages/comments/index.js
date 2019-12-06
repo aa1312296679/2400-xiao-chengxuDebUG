@@ -7,8 +7,10 @@ Page({
    */
   data: {
     commentList: [],
+    count: [{ type: 0, number: 0 }, { type: 1, number: 0 }, { type: 2, number: 0 }, { type: 3, number: 0 }],
     productId: '',
-    page: 1
+    page: 1,
+    type: 0
   },
 
   /**
@@ -16,7 +18,11 @@ Page({
    */
   onLoad: function (options) {
     this.data.productId = options.id
-    this.getComment(0, this.data.page)
+    this.getComment(this.data.type, this.data.page)
+  },
+  getCommontData(e) {
+    this.data.type = e.currentTarget.dataset.index
+    this.getComment(this.data.type, this.data.page)
   },
   getComment(type, page) {
     let that = this
@@ -29,6 +35,12 @@ Page({
       }
     }).then(res => {
       console.log(res)
+      if (res.code === 1) {
+        that.setData({
+          count: res.data.count,
+          commentList:res.data.comment
+        })
+      }
     })
   },
   /**
@@ -70,7 +82,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.setData({
+      page: ++this.data.page
+    })
+    this.getComment(this.data.type, this.data.page)
   },
 
   /**

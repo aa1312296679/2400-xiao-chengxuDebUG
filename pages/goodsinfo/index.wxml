@@ -106,11 +106,12 @@
           <text>{{item.evaluate}}</text>
           <text>{{item.evalTime}}</text>
         </view>
-        <!-- <li>
-      <image src="../../img/home/商品详情_007.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
-    <image src="../../img/home/商品详情_09.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
-    <image src="../../img/home/商品详情_011.png" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
-    </li> -->
+        <li wx:if="{{item.evalImage}}">
+      <image  src="{{item.evalImage}}" mode="scaleToFill" style="width:220rpx; height:220rpx"></image>
+    </li>
+         <li wx:if="{{item.evalVideo}}">
+      <video  src="{{item.evalVideo}}" style="width:220rpx; height:220rpx"></video>
+    </li>
         <!-- <h1>白色</h1>
       <text class="advice">查看全部评价</text> -->
       </view>
@@ -169,17 +170,17 @@
               <text>尾箱版蓝色</text>
             </li>           
         </view> -->
-    <!-- <view class="number"> -->
-      <!-- <text>数量</text> -->
-      <!-- <view class="stepper"> -->
-        <!-- 减号 -->
-        <!-- <text bindtap="delCount" data-index="{{index}}     ">-</text> -->
+    <view wx:if="{{productData&&productData.type==1}}" class="number">
+      <text>数量</text>
+      <view class="stepper">
+        减号
+        <text bindtap="delCount" data-index="{{index}}     ">-</text>
         <!-- 数值 -->
-        <!-- <input disabled type="number" value="{{num}}" /> -->
+        <input disabled type="number" value="{{num}}" />
         <!-- 加号 -->
-        <!-- <text bindtap="addCount">+</text>
+        <text bindtap="addCount">+</text>
       </view>
-    </view> -->
+    </view>
     <!-- <view wx:if="{{!type}}" class="remark">
       <textarea value="{{remark}}" placeholder="订单备注"></textarea>
     </view> -->
@@ -214,7 +215,7 @@
           </li>
         </view> -->
  <!-- bindtap="closeBuy" -->
-    <navigator url="/pages/orders/writeorder/index?id={{productId}}"><text class="yes">确定</text></navigator>
+   <text bindtap="closeBuy" class="yes">确定</text>
   </view>
 </view>
 

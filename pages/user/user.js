@@ -159,7 +159,14 @@ Page({
                     uid: resp.data.data.id,
                     pid: userd
                   }
-                }).then(res =>{})
+                }).then(res =>{
+                  wx.removeStorage({
+                    key: 'code',
+                    success(res) {
+                      console.log(res)
+                    }
+                  })
+                })
               },
             })
             app.request({

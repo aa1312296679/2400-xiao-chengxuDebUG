@@ -39,6 +39,20 @@ Page({
         productId: options.id
       })
       app.request({
+        url: '/content/api/product-comment',
+        data: {
+          productId: options.id,
+          type: 0,
+          page: 1
+        }
+      }).then(res => {
+        if (res.code === 1) {
+          that.setData({
+            comment: res.data.comment
+          })
+        }
+      })
+      app.request({
         url: '/content/api/product-detail',
         data: {
           productId: options.id,
@@ -46,17 +60,11 @@ Page({
         }
       }).then(res => {
         console.log(res)
-        if (res.data.comment && res.data.comment.comment.length) {
-          this.setData({
-            comment: res.data.comment.comment
-          })
-        }
-        this.setData({
+        that.setData({
           productData: res.data.product,
           show: true
         })
         if (options.addressId) {
-          const that = this
           app.request({
             url: '/content/api/user-address',
             data: {
@@ -73,17 +81,31 @@ Page({
               }
             })
           })
-          this.setData({
+          that.setData({
             addressId: options.addressId
           })
         } else if (res.data.userAddress) {
-          this.setData({
+          that.setData({
             addressId: res.data.userAddress.id,
             userInfo: res.data
           })
         }
       })
     }else {
+      app.request({
+        url: '/content/api/product-comment',
+        data: {
+          productId: options.id,
+          type: 0,
+          page: 1
+        }
+      }).then(res => {
+        if (res.code === 1) {
+          that.setData({
+            comment: res.data.comment
+          })
+        }
+      })
       app.request({
         url: '/content/api/product-detail',
         data: {
@@ -95,11 +117,6 @@ Page({
           productData: res.data.product,
           show: true
         })
-        if (res.data.comment && res.data.comment.comment.length) {
-          this.setData({
-            comment: res.data.comment.comment
-          })
-        }
       })
     }
   },
@@ -147,13 +164,13 @@ Page({
   },
   closeBuy() {
     let that = this
-    if (this.data.type) {
+    if (that.data.type) {
       app.request({
         url: '/content/api/cart-add',
         data: {
           uid: app.globalData.userInfo.id,
-          productId: this.data.productId,
-          number: this.data.num
+          productId: that.data.productId,
+          number: that.data.num
         }
       }).then(res => {
         wx.showToast({
@@ -162,43 +179,21 @@ Page({
         })
       })
     } else { 
-       app.request({
-         url: '/content/api/create-order',
-         data: {
-           uid: app.globalData.userInfo.id,
-           productId: that.data.productId,
-           number: that.data.num,
-           integral: 0,
-           couponId: 0,
-           type: 2,
-           remark: that.data.remark,
-           addressId: that.data.addressId
-         }
-       }).then(res => {
-         console.log(res)
-        //  if (that.data.productData.type != 1) {
-           wx.requestPayment({
-             timeStamp: res.data.timeStamp.toString(),
-             nonceStr: res.data.nonceStr,
-             package: res.data.package,
-             signType: 'MD5',
-             paySign: res.data.paySign,
-             success: (res) => {
-               wx.showToast({
-                 title: '支付成功',
-                 type: 'success'
-               })
-             },
-             complete: (data) => {
-               console.log(data)
-             }
-           })
-        //   } else {
-        //   wx.navigateTo({
-        //     url: '/pages/pay/index?id=' + that.data.productId + '&orderId='+res.data.orderId,
-        //   })
-        // }
-       })
+      // if (that.data.productData.type != 1) {
+        wx.navigateTo({
+          url: '/pages/orders/writeorder/index?id=' + that.data.productId,
+        })
+      // } else {
+      //   let temp = JSON.parse(JSON.stringify(that.data.productData))
+      //   temp.number = that.data.num
+      //   let info = {
+      //     arr: [temp],
+      //     totalMoney: that.data.productData.price*that.data.num
+      //   }
+      //   wx.navigateTo({
+      //     url: '/pages/pay/index?info=' + JSON.stringify(info),
+      //   })
+      // }
     }
     this.setData({
       isShow: false
@@ -208,7 +203,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.removeStorage({
+      key: 'info',
+      success(res) {
+        console.log(res)
+      }
+    })
   },
 
   /**

@@ -9,12 +9,19 @@
     <image style="float:left;width:80rpx; height:75rpx;" src="{{userInfo.avatarUrl?userInfo.avatarUrl:'../../../img/user/会员中心_003.jpg'}}" mode="scaleToFill"></image>
     <text>{{name}}</text>
      <image style="width:35rpx; height:28rpx; margin-left: 20rpx; " src="../../../img/user/会员中心_03.png" mode="scaleToFill"></image>
-     <view>你的会员将在2019-10-30到期></view>
+     <view wx:if="{{memberData && memberData.member==1}}">
+      <view>你的会员将在{{memberData.endTime}}到期></view>
      <view>已为您节省0.00元</view>
+     </view>
+      <view wx:if="{{memberData && memberData.member==0}}">
+        你还不是会员
+      </view>
 
      <view class="s2_bot">
-      <text>0</text>
-      <text>0</text>
+      <text wx:if="{{personalData}}">{{personalData.couponNumber}}</text>
+      <text wx:else>0</text>
+      <text wx:if="{{personalData}}">{{personalData.integral}}</text>
+      <text wx:else>0</text>
       <text>0</text>
      </view>
      <view class="s2_bot1">
@@ -47,7 +54,7 @@
 </view>
 <view class="s4">
   <image style="width:120rpx; height:50rpx;" src="../../../img/user/会员中心_19.png" mode="scaleToFill"></image>
-  <text bindtap="goBuy">00元/年开通会员</text>
+  <text bindtap="goBuy">开通会员</text>
 </view>
 <view class="s6">
   <image style="width:40rpx; height:40rpx;" src="../../../img/user/会员中心_07.jpg" mode="scaleToFill"></image>
@@ -55,10 +62,10 @@
   <image style="width:40rpx; height:40rpx;" src="../../../img/user/会员中心_07.jpg" mode="scaleToFill"></image>
 </view>
 <view class="s7">
+  <!-- <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心1_16.png" mode="scaleToFill"></image>
   <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心1_16.png" mode="scaleToFill"></image>
   <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心1_16.png" mode="scaleToFill"></image>
-  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心1_16.png" mode="scaleToFill"></image>
-  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心1_16.png" mode="scaleToFill"></image>
+  <image style="width:45%; height:100rpx;" src="../../../img/user/会员中心1_16.png" mode="scaleToFill"></image> -->
 </view>
 
 <view wx:if="{{isShow}}" class="choose">

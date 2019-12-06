@@ -7,7 +7,8 @@ Page({
    */
   data: {
     car:[],
-    totalMoney:0
+    totalMoney:0,
+    id: null
   },
 
   /**
@@ -16,9 +17,11 @@ Page({
   onLoad: function (options) {
     let info = options.info
     info = JSON.parse(info)
+    console.log(info)
     this.setData({
       car: info.arr,
-      totalMoney: info.totalMoney
+      totalMoney: info.totalMoney,
+      id: info.arr[0].id
     })
   },
 
