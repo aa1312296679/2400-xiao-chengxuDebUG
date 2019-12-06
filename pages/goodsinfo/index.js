@@ -164,40 +164,52 @@ Page({
   },
   closeBuy() {
     let that = this
-    if (that.data.type) {
-      app.request({
-        url: '/content/api/cart-add',
-        data: {
-          uid: app.globalData.userInfo.id,
-          productId: that.data.productId,
-          number: that.data.num
-        }
-      }).then(res => {
-        wx.showToast({
-          title: '已加入购物车',
-          type:'success'
+    if (app.globalData.userInfo && app.globalData.userInfo.id) {
+      if (that.data.type) {
+        app.request({
+          url: '/content/api/cart-add',
+          data: {
+            uid: app.globalData.userInfo.id,
+            productId: that.data.productId,
+            number: that.data.num
+          }
+        }).then(res => {
+          wx.showToast({
+            title: '已加入购物车',
+            type: 'success'
+          })
         })
-      })
-    } else { 
-      // if (that.data.productData.type != 1) {
+      } else {
+        // if (that.data.productData.type != 1) {
         wx.navigateTo({
           url: '/pages/orders/writeorder/index?id=' + that.data.productId,
         })
-      // } else {
-      //   let temp = JSON.parse(JSON.stringify(that.data.productData))
-      //   temp.number = that.data.num
-      //   let info = {
-      //     arr: [temp],
-      //     totalMoney: that.data.productData.price*that.data.num
-      //   }
-      //   wx.navigateTo({
-      //     url: '/pages/pay/index?info=' + JSON.stringify(info),
-      //   })
-      // }
+        // } else {
+        //   let temp = JSON.parse(JSON.stringify(that.data.productData))
+        //   temp.number = that.data.num
+        //   let info = {
+        //     arr: [temp],
+        //     totalMoney: that.data.productData.price*that.data.num
+        //   }
+        //   wx.navigateTo({
+        //     url: '/pages/pay/index?info=' + JSON.stringify(info),
+        //   })
+        // }
+      }
+      this.setData({
+        isShow: false
+      })
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+      setTimeout(_ => {
+        wx.switchTab({
+          url: '/pages/user/user',
+        },2000)
+      })
     }
-    this.setData({
-      isShow: false
-    })
   },
   /**
    * 生命周期函数--监听页面显示

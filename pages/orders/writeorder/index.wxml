@@ -121,8 +121,8 @@
     </view>
     <view>
       <text>共{{num}}件</text>
-      <text wx:if="{{type==1}}">合计￥{{total}}</text>
-      <text wx:else>合计￥{{num*productData.price}}</text>
+      <text wx:if="{{type==1}}">合计23￥ <text wx:if="{{total}}">{{total}}</text></text>
+      <text wx:elif="{{productData && productData.price}}">合计12￥{{num*productData.price}}</text>
       <button form-type="submit">提交订单</button>
     </view>
   </view>

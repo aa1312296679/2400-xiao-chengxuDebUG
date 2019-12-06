@@ -53,7 +53,7 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo
     })
-    if (this.data.userInfo.id) {
+    if (this.data.userInfo&&this.data.userInfo.id) {
       app.request({
         url: '/content/api/user-personal',
         data: {
