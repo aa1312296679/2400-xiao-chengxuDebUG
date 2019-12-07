@@ -170,7 +170,7 @@
               <text>尾箱版蓝色</text>
             </li>           
         </view> -->
-    <view wx:if="{{productData&&productData.type==1}}" class="number">
+    <view wx:if="{{(productData&&productData.type==1)||type==='cart'}}" class="number">
       <text>数量</text>
       <view class="stepper">
         减号
