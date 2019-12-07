@@ -13,11 +13,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.request({
-      url: '/content/api/group-index'
-    }).then(res=>{
-      console.log(res)
-    })
+    if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
+      app.request({
+        url: '/content/api/group-index'
+      }).then(res => {
+        console.log(res)
+      })
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+      wx.switchTab({
+        url: '/pages/user/user',
+      })
+    }
   },
 
   /**
