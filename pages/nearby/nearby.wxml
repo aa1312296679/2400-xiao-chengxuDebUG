@@ -8,12 +8,12 @@
     <view class="s7_right">
       <h4>{{item.name}}</h4>
       <view class="content_text">
-        <image src="../../img/home/附近的人_035.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
+        <image src="../../img/home/nearby_035.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
         <text>:{{item.phone}}</text>
       </view>
       <view style="font-size: 24rpx">营业时间：{{item.shopTime}}</view>
       <view class="content_text">
-        <image src="../../img/home/附近的人_003.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
+        <image src="../../img/home/nearby_003.png" mode="scaleToFill" style=" width: 30rpx; height: 30rpx;"></image>
         <text>:{{item.distance}}km</text>
       </view>
       <view class="address">
@@ -21,7 +21,7 @@
       </view>
     </view>
     <view data-index="{{index}}" bindtap="mapAddress" class="s7_r">
-      <image src="../../img/home/附近的人_06.png" mode="scaleToFill" style=" width: 80rpx; height: 80rpx;"></image>
+      <image src="../../img/home/nearby_06.png" mode="scaleToFill" style=" width: 80rpx; height: 80rpx;"></image>
       <text>一键导航</text>
     </view>
   </view>
