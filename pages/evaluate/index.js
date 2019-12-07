@@ -63,7 +63,6 @@ Page({
   },
   uploadImg() {
     let that = this
-    console.log(222)
     wx.chooseImage({
       success(res) {
         console.log(res)

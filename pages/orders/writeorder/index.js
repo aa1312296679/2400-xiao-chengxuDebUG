@@ -29,19 +29,19 @@ Page({
         that.data.productList.map((item, index) => {
           if (that.data.productList.length>1) {
             if (index < that.data.productList.length - 1) {
-              products += `'${item.id}-${item.number},`
+              products += "'" + item.productId + '-' + item.number + ","
             } else {
-              products += `${item.id}-${item.number}'`
+              products += item.productId + '-' + item.number + "'"
             }
           } else {
-            products += `'${item.id}-${item.number}'`
+            products += "'" + item.productId + '-' + item.number + "'"
           }
         })
         app.request({
           url: '/content/api/create-order-by-cart',
           data: {
             uid: app.globalData.userInfo.id,
-            products: products,
+            products: '1-1',
             integral: 0,
             couponId: 0,
             type: 2,

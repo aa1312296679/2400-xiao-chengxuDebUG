@@ -180,21 +180,21 @@ Page({
           })
         })
       } else {
-        // if (that.data.productData.type != 1) {
+        if (that.data.productData.type != 1) {
         wx.navigateTo({
           url: '/pages/orders/writeorder/index?id=' + that.data.productId,
         })
-        // } else {
-        //   let temp = JSON.parse(JSON.stringify(that.data.productData))
-        //   temp.number = that.data.num
-        //   let info = {
-        //     arr: [temp],
-        //     totalMoney: that.data.productData.price*that.data.num
-        //   }
-        //   wx.navigateTo({
-        //     url: '/pages/pay/index?info=' + JSON.stringify(info),
-        //   })
-        // }
+        } else {
+          let temp = JSON.parse(JSON.stringify(that.data.productData))
+          temp.number = that.data.num
+          let info = {
+            arr: [temp],
+            totalMoney: that.data.productData.price*that.data.num
+          }
+          wx.navigateTo({
+            url: '/pages/pay/index?info=' + JSON.stringify(info),
+          })
+        }
       }
       this.setData({
         isShow: false
@@ -207,7 +207,7 @@ Page({
       setTimeout(_ => {
         wx.switchTab({
           url: '/pages/user/user',
-        },2000)
+        })
       })
     }
   },
