@@ -30,10 +30,10 @@ Page({
         })
       })
     } else {
-      wx.showToast({
-        title: '请先登录',
-        icon: 'none'
-      })
+      // wx.showToast({
+      //   title: '请先登录',
+      //   icon: 'none'
+      // })
     }
   },
   // 计算总价
