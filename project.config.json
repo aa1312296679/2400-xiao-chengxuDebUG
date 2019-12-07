@@ -22,7 +22,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.0",
-	"appid": "wx51c34099f4e38b33",
+	"appid": "wxc764cf626c79acf7",
 	"projectname": "miniprogram",
 	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
@@ -590,6 +590,27 @@
 					"id": -1,
 					"name": "pages/My/address/waddress/index",
 					"pathName": "pages/My/address/waddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/index",
+					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/My/assemble/index",
+					"pathName": "pages/My/assemble/index",
 					"scene": null
 				}
 			]

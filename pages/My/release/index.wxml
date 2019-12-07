@@ -5,7 +5,7 @@
   <view class="main">
     <view class="s2">
       <text>请上传封面图片或视频</text>
-      <image wx:if='{{!imgUrl}}' bindtap="imgUp" src="../../../img/home/发布商品_03.png" mode="scaleToFill" style="width:150rpx; height:150rpx"></image>
+      <image wx:if='{{!imgUrl}}' bindtap="imgUp" src="../../../img/home/release_03.png" mode="scaleToFill" style="width:150rpx; height:150rpx"></image>
       <image wx:else src='{{imgUrl}}' style="width:150rpx; height:150rpx"></image>
     </view>
     <form bindsubmit="formSubmit">
