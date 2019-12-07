@@ -30,7 +30,7 @@
     <view class="s3">
       <h3>{{productData.title}}</h3>
       <li>
-        <image src="../../img/home/商品详情_03.png" mode="scaleToFill" style="width:30rpx; height:12px"></image>
+        <image src="../../img/home/goods_03.png" mode="scaleToFill" style="width:30rpx; height:12px"></image>
         <view style="color:red;font-weight:bold;font-size: 16px;">￥{{productData.price}}</view>
         <!-- <text>开通VIP会员卡。享受满700减50优惠卷</text> -->
         <!-- <image class="s3_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image> -->
@@ -64,7 +64,7 @@
     </li> -->
       <li>
         <h1>送至</h1>
-        <image src="../../img/home/商品详情_07.png" mode="scaleToFill" style="width:30rpx; height:18px; margin-right:10rpx;"></image>
+        <image src="../../img/home/goods_07.png" mode="scaleToFill" style="width:30rpx; height:18px; margin-right:10rpx;"></image>
         <text wx:if="{{userInfo.userAddress}}" bindtap="chooseAddress">{{userInfo.userAddress.area}}{{userInfo.userAddress.address}}</text>
         <text wx:else bindtap="chooseAddress" style="color: #666">请选择收货地址</text>
         <p>现货</p>
@@ -74,9 +74,9 @@
         <text>在线支付运费50元</text>
       </li> -->
       <li class="s5_bot">
-        <image src="../../img/home/商品详情_11.png" mode="scaleToFill" style="width:35rpx; height:18px; margin-right:10rpx;"></image>
+        <image src="../../img/home/goods_11.png" mode="scaleToFill" style="width:35rpx; height:18px; margin-right:10rpx;"></image>
         <text>店铺发货&售后</text>
-        <image src="../../img/home/商品详情_14.png" mode="scaleToFill" style="width:35rpx; height:18px; margin-right:10rpx;"></image>
+        <image src="../../img/home/goods_14.png" mode="scaleToFill" style="width:35rpx; height:18px; margin-right:10rpx;"></image>
         <text>不支持7天无理由退货</text>
       </li>
     </view>
@@ -86,7 +86,7 @@
         <p></p>
         <h1>评价</h1>
         <text></text>
-        <image class="s3_r" src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
+        <image class="s3_r" src="../../img/home/shiliang.png" mode="scaleToFill" style="width:18rpx; height:12px"></image>
         <h2></h2>
       </li>
       <!-- <li>
@@ -129,13 +129,13 @@
   <li>
     <view>
       <navigator url="/pages/shop/index">
-        <image src="../../img/home/商品详情_21.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
+        <image src="../../img/home/goods_21.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
         <text>店铺</text>
       </navigator>
     </view>
     <view>
       <navigator open-type="switchTab" url="/pages/car/car">
-        <image src="../../img/home/商品详情_18.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
+        <image src="../../img/home/goods_18.png" mode="scaleToFill" style="width:55rpx; height:50rpx"></image>
         <text>购物车</text>
       </navigator>
     </view>
@@ -152,12 +152,12 @@
 <view wx:if="{{isShow}}" class="choose">
   <view class="choose_content">
     <view class="c_header">
-      <image src="{{productData.headMsg?productData.headMsg:'../../img/home/商品详情_02.jpg'}}" mode="scaleToFill" style="width:200rpx; height:180rpx"></image>
+      <image src="{{productData.headMsg?productData.headMsg:'../../img/home/goods_02.jpg'}}" mode="scaleToFill" style="width:200rpx; height:180rpx"></image>
       <li>
         <text>￥{{productData.price}}</text>
         <!-- <h1>编号:49927298515</h1> -->
       </li>
-      <image bindtap="closePlate" src="../../img/home/购买选择_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
+      <image bindtap="closePlate" src="../../img/home/buyc_03.png" mode="scaleToFill" style="width:40rpx; height:40rpx"></image>
     </view>
     <!-- <view class="color">
           <h1>颜色</h1>

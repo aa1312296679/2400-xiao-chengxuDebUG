@@ -18,7 +18,7 @@
         <view class="img-list">
          <image class="img-user" wx:for="{{images}}" wx:key="{{index}}" src="{{item}}"></image>
         </view>
-        <image bindtap="uploadImg" src="../../../img/home/发布商品_07.png" style="width: 200rpx; height:180rpx;" ></image>
+        <image bindtap="uploadImg" src="../../../img/home/fabu_07.png" style="width: 200rpx; height:180rpx;" ></image>
       </view>
       <p class="space1"></p>
       <button form-type="submit" class="btn">提交</button>

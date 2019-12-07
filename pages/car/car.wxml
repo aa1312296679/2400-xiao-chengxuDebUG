@@ -1,7 +1,7 @@
 <!--pages/car.wxml-->
 <view class="s1">
   <view class="s1_main">
-    <image src="../../img/home/购物车_03.png" style=" width: 100%; height: 200rpx; " mode="scaleToFill"></image>
+    <image src="../../img/home/cart_03.png" style=" width: 100%; height: 200rpx; " mode="scaleToFill"></image>
     <checkbox-group bindchange="checkboxChange">
       <view class="s2" wx:for='{{info}}' wx:key='{{index}}'>
         <view class="s2_bot">

@@ -24,7 +24,7 @@
         </view>
            <view>
             <view data-index="{{index}}" bindtap="addInfo">
-              <image src="../../../img/home/已接单_03.png" mode="scaleToFill" style="margin-top:20rpx; margin-left:60rpx; width: 30rpx; height: 30rpx;"></image>
+              <image src="../../../img/home/r_get_03.png" mode="scaleToFill" style="margin-top:20rpx; margin-left:60rpx; width: 30rpx; height: 30rpx;"></image>
               <text class="s7_text1">添加信息</text>
             </view>
             <view class="stepper">
@@ -43,7 +43,7 @@
   <view class="s_content">
     <view class="s_top">
       <text>质保项目</text>
-      <image src="../../../img/user/质保项目_03.png" style="margin-top:30rpx; margin-right:30rpx; width: 20rpx; height: 20rpx;"></image>
+      <image src="../../../img/user/zhibao_03.png" style="margin-top:30rpx; margin-right:30rpx; width: 20rpx; height: 20rpx;"></image>
     </view>
     <view class="s_bot">
       <view>
@@ -75,7 +75,7 @@
   <view class="i_content">
     <view class="i_top">
       <text>添加信息</text>
-      <image bindtap="closeAdd" src="../../../img/user/质保项目_03.png" style="margin-top:30rpx; margin-right:30rpx; width: 20rpx; height: 20rpx;"></image>
+      <image bindtap="closeAdd" src="../../../img/user/zhibao_03.png" style="margin-top:30rpx; margin-right:30rpx; width: 20rpx; height: 20rpx;"></image>
     </view>
     <view class="i_bot">
       <form bindsubmit="formSubmit">

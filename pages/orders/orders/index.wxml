@@ -14,7 +14,7 @@
       <view class="s2_bot">
         <view class="s7">
           <view class="s7_left">
-            <image src="{{item.productImage?item.productImage:'../../../img/home/木马首页_20.png'}}" alt="" style=" width:150rpx; height: 150rpx;"></image>
+            <image src="{{item.productImage?item.productImage:'../../../img/home/home_20.png'}}" alt="" style=" width:150rpx; height: 150rpx;"></image>
           </view>
           <view class="s7_right">
             <h4>{{item.productTitle}}</h4>

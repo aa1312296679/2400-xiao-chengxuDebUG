@@ -12,13 +12,13 @@
         <view class="s2_bot">
           <!-- <text>星汉北路金府国际2-3</text> -->
           <text>{{userInfo.userAddress.name}} {{userInfo.userAddress.phone}}</text>
-          <image class="specal" src="../../../img/user/矢量智能箭头 拷贝 5.png" style=" width: 20rpx; height: 30rpx;" mode="scaleToFill"></image>
+          <image class="specal" src="../../../img/user/shiliang.png" style=" width: 20rpx; height: 30rpx;" mode="scaleToFill"></image>
         </view>
       </view>
       <view bindtap="chooseAddress" wx:elif="{{show}}">请选择收货地址</view>
       <view class="space"></view>
       <view class="s3">
-        <image class="specal" src="../../../img/user/填写订单_03.png" style=" width: 40rpx; height: 35rpx;" mode="scaleToFill"></image>
+        <image class="specal" src="../../../img/user/w_order_03.png" style=" width: 40rpx; height: 35rpx;" mode="scaleToFill"></image>
         <!-- <text>雅迪官方旗舰店</text> -->
         <view wx:if="{{type==1}}">
           <view wx:for="{{productList}}" wx:key="{{index}}" class="s7">
@@ -32,7 +32,7 @@
                 <view class="s7_text">
                   <text>￥{{item.price}} </text>
                 </view>
-                <image src="../../../img/user/填写订单_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
+                <image src="../../../img/user/w_order_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
                 <view class="s7_content">
                   <text>不支持7天无理由退货</text>
                 </view>
@@ -56,7 +56,7 @@
         <view wx:else class="s7">
           <view class="s7_main">
             <view class="s7_left">
-              <image src="{{productData.headMsg?productData.headMsg:'../../../img/user/填写订单_022.png'}}" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+              <image src="{{productData.headMsg?productData.headMsg:'../../../img/user/w_order_022.png'}}" alt="" style=" width: 200rpx; height: 200rpx;"></image>
             </view>
             <view class="s7_right">
               <h4>{{productData.title}}...</h4>
@@ -64,7 +64,7 @@
               <view class="s7_text">
                 <text>￥{{productData.price}} </text>
               </view>
-              <image src="../../../img/user/填写订单_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
+              <image src="../../../img/user/w_order_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
               <view class="s7_content">
                 <text>不支持7天无理由退货</text>
               </view>
@@ -85,13 +85,13 @@
         <view class="s4">
           <view class="s4_top">
             <text>配送</text>
-            <image src="../../../img/user/填写订单_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
+            <image src="../../../img/user/w_order_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
             <text>快速运输</text>
           </view>
           <text class="s4_text">工作日、双休日与节假日均可送货</text>
           <view class="s4_bot">
             <!-- <text>退换无忧￥0.80 预计获得9.80元的运费...</text> -->
-            <image src="../../../img/user/填写订单_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
+            <image src="../../../img/user/w_order_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
           </view>
           <!-- <view class="message">
           <text>留言</text>

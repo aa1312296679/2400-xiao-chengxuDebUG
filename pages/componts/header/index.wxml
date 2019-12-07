@@ -1,7 +1,7 @@
 <!--pages/componts/header/index.wxml-->
 <view class="s1">
   <text class="s1_text">成都</text>
-  <image src="../../../img/home/仁马二手车_01_03.png" style=" width: 20px; height: 15px; margin-top:8rpx;" mode="scaleToFill"></image>
-  <image src="../../../img/home/仁马二手车_03.png" style=" width: 20px; height: 20px;" mode="scaleToFill"></image>
+  <image src="../../../img/home/oldcar_01_03.png" style=" width: 20px; height: 15px; margin-top:8rpx;" mode="scaleToFill"></image>
+  <image src="../../../img/home/oldcar_03.png" style=" width: 20px; height: 20px;" mode="scaleToFill"></image>
   <text class="text_mid">配件价格</text>
   </view>

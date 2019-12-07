@@ -7,12 +7,12 @@
         <text>{{item.productTitle}}</text>
         <text>等待买家付款</text>
         <radio  checked="true"/>
-        <image src="../../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+        <image src="../../../img/home/shiliang.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
       </view>
       <view class="s2_bot">
         <view class="s7">
           <view class="s7_left">
-            <image src="{{item.productImage?item.productImage:'../../../img/home/木马首页_20.png'}}" alt="" style=" width:150rpx; height: 150rpx;"></image>
+            <image src="{{item.productImage?item.productImage:'../../../img/home/home_20.png'}}" alt="" style=" width:150rpx; height: 150rpx;"></image>
           </view>
           <view class="s7_right">
             <h4 wx:if='{{item.extInfo}}'>{{item.extInfo}}</h4>

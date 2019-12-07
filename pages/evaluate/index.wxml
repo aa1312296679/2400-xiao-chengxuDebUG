@@ -28,8 +28,8 @@
               <video class="img-user" wx:for="{{videos}}" wx:key="{{index}}" src="{{item}}"></video>
             </view>
           </view>
-          <image bindtap="uploadImg" src="../../img/home/发布商品_07.png" style="width:150rpx; height:150rpx;"></image>
-          <image bindtap="uploadVid" src="../../img/home/发布商品_07.png" style="width:150rpx; height:150rpx;"></image>
+          <image bindtap="uploadImg" src="../../img/home/fabu_07.png" style="width:150rpx; height:150rpx;"></image>
+          <image bindtap="uploadVid" src="../../img/home/fabu_03.png" style="width:150rpx; height:150rpx;"></image>
         </view>
       </view>
       <p class="space1"></p>

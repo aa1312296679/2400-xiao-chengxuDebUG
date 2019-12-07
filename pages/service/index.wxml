@@ -6,15 +6,15 @@
 <view class="space"></view>
 <view class="main">
   <view class="s2">
-    <image src="../../img/home/申请售后_03.jpg" mode="scaleToFill" style="width:100%; height:345rpx"></image>
+    <image src="../../img/home/service_03.jpg" mode="scaleToFill" style="width:100%; height:345rpx"></image>
   </view>
   <view class="s3">
        <li>
-        <image src="../../img/home/申请售后_07.png" style=" width: 16px; height: 16px;" mode="scaleToFill"></image>
+        <image src="../../img/home/service_07.png" style=" width: 16px; height: 16px;" mode="scaleToFill"></image>
        <input value="请输入您的姓名"></input>
        </li>
   <li>
-        <image src="../../img/home/店铺详情_11.png" style=" width: 20px; height: 20px;" mode="scaleToFill"></image>
+        <image src="../../img/home/d_detail_11.png" style=" width: 20px; height: 20px;" mode="scaleToFill"></image>
        <input value="请输入您的电话"></input>
        </li>
   </view>
@@ -22,7 +22,7 @@
   <view class="s4">
     <p></p>
     <h4>上传故障视频或图片方便维修师精准判断</h4>
-    <image src="../../img/home/申请售后_11.png" mode="scaleToFill" style="width:160rpx; height:140rpx"></image>
+    <image src="../../img/home/service_11.png" mode="scaleToFill" style="width:160rpx; height:140rpx"></image>
   </view>
 
   <view class="s5">

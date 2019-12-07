@@ -48,32 +48,32 @@
     "borderStyle": "black",
     "list": [
       {
-        "selectedIconPath": "img/home/形状 10.png",
-        "iconPath": "img/home/购物车_10.png",
+        "selectedIconPath": "img/home/xing 10.png",
+        "iconPath": "img/home/zhuang_10.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
-        "selectedIconPath": "img/home/形状 7.png",
-        "iconPath": "img/home/购物车_12.png",
+        "selectedIconPath": "img/home/xing 7.png",
+        "iconPath": "img/home/zhuang_12.png",
         "pagePath": "pages/nearby/nearby",
         "text": "附近门店"
       },
       {
-        "selectedIconPath": "img/home/购物车_70.png",
-        "iconPath": "img/home/购物车_70.png",
+        "selectedIconPath": "img/home/xing_70.png",
+        "iconPath": "img/home/xing_70.png",
         "pagePath": "pages/message/message",
         "text": "消息"
       },
       {
-        "selectedIconPath": "img/home/形状 8.png",
-        "iconPath": "img/home/购物车_05.png",
+        "selectedIconPath": "img/home/xing 8.png",
+        "iconPath": "img/home/zhuang_05.png",
         "pagePath": "pages/car/car",
         "text": "购物车"
       },
       {
-        "selectedIconPath": "img/home/形状 9.png",
-        "iconPath": "img/home/购物车_07.png",
+        "selectedIconPath": "img/home/xing 9.png",
+        "iconPath": "img/home/zhuang_07.png",
         "pagePath": "pages/user/user",
         "text": "我的"
       }
