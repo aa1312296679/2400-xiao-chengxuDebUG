@@ -555,6 +555,41 @@
 					"id": -1,
 					"name": "pages/index/index",
 					"pathName": "pages/advice/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/nearby/nearby",
+					"pathName": "pages/nearby/nearby",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/My/invite/index",
+					"pathName": "pages/My/invite/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/My/address/waddress/index",
+					"pathName": "pages/My/address/waddress/index",
 					"scene": null
 				}
 			]

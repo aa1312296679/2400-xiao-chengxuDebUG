@@ -4,7 +4,7 @@
 <view class="content">
   <view class="main">
     <view>
-      <image src="../../../img/user/邀请有奖_03.png" style=" width: 100%; height: 170px;" mode="scaleToFill"></image>
+      <image src="../../../img/user/invite_03.png" style=" width: 100%; height: 170px;" mode="scaleToFill"></image>
       <text>活动规则</text>
     </view>
     <p class="space"></p>
@@ -16,19 +16,19 @@
   <view class="s2_main">
     <view class="s2_content">
       <button open-type='share'>
-        <image src="../../../img/user/邀请有奖_003.png" style=" width: 80rpx; height: 70rpx;" mode="scaleToFill"></image>
+        <image src="../../../img/user/invite_003.png" style=" width: 80rpx; height: 70rpx;" mode="scaleToFill"></image>
         <text>邀请微信好友</text>
       </button>
       <button bindtap="showDia">
-        <image src="../../../img/user/邀请有奖_004.png" style=" width: 70rpx; height: 65rpx;" mode="scaleToFill"></image>
+        <image src="../../../img/user/invite_004.png" style=" width: 70rpx; height: 65rpx;" mode="scaleToFill"></image>
         <text>邀请朋友圈好友</text>
       </button>
       <button bindtap="showDia">
-        <image src="../../../img/user/邀请有奖_005.png" style=" width: 80rpx; height: 80rpx;" mode="scaleToFill"></image>
+        <image src="../../../img/user/invite_005.png" style=" width: 80rpx; height: 80rpx;" mode="scaleToFill"></image>
         <text>填写邀请码</text>
       </button>
       <button bindtap="showCode">
-        <image src="../../../img/user/邀请有奖_006.png" style=" width: 75rpx; height: 75rpx;" mode="scaleToFill"></image>
+        <image src="../../../img/user/invite_006.png" style=" width: 75rpx; height: 75rpx;" mode="scaleToFill"></image>
         <text>面对面邀请</text>
       </button>
     </view>
@@ -46,11 +46,11 @@
   </view>
   <view class="s3_content" wx:for='{{info.myShare}}' wx:key='index'>
     <image wx:if='{{item.avatar}}' src="{{item.avatar}}"></image>
-    <image wx:else src="../../../img/user/邀请有奖_011.png" style=" width: 120rpx; height: 110rpx;" mode="scaleToFill"></image>
+    <image wx:else src="../../../img/user/invite_011.png" style=" width: 120rpx; height: 110rpx;" mode="scaleToFill"></image>
     <view class="s3_text">
       <text>{{item.nickname}}</text>
       <text>使用详情</text>
     </view>
-    <image class="specal" src="../../../img/user/矢量智能箭头 拷贝 5.png" style=" width: 20rpx; height: 30rpx;" mode="scaleToFill"></image>
+    <image class="specal" src="../../../img/user/shiliang.png" style=" width: 20rpx; height: 30rpx;" mode="scaleToFill"></image>
   </view>
 </view>

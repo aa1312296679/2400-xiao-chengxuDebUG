@@ -11,7 +11,7 @@
       <view class="address-list">
       {{item.area}}
       <navigator url="/pages/My/address/waddress/index?id={{item.id}}&type={{type}}&productId={{productId}}">
-    <image src="../../../img/home/收货地址_03.png" style=" width: 40rpx; height: 40rpx;" mode="scaleToFill"></image>   
+    <image src="../../../img/home/bianji_03.png" style=" width: 40rpx; height: 40rpx;" mode="scaleToFill"></image>   
       </navigator>
       <icon data-id="{{item.id}}" bindtap="delAddress" style="margin-left:30rpx;margin-top:6rpx" type="cancel" size="28"/>
       </view>

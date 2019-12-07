@@ -3,7 +3,7 @@
   <view class="s1">
     <view class="s1_top">
       <text>木马app</text>
-      <image src="../../img/home/木马首页_03.png" style=" float:right; width: 30px; height: 30px;"></image>
+      <image src="../../img/home/shouye_03.png" style=" float:right; width: 30px; height: 30px;"></image>
     </view>
     <view wx:if='{{!userInfo}}'>
       <button class="login-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">登录</button>
@@ -14,14 +14,14 @@
       <view>
     </view>
       <view wx:if="{{userInfo.hone}}" class="s1_content">
-        <image src="../../img/user/个人中心_06.png" style="width: 15px; height: 15px;"></image>
+        <image src="../../img/user/user_06.png" style="width: 15px; height: 15px;"></image>
         <text>159256542013  </text>
-        <image src="../../img/user/个人中心_09.png" style="width: 12px; height: 12px;"></image>
+        <image src="../../img/user/user_09.png" style="width: 12px; height: 12px;"></image>
       </view>
     </view>
     <view class="s1_bottom">
       <view class="s1_b_top">
-        <image src="../../img/user/个人中心_07.png" style="width: 30px; height: 25px;"></image>
+        <image src="../../img/user/user_07.png" style="width: 30px; height: 25px;"></image>
         <text style="color:#000;">花费100元/年，预计省200元/年 </text>
         <navigator url="/pages/vip/vipcenter/index">
         <text class="s1_b_text">立即开通</text>
@@ -31,13 +31,13 @@
       <view class="s1_b_bot">
       <navigator url="../../pages/coupon/coupon/index">
         <view class="s1_b_bot_left">
-          <image src="../../img/user/个人中心_11.png" style="width: 40px; height: 30px;"></image>
+          <image src="../../img/user/user_11.png" style="width: 40px; height: 30px;"></image>
           <text>优惠卷：{{couponNumber}}张</text>
         </view>
           </navigator>
       <navigator url="../../pages/points/pointsInfo/index">
         <view>
-          <image src="../../img/user/个人中心_13.png" style="width: 40px; height: 30px;"></image>
+          <image src="../../img/user/user_13.png" style="width: 40px; height: 30px;"></image>
           <text>积分：{{integral}}分</text>
         </view>
         </navigator>
@@ -48,41 +48,41 @@
 <view class="s2">
   <view class="s2_content">
     <text>我的订单</text>
-    <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+    <image src="../../img/home/shiliang.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
     <navigator url="../../pages/orders/orders/index">
       <text class="orders">查看全部订单</text>
     </navigator>
     <view class="s3">
       <navigator url="../../pages/orders/Wpays/index">
         <view class="s3_view">
-        <image src="../../img/user/个人中心_18.png" style="width: 30px; height: 25px;"></image>
+        <image src="../../img/user/user_18.png" style="width: 30px; height: 25px;"></image>
         <view wx:if="{{orderNumber && orderNumber[0]&&orderNumber[0].number>0}}" class="order_num">{{orderNumber[0].number}}</view>
         </view>
       </navigator>
       <navigator url="../../pages/orders/Worder/index">
       <view class="s3_view">
-           <image src="../../img/user/个人中心_20.png" style="width: 26px; height: 25px;"></image>
+           <image src="../../img/user/user_20.png" style="width: 26px; height: 25px;"></image>
           <view wx:if="{{orderNumber && orderNumber[1]&&orderNumber[1].number>0}}" class="order_num">{{orderNumber[1].number}}</view>
       </view>
    
       </navigator>
       <navigator url="../../pages/orders/Rorder/index">
       <view class="s3_view">
-          <image src="../../img/user/个人中心_22.png" style="width: 26px; height: 25px;"></image>
+          <image src="../../img/user/user_22.png" style="width: 26px; height: 25px;"></image>
           <view wx:if="{{orderNumber && orderNumber[2]&&orderNumber[2].number>0}}" class="order_num">{{orderNumber[2].number}}</view>
       </view>
     
       </navigator>
       <navigator url="../../pages/orders/Wcomment/index">
       <view class="s3_view">
-      <image src="../../img/user/个人中心_24.png" style="width: 28px; height: 25px;"></image>
+      <image src="../../img/user/user_24.png" style="width: 28px; height: 25px;"></image>
       <view wx:if="{{orderNumber && orderNumber[3]&&orderNumber[3].number>0}}" class="order_num">{{orderNumber[3].number}}</view>
       </view>
         
       </navigator>
       <navigator url="../../pages/orders/Wservice/index">
       <view class="s3_view">
-      <image src="../../img/user/个人中心_26.png" style="width: 26px; height: 25px;"></image>
+      <image src="../../img/user/user_26.png" style="width: 26px; height: 25px;"></image>
    <view wx:if="{{orderNumber && orderNumber[4]&&orderNumber[4].number>0}}" class="order_num">{{orderNumber[4].number}}</view>
       </view>
         
@@ -113,16 +113,16 @@
     <text class="s4_4_text"></text>
     <view class="s4_content">
       <navigator url="../../pages/My/production/index">
-        <image src="../../img/user/个人中心_42.png" style="width: 40px; height: 40px;"></image>
+        <image src="../../img/user/user_42.png" style="width: 40px; height: 40px;"></image>
       </navigator>
       <navigator url="../../pages/My/release/index">
-        <image src="../../img/user/个人中心_34.png" style="width: 40px; height: 40px;"></image>
+        <image src="../../img/user/user_34.png" style="width: 40px; height: 40px;"></image>
       </navigator>
       <navigator url="../../pages/My/assemble/index">
-        <image src="../../img/user/37.png" style="width: 40px; height: 40px;"></image>
+        <image src="../../img/user/user_7.png" style="width: 40px; height: 40px;"></image>
       </navigator>
       <navigator url="../../pages/My/invite/index">
-        <image src="../../img/user/个人中心_39.png" style="width: 40px; height: 40px;"></image>
+        <image src="../../img/user/user_39.png" style="width: 40px; height: 40px;"></image>
       </navigator>
     </view>
 
@@ -143,16 +143,16 @@
     </view>
     <view class="s4_content">
       <navigator url="../../pages/My/address/index">
-        <image src="../../img/user/个人中心_49.png" style="width: 40px; height: 40px;"></image>
+        <image src="../../img/user/user_49.png" style="width: 40px; height: 40px;"></image>
       </navigator>
        <navigator url="../../pages/My/about/index">
-      <image src="../../img/user/个人中心_51.png" style="width: 40px; height: 40px;"></image>
+      <image src="../../img/user/user_51.png" style="width: 40px; height: 40px;"></image>
       </navigator>
       <navigator url="../../pages/My/advice/index">
-      <image src="../../img/user/个人中心_53.png" style="width: 40px; height: 40px;"></image>
+      <image src="../../img/user/user_53.png" style="width: 40px; height: 40px;"></image>
       </navigator>
       <navigator url="../../pages/My/set/index">
-        <image src="../../img/user/个人中心_55.png" style="width: 40px; height: 40px;"></image>
+        <image src="../../img/user/user_55.png" style="width: 40px; height: 40px;"></image>
       </navigator>
     </view>
     <view class="s4_text">
@@ -173,10 +173,10 @@
 </view>
 <view class="s5">
   <view class="s5_content">
-    <image src="../../img/user/个人中心_003.png" style="width: 100px; height: 15px;"></image>
-    <image src="../../img/user/个人中心_062.png" style="margin-left:20rpx; width: 20px; height: 20px;"></image>
+    <image src="../../img/user/user_003.png" style="width: 100px; height: 15px;"></image>
+    <image src="../../img/user/user_062.png" style="margin-left:20rpx; width: 20px; height: 20px;"></image>
     <text>猜你喜欢</text>
-    <image src="../../img/user/个人中心_005.png" style="margin-left:20rpx; width: 100px; height: 15px;"></image>
+    <image src="../../img/user/user_005.png" style="margin-left:20rpx; width: 100px; height: 15px;"></image>
   </view>
 </view>
 
@@ -191,7 +191,7 @@
       <text class="s7_text">￥{{item.price}}</text>
       <view class="s7_content">
         <text>{{item.tradeAddress}}</text>
-        <image src="../../img/home/矢量智能对象 拷贝 5.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
+        <image src="../../img/home/shiliang.png" mode="scaleToFill" style=" width: 15rpx; height: 20rpx;"></image>
       </view>
     </view>
   </view>
