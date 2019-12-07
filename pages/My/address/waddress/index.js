@@ -105,13 +105,17 @@ Page({
     qqmapsdk = new QQMapWX({
       key: 'XEZBZ-IYJCG-AN7QT-IPO44-KCTT3-GZF35'
     })
-    if (app.globalData.userInfo) {
+    if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
       this.setData({
         ['addressData.uid']: app.globalData.userInfo.id
       })
     } else {
-      wx.reLaunch({
-        url: '/pages/login/index'
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+      wx.switchTab({
+        url: '/pages/user/user',
       })
     }
     if (options.id) {

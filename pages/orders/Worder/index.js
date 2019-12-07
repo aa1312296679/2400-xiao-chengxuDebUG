@@ -14,19 +14,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
-    app.request({
-      url: '/content/api/my-order',
-      data: {
-        uid: app.globalData.userInfo.id,
-        type: 1
-      }
-    }).then(res => {
-      console.log(res)
-      that.setData({
-        orderInfo: res.data.order
+    if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
+      let that = this
+      app.request({
+        url: '/content/api/my-order',
+        data: {
+          uid: app.globalData.userInfo.id,
+          type: 1
+        }
+      }).then(res => {
+        console.log(res)
+        that.setData({
+          orderInfo: res.data.order
+        })
       })
-    })
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+      wx.navigateBack()
+    }
   },
 
   /**

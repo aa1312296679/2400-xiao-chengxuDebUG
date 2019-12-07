@@ -17,17 +17,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
-    app.request({
-      url:'/content/api/user-cart',
-      data:{
-        uid: app.globalData.userInfo.id
-      }
-    }).then(res=>{
-      that.setData({
-        info:res.data
+    if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
+      let that = this
+      app.request({
+        url: '/content/api/user-cart',
+        data: {
+          uid: app.globalData.userInfo.id
+        }
+      }).then(res => {
+        that.setData({
+          info: res.data
+        })
       })
-    })
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+    }
   },
   // 计算总价
   getAllMoney(){
@@ -159,23 +166,30 @@ Page({
         console.log(res)
       }
     })
-    let that = this
-    app.request({
-      url: '/content/api/user-cart',
-      data: {
-        uid: app.globalData.userInfo.id
-      }
-    }).then(res => {
-      that.setData({
-        info: res.data
+    if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
+      let that = this
+      app.request({
+        url: '/content/api/user-cart',
+        data: {
+          uid: app.globalData.userInfo.id
+        }
+      }).then(res => {
+        that.setData({
+          info: res.data
+        })
       })
-    })
-    console.log(this.data.subInfo)
-    this.data.info.map(r=>{
-      if(r.checked = true){
+      console.log(this.data.subInfo)
+      this.data.info.map(r => {
+        if (r.checked = true) {
 
-      }
-    })
-    this.data.allMoney
+        }
+      })
+      this.data.allMoney
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+    }
   },
 })

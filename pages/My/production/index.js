@@ -52,7 +52,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (this.data.uid){
+    if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
       app.request({
         url: '/content/api/user-quality',
         data: {
@@ -66,6 +66,12 @@ Page({
           })
         }
       })
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+      wx.navigateBack()
     }
   },
   formSubmit(e){
