@@ -36,6 +36,11 @@ editAddress() {
         productId: options.productId
       })
     }
+    if (options.productId) {
+        this.setData({
+            productId: options.productId
+        })
+    }
     if (options.buy) {
       this.setData({
         buy: options.buy,
