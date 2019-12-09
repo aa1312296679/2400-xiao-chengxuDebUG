@@ -17,6 +17,7 @@ Page({
     total: 0
   },
   userSubmit(e) {
+    console.log(this.data.addressId)
     if (!this.data.addressId) {
       wx.showToast({
         title: '请选择收货地址',
@@ -193,6 +194,7 @@ Page({
   onLoad: function (options) {
     let that = this
     console.log('信息')
+    console.log(options)
     let tempInfo = ''
     wx.getStorage({
       key: 'info',
@@ -333,6 +335,8 @@ Page({
                     uid: app.globalData.userInfo.id
                   }
                 }).then(res1 => {
+                  console.log('地址')
+                  console.log(options.addressId)
                   res1.data.map(item => {
                     if (item.id == options.addressId) {
                       res.data.userAddress = item
@@ -347,6 +351,7 @@ Page({
                 that.setData({
                   addressId: options.addressId
                 })
+                console.log(that.data.addressId)
               } else if (res.data.userAddress) {
                 that.setData({
                   addressId: res.data.userAddress.id,
@@ -371,6 +376,7 @@ Page({
         }
       }
     })
+    console.log(that.data.addressId)
   },
 
   /**
