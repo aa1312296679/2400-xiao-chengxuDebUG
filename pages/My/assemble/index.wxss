@@ -68,6 +68,12 @@
      display: flex;
      justify-content: space-around;
    }
+ .s3_bto .button-hover{
+    width: 140rpx;
+    height: 130rpx;
+    margin: 0;
+    background-color: #fff;
+ }
    .s3_main image{
      width: 140rpx;
      height: 130rpx;
@@ -76,7 +82,7 @@
      display: flex;
      justify-content: space-around;
    }
-   .invite text {
+   .invite button {
      margin-top: 20rpx;
     font-size: 13px;
     text-align: center;
@@ -84,9 +90,9 @@
     height: 63rpx;
     line-height: 63rpx;
     color: #000;
-    background-image: linear-gradient(
-		#e3e4e5, 
-		#e3e4e5), 
+    background-image: linear-gradient(0deg, 
+		#208137 0%, 
+		#33f861 100%), 
 	linear-gradient(0deg, 
 		#eb1e0f 0%, 
 		#f23b1d 100%);
@@ -103,3 +109,16 @@
 		#f23b1d 100%);
     color: #fff;
    }
+   .footer {
+     position: fixed;
+     bottom: 0px;
+     height: 100rpx;
+     width: 100%;
+     line-height: 100rpx;
+     background-color: #ccc;
+}
+.footer>view{
+  margin: 0rpx 50rpx;
+  display: flex;
+  justify-content: space-between;
+}

@@ -59,7 +59,9 @@
      color: #ccc;
      font-size: 12px;
    }
-  
+   .s7_right{
+     margin-left: 20rpx;
+   }
    .s7_right h4 {
      font-size: 15px;
    }

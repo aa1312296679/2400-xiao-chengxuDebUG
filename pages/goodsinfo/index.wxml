@@ -173,7 +173,7 @@
     <view wx:if="{{(productData&&productData.type==1)||type==='cart'}}" class="number">
       <text>数量</text>
       <view class="stepper">
-        减号
+        <!-- 减号 -->
         <text bindtap="delCount" data-index="{{index}}     ">-</text>
         <!-- 数值 -->
         <input disabled type="number" value="{{num}}" />

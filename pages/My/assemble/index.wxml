@@ -13,20 +13,20 @@
     <text>团购说明和商品信息</text>
     <text>助力好友</text>
     <view class="s3_bto">
-      <image src="../../../img/user/assemble_03.png"></image>
+      <image style="border-radius:50%;" src="../../../img/user/assemble_03.png"></image>
       <image src="../../../img/user/assemble_05.png"></image>
       <image src="../../../img/user/assemble_07.png"></image>
       <image src="../../../img/user/assemble_10.png"></image>
     </view>  
   </view>
   <view class="invite">
-      <text>邀请微信好友</text>
-      <text>邀请朋友圈好友</text>
-      <text>面对面邀请</text>
+      <button open-type='share'>邀请微信好友</button>
+      <!-- <text>邀请朋友圈好友</text>
+      <text>面对面邀请</text> -->
     </view>
 </view>
 
-<view class="s3">
+<!-- <view class="s3">
   <view class="s3_main">
     <text>团购说明和商品信息</text>
     <text>助力好友</text>
@@ -41,5 +41,12 @@
       <text>邀请微信好友</text>
       <text>邀请朋友圈好友</text>
       <text>面对面邀请</text>  
+  </view>
+</view> -->
+<view class="space"></view>
+<view class="footer">
+  <view>
+    <text>团购首页</text>
+    <text>我的团购</text>
   </view>
 </view>

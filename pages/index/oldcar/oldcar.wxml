@@ -1,7 +1,7 @@
 <!--pages/car/oldcar.wxml-->
 <view class="s1">
   <text class="s1_text">成都</text>
-  <image src="../../../img/home/仁马二手车_01_03.png" style=" width: 20px; height: 15px; margin-top:8rpx;" mode="scaleToFill"></image>
+  <image src="../../../img/home/oldcar_01_03.png" style=" width: 20px; height: 15px; margin-top:8rpx;" mode="scaleToFill"></image>
   <view class="search">
     <view class="df search_arr">
       <icon class="searchcion" size='15' color="#fff" type='search'></icon>
@@ -25,7 +25,7 @@
     <view>
       <p></p>
       <text>品牌</text>
-      <image src="../../../img/user/仁马筛选_03.png" style=" width: 30px; height: 30px; margin-top:8rpx;" mode="scaleToFill"></image>
+      <image src="../../../img/user/choose_03.png" style=" width: 30px; height: 30px; margin-top:8rpx;" mode="scaleToFill"></image>
     </view>
     <view>
       <text data-index="{{0}}" bindtap="changeBorad" class="{{index==0?'active-board':''}}">大众</text>

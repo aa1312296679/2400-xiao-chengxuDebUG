@@ -28,6 +28,19 @@ Page({
         url: '/pages/user/user',
       })
     }
+
+    wx.showShareMenu({
+      withShareTicket: true,
+      success: function (res) {
+        // 分享成功
+        console.log('shareMenu share success')
+        console.log('分享' + res)
+      },
+      fail: function (res) {
+        // 分享失败
+        console.log(res)
+      }
+    })
   },
 
   /**
@@ -75,7 +88,24 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function (ops) {
+    if (ops.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(ops.target)
+    }
+    return {
+      title: '快来.....啦',
+      // imageUrl: 'http://xxxx',//图片地址
+      path: '/pages/index/index?jump=123',// 用户点击首先进入的当前页面
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功:");
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败:");
+      }
+    }
 
   }
 })

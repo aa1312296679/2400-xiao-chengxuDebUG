@@ -2,7 +2,7 @@
 <view class="s1_1">
   <view class="s1">
     <view class="s1_top">
-      <text>木马app</text>
+      <text>仁马app</text>
       <image src="../../img/home/shouye_03.png" style=" float:right; width: 30px; height: 30px;"></image>
     </view>
     <view wx:if='{{!userInfo}}'>
@@ -183,7 +183,7 @@
 <view class="s7" wx:if='{{guessInfo.length>0}}'>
   <view data-id="{{item.id}}" bindtap="viewDetails" class="s7_main" wx:for='{{guessInfo}}' wx:key='index'>
     <view class="s7_left">
-      <image src="{{item.headMsg}}" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+      <image src="{{item.headMsg}}" alt="" style="border-radius:15rpx; width: 200rpx; height: 200rpx;"></image>
     </view>
     <view class="s7_right">
       <h4>{{item.title}}</h4>

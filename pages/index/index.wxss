@@ -108,9 +108,18 @@
    .s6_top image {
      margin-right: 20rpx;
    }
+    .s6_top text::before{
+      content: "";
+      display: inline-block;
+      width: 10rpx;
+      height: 30rpx;
+      background-color: #6180f1;
+      border-radius: 15rpx;
+    }
+   
    .s6_top text {
-    border-left: 15rpx solid #6180f1;
     margin-left: 20rpx;
+    font-size: 15px;
    }
    .s7 {
      width: 95%;

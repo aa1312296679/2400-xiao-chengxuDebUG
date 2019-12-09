@@ -20,7 +20,7 @@
 }
 .space {
   display: block;
- height: 20rpx;
+  height: 20rpx;
 }
 .main {
   width: 95%;

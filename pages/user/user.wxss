@@ -16,6 +16,7 @@
 .s1_top {
   display: flex;
   justify-content: space-between;
+  margin: 0rpx 40rpx;
 }
 .s1_top text {
   font-size: 13px;
@@ -52,13 +53,15 @@
 .s1_b_top image {
   margin-top: 20rpx;
 }
-.s1_b_text{
+.s1_b_top .s1_b_text{
+  display: inline-block;
   color: #fff;
   background-color: #22a715;
-  padding: 0rpx 15rpx;
+  padding: 8rpx 15rpx;
   border-radius: 10rpx;
   line-height: 50rpx;
   margin-left: 20rpx;
+  margin-top: 10rpx;
   font-size: 12px;
 }
 .s1_b_bot {
