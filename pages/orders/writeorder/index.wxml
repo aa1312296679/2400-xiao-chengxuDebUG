@@ -15,7 +15,7 @@
           <image class="specal" src="../../../img/user/shiliang.png" style=" width: 20rpx; height: 30rpx;" mode="scaleToFill"></image>
         </view>
       </view>
-      <view bindtap="chooseAddress" wx:elif="{{show}}">请选择收货地址</view>
+      <view bindtap="chooseAddress" wx:elif="{{!userInfo || !userInfo.userAddress || show}}">请选择收货地址</view>
       <view class="space"></view>
       <view class="s3">
         <image class="specal" src="../../../img/user/w_order_03.png" style=" width: 40rpx; height: 35rpx;" mode="scaleToFill"></image>

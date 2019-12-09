@@ -2,7 +2,7 @@ const app = getApp();
 Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    userInfo: null,
+    userInfo: {},
     guessInfo:[],
     uid:null,
     orderNumber: [],
@@ -16,8 +16,6 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo
     })
-    console.log('信息')
-    console.log(app.globalData.userInfo)
     if (this.data.userInfo && this.data.userInfo.id){
       app.request({
         url: '/content/api/guess-you',
@@ -60,10 +58,12 @@ Page({
           uid: app.globalData.userInfo.id
         }
       }).then(res => {
+        console.log(res)
         if (res.code === 1) {
           that.setData({
             couponNumber: res.data.couponNumber,
-            integral: res.data.integral
+            integral: res.data.integral,
+            ['userInfo.nickName']: res.data.nickname
           })
         }
       })
@@ -81,9 +81,6 @@ Page({
         }
       })
       let that = this
-      this.setData({
-        userInfo: app.globalData.userInfo
-      })
       if (this.data.userInfo && this.data.userInfo.id) {
         app.request({
           url: '/content/api/guess-you',
