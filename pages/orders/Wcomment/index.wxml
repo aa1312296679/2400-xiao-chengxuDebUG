@@ -12,7 +12,7 @@
     <view class="s2_bot">
       <view class="s7">
     <view class="s7_left">
-      <image src="{{item.productImage?item.productImage:'../../../img/home/木马首页_20.png'}}" alt="" style=" width:150rpx; height: 150rpx;"></image>
+      <image src="{{item.productImage?item.productImage:'../../../img/home/home_20.png'}}" alt="" style=" width:150rpx; height: 150rpx;"></image>
     </view>
     <view class="s7_right">
       <h4>{{item.productTitle}}...</h4> 
@@ -21,7 +21,9 @@
       
      <view class="stepper">  
       <!-- <text>售后</text> -->
-      <text data-id="{{item.id}}" bindtap="showEvaluate" class="btn">评价</text>
+      <navigator url="/pages/evaluate/index?id={{item.id}}&productImage={{item.productImage}}&productTitle={{item.productTitle}}">
+        <text data-id="{{item.id}}" class="btn">评价</text>
+      </navigator>
   </view>  
     </view>
   </view>

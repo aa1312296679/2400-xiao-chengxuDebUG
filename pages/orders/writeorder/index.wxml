@@ -1,88 +1,129 @@
 <!--pages/orders/writeorder/index.wxml-->
+<form bindsubmit="userSubmit">
+  <view class="content">
+    <view class="main">
 
-
-<view class="content">
-  <view class="main">
-
-  <view class="s2">
-      <view class="s2_top">
-      <p>默认</p>
-      <p>公司</p>
-      <text>四川成都市金牛区城区</text>
+      <view wx:if="{{userInfo && userInfo.userAddress && userInfo.userAddress.area && show}}" bindtap="chooseAddress" class="s2">
+        <view class="s2_top">
+          <!-- <p>默认</p>-->
+          <p>{{userInfo.userAddress.label}}</p>
+          <text>{{userInfo.userAddress.area}}</text>
+        </view>
+        <view class="s2_bot">
+          <!-- <text>星汉北路金府国际2-3</text> -->
+          <text>{{userInfo.userAddress.name}} {{userInfo.userAddress.phone}}</text>
+          <image class="specal" src="../../../img/user/shiliang.png" style=" width: 20rpx; height: 30rpx;" mode="scaleToFill"></image>
+        </view>
       </view>
-      <view class="s2_bot">
-        <text>星汉北路金府国际2-3</text>
-        <text>小周159***7250</text>
-        <image class="specal" src="../../../img/user/矢量智能箭头 拷贝 5.png" style=" width: 20rpx; height: 30rpx;" mode="scaleToFill"></image>
-      </view>     
-  </view>
-  <view class="space"></view>
-  <view class="s3">
-    <image class="specal" src="../../../img/user/填写订单_03.png" style=" width: 40rpx; height: 35rpx;" mode="scaleToFill"></image>
-    <text>雅迪官方旗舰店</text>
-    
-        <view class="s7">
-<view class="s7_main">
-    <view class="s7_left">
-      <image src="../../../img/user/填写订单_022.png" alt="" style=" width: 200rpx; height: 200rpx;"></image>
-    </view>
-    <view class="s7_right">
-      <h4>雅迪新款电动车 浩悦4V 适配本...</h4> 
-      <view class="content_text"> 颜色: 靠背白色</view>
-      <text class="s7_text"><text>￥3199.00  </text></text>
-      <image src="../../../img/user/填写订单_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
-      <view class="s7_content"> 
-      <text>不支持7天无理由退货</text>
+      <view bindtap="chooseAddress" wx:elif="{{!userInfo || !userInfo.userAddress || show}}">请选择收货地址</view>
+      <view class="space"></view>
+      <view class="s3">
+        <image class="specal" src="../../../img/user/w_order_03.png" style=" width: 40rpx; height: 35rpx;" mode="scaleToFill"></image>
+        <!-- <text>雅迪官方旗舰店</text> -->
+        <view wx:if="{{type==1}}">
+          <view wx:for="{{productList}}" wx:key="{{index}}" class="s7">
+            <view class="s7_main">
+              <view class="s7_left">
+                <image src="{{item.productImage?item.productImage:'../../../img/user/填写订单_022.png'}}" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+              </view>
+              <view class="s7_right">
+                <h4>{{item.title}}...</h4>
+                <!-- <view class="content_text"> 颜色: 靠背白色</view> -->
+                <view class="s7_text">
+                  <text>￥{{item.price}} </text>
+                </view>
+                <image src="../../../img/user/w_order_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
+                <view class="s7_content">
+                  <text>不支持7天无理由退货</text>
+                </view>
+              </view>
+            </view>
+            <view>
+            
+              <view class="stepper">
+                <!-- 减号 -->
+                <text bindtap="delCount" data-index="{{index}}">-</text>
+                <!-- 数值 -->
+                <input type="number" value="{{item.number}}" />
+                <!-- 加号 -->
+                <text bindtap="addCount" data-index="{{index}}">+</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+        <view wx:else class="s7">
+          <view class="s7_main">
+            <view class="s7_left">
+              <image src="{{productData.headMsg?productData.headMsg:'../../../img/user/w_order_022.png'}}" alt="" style=" width: 200rpx; height: 200rpx;"></image>
+            </view>
+            <view class="s7_right">
+              <h4>{{productData.title}}...</h4>
+              <!-- <view class="content_text"> 颜色: 靠背白色</view> -->
+              <view class="s7_text">
+                <text>￥{{productData.price}} </text>
+              </view>
+              <image src="../../../img/user/w_order_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
+              <view class="s7_content">
+                <text>不支持7天无理由退货</text>
+              </view>
+            </view>
+          </view>
+          <view>
+            <view class="stepper">
+              <!-- 减号 -->
+              <text bindtap="delCount" data-index="{{index}}">-</text>
+              <!-- 数值 -->
+              <input type="number" value="{{num}}" />
+              <!-- 加号 -->
+              <text bindtap="addCount">+</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="s4">
+          <view class="s4_top">
+            <text>配送</text>
+            <image src="../../../img/user/w_order_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
+            <text>快速运输</text>
+          </view>
+          <text class="s4_text">工作日、双休日与节假日均可送货</text>
+          <view class="s4_bot">
+            <!-- <text>退换无忧￥0.80 预计获得9.80元的运费...</text> -->
+            <image src="../../../img/user/w_order_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
+          </view>
+          <!-- <view class="message">
+          <text>留言</text>
+          <input value="建议留言前先与商家沟通确认"></input>
+        </view> -->
+        </view>
+        <view class="space"></view>
+
+        <view class="s5">
+          <li>
+            <text>支付方式</text>
+            <text>微信支付</text>
+          </li>
+          <li>
+            <text>优惠券</text>
+            <text>0张可用</text>
+          </li>
+          <!-- <li>
+            <text>使用00积分抵扣￥00元</text>
+          </li> -->
+          <view class="message">
+            <text>备注</text>
+            <input name="content" placeholder="请先和商家协商一致"></input>
+          </view>
+        </view>
       </view>
-    </view>
     </view>
     <view>
-      <view class="stepper">  
-      <!-- 减号 -->  
-      <text  bindtap="delCount" data-index="{{index}}">-</text>  
-      <!-- 数值 -->  
-      <input type="number" value="1"  />  
-      <!-- 加号 -->  
-      <text  >+</text>  
-  </view>  
+      <text>共{{num}}件</text>
+      <text wx:if="{{type==1}}">合计￥ <text wx:if="{{total}}">{{total}}</text></text>
+      <text wx:elif="{{productData && productData.price}}">合计￥{{num*productData.price}}</text>
+      <button form-type="submit">提交订单</button>
     </view>
   </view>
-
-  <view class="s4">
-      <view class="s4_top">
-        <text>配送</text>
-        <image src="../../../img/user/填写订单_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
-        <text>快速运输</text>   
-      </view>
-      <text class="s4_text">工作日、双休日与节假日均可送货</text>
-      <view class="s4_bot">
-        <text>退换无忧￥0.80 预计获得9.80元的运费...</text>
-        <image src="../../../img/user/填写订单_004.png" alt="" style=" width: 30rpx; height: 30rpx;"></image>
-      </view>
-      <view class="message">
-      <text>留言</text>
-      <input value="建议留言前先与商家沟通确认"></input>
-      </view>
-  </view>
-  <view class="space"></view>
-
-  <view class="s5">
-    <li>
-      <text>支付方式</text>
-      <text>微信支付</text>
-    </li>
-    <li>
-      <text>优惠券</text>
-      <text>0张可用</text>
-    </li>
-    <li>
-      <text>使用00积分抵扣￥00元</text>
-    </li>
-    <view class="message">
-    <text>备注</text>
-    <input value="请先和商家协商一致"></input>
-    </view>
-  </view>
-    </view>
-  </view>
-</view>
+</form>

@@ -48,6 +48,7 @@ Page({
       url: '/content/api/cate-product',
       data: {
         catPid: id,
+        type: 1,
         page: 1
       }
     }).then(res => {

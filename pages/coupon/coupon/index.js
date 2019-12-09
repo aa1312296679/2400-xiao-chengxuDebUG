@@ -17,7 +17,7 @@ Page({
     if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
       let that = this
       app.request({
-        url: '/content/api/coupon-message',
+        url: '/content/api/member-coupon',
         data: {
           uid: app.globalData.userInfo.id
         }

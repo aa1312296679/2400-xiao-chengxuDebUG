@@ -27,10 +27,20 @@ Page({
    * 生命周期函数--监听页面加载s
    */
   onLoad: function (options) {
-    this.setData({
-      uid: app.globalData.userInfo.id
-    })
-    this.getUserInfo()
+    if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
+      this.setData({
+        uid: app.globalData.userInfo.id
+      })
+      this.getUserInfo()
+    } else {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+      wx.switchTab({
+        url: '/pages/user/user',
+      })
+    }
   },
   // 提交
   formSubmit(e){

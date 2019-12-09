@@ -21,6 +21,18 @@ Page({
             uid: app.globalData.userInfo.id
           }
         }).then(res => {
+          if (res.code === 1) {
+            if (res.data.coupons&&res.data.coupons.length) {
+              res.data.coupons.map(item => {
+                if (item.integral && Number(item.integral) > 0) {
+                  that.data.couponList.push(item)
+                }
+              })
+              that.setData({
+                couponList: that.data.couponList
+              })
+            }
+          }
           console.log(res)
         })
     } else {
@@ -38,7 +50,28 @@ Page({
   onReady: function () {
 
   },
-
+  userGetCoupon(e) {
+    const id = e.currentTarget.dataset.id
+    app.request({
+      url: '/content/api/integral-coupon',
+      data: {
+        uid: app.globalData.userInfo.id,
+        couponId: id
+      }
+    }).then(res => {
+      if (res.code === 1) {
+        wx.showToast({
+          title: '领取成功',
+          icon: 'none'
+        })
+      } else {
+        wx.showToast({
+          title: res.message,
+          icon: 'none'
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

@@ -60,10 +60,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.userInfo.id) {
+    if (app.globalData && app.globalData.userInfo && app.globalData.userInfo.id) {
       this.getOrder()
     } else {
-      wx.navigateBack()
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+      wx.switchTab({
+        url: '/pages/user/user',
+      })
     }
   },
 

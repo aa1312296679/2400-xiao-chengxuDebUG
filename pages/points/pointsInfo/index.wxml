@@ -2,32 +2,16 @@
 <view class="space"></view>
 <view class="content">
   <view class="main">
-    <image src="/img/home/积分_03.jpg" style="width:100%; height:400rpx;"></image>
+    <image src="/img/home/points_03.jpg" style="width:100%; height:400rpx;"></image>
     <text>—— 积分兑换 超值优惠卷 ——</text>
     <p>积分所兑换优惠卷不能与店铺优惠叠加使用. 有效期为三个月</p>
      <view class="mid">
-          <view class="mid_d">
-              <image src="../../../img/home/coupon_4.png" style="width: 97%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
+          <view wx:for="{{couponList}}" wx:key="{{index}}" class="mid_d">
+              <image src="../../../img/home/  .png" style="width: 97%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
               <view class="mid_a">
-                <text>10</text>
-                <p>1000积分</p>
-                <span>立即兑换</span>
-              </view>
-          </view>
-           <view class="mid_d">
-              <image src="../../../img/home/coupon_4.png" style="width: 97%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
-              <view class="mid_a">
-                <text>10</text>
-                <p>1000积分</p>
-                <span>立即兑换</span>
-              </view>
-          </view>
-          <view class="mid_d">
-              <image src="../../../img/home/coupon_4.png" style="width: 97%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
-              <view class="mid_a">
-                <text>10</text>
-                <p>1000积分</p>
-                <span>立即兑换</span>
+                <text>{{item.money}}</text>
+                <p>{{item.integral}}积分</p>
+                <span bindtap="userGetCoupon" data-id="{{item.id}}">立即兑换</span>
               </view>
           </view>
       </view>

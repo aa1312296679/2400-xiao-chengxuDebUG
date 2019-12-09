@@ -29,7 +29,7 @@
         </li>
         <li>
           <text>地区</text>
-          <input value="{{userData.province - userData.city - userData.area}}" name='area'></input>
+          <input value="{{userData.province +'-'+ userData.city +'-' +userData.area}}" name='area'></input>
         </li>
         <li>
           <text>手机号</text>

@@ -65,8 +65,8 @@
 
 .updata {
   background-color: #e6e6e6;
-  height: 230rpx; 
   padding-top: 15rpx;
+  padding-bottom: 15rpx
 }
 .updata_main {
   background-color: #fff;
@@ -135,7 +135,16 @@
   margin-left: 37rpx;
   font-size: 13px;
 }
-
+.s4_main button{
+float: right;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 15px;
+  background-color: red;
+  padding: 0 30rpx;
+  color: #fff;
+  border-radius: 30rpx;
+}
 .s4  text {
   float: left;
   
@@ -146,15 +155,7 @@
   font-size: 17px;
 }
 .s4 h4{
-  float: right;
-  width: 150rpx;
-  height: 60rpx;
-  line-height: 60rpx;
-  font-size: 15px;
-  background-color: red;
-  padding-left: 40rpx;
-  color: #fff;
-  border-radius: 30rpx;
+  
 }
 .s6{
   background-color: #e6e6e6;

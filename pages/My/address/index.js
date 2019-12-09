@@ -8,7 +8,8 @@ Page({
   data: {
     addressList: [],
     type: null,
-    productId: null
+    productId: null,
+    buy: null
   },
 editAddress() {
   wx.chooseAddress({
@@ -35,6 +36,12 @@ editAddress() {
         productId: options.productId
       })
     }
+    if (options.buy) {
+      this.setData({
+        buy: options.buy,
+        productId: options.productId
+      })
+    }
     if (app.globalData.userInfo) {
       this.getAddress()
     } else {
@@ -58,7 +65,7 @@ editAddress() {
   goToShop(e) {
     if (this.data.type === 'shop') {
       wx.navigateTo({
-        url: '/pages/goodsinfo/index?addressId=' + e.currentTarget.dataset.id + '&id=' + this.data.productId,
+        url: '/pages/orders/writeorder/index?addressId=' + e.currentTarget.dataset.id + '&id=' + this.data.productId,
       })
     }
   },
