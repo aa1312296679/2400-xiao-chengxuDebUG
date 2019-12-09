@@ -199,7 +199,6 @@ Page({
     wx.getStorage({
       key: 'info',
       success: function(res) {
-        console.log(res)
         tempInfo = res.data
         const info = tempInfo
         console.log(info)
@@ -257,6 +256,7 @@ Page({
         })
       },
       fail(err) {
+        console.log('失败')
         if (options.info) {
           const info = JSON.parse(options.info)
           console.log(info)
@@ -323,12 +323,12 @@ Page({
                 uid: app.globalData.userInfo.id
               }
             }).then(res => {
+              console.log(111)
               console.log(res)
               that.setData({
                 productData: res.data.product,
               })
               if (options.addressId) {
-                const that = this
                 app.request({
                   url: '/content/api/user-address',
                   data: {

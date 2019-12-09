@@ -44,6 +44,7 @@ Page({
   },
   getUserAddress() {
     let that = this
+    console.log(123)
     wx.getLocation({
       type: 'gcj02',
       success(res) {
@@ -53,6 +54,7 @@ Page({
             longitude: res.longitude
           },
           success(res) {
+            console.log(res)
             that.setData({
               ['addressData.area']: res.result.address
             })
@@ -60,6 +62,11 @@ Page({
           complete(res) {
             console.log(res)
           }
+        })
+      },
+      fail(data) {
+        wx.showToast({
+          title: '请在设置里开启位置',
         })
       }
     })

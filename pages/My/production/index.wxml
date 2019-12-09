@@ -1,7 +1,7 @@
 <!--pages/orders/Wcomment/index.wxml-->
 
 
-<view class="content">
+<view wx:if="listData.length" class="content">
   <view class="main">
     <view wx:for="{{listData}}" wx:key="{{index}}" class="s2">
       <view class="s2_top">
@@ -101,4 +101,7 @@
       </form>
     </view>
   </view>
+</view>
+<view style="text-align:center;color:#666;font-size:24rpx;padding-top:120rpx" wx:else>
+  <text>还没有质保商品~</text>
 </view>
