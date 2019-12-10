@@ -20,6 +20,7 @@
             <h4>{{item.productTitle}}...</h4>
             <!-- <view class="content_text">普通胎X1 </view> -->
             <view class="s7_text">￥{{item.totalPrice}} </view>
+              <view>订单号：{{item.orderNumber}}</view>
             <view class="stepper">
               <text>共{{item.number}}件商品合计:<text>￥{{item.totalPrice}}</text></text>
             </view>
