@@ -22,7 +22,8 @@ Page({
       data: {
         uid: app.globalData.userInfo.id,
         month: month,
-        money: money
+        // money: money
+        money: 0.01
       }
     }).then(res => {
       if (res.code == 1) {

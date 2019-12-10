@@ -9,7 +9,7 @@
     </li>
     <li class="service">
     <image src="../../img/home/tel.png" style="width:70rpx; height: 70rpx;"></image>
-    <button open-type="contact">在线客服</button>
+    <button bindtap="goToPhone">在线客服</button>
     </li>
   </view>
   <view class="space"></view>

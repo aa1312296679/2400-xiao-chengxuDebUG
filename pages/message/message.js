@@ -7,7 +7,11 @@ Page({
   data: {
 
   },
-
+  goToPhone() {
+    wx.makePhoneCall({
+      phoneNumber: '123456',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -189,7 +189,9 @@ Page({
         title: '添加成功',
         type: 'success'
       })
-      wx.navigateBack()
+     setTimeout(_ => {
+       wx.navigateBack()
+     },3000)
       that.setData({
         ['productData.title']: null,
         ['productData.uid']: null,

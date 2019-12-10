@@ -121,6 +121,12 @@ Page({
             wx.hideLoading()
           }
         })
+      },
+      fail() {
+        wx.showToast({
+          title: '请在设置里打开定位',
+          icon: 'none'
+        })
       }
     })
   },
