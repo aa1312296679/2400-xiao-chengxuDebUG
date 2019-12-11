@@ -4,11 +4,11 @@
   <text>点击电话图标即可拨打服务热线</text>
 </view>
 
-  <view class="main">
+  <view class="main" >
     <view class="heard">
-    <text>公司简介</text>
+    <text style="font-size:16px;">公司简介</text>
     </view>
-    <view>
+    <view style="font-size:13px;">
     {{content}}
     </view>
   </view>

@@ -36,7 +36,7 @@
   border-radius: 20rpx;
 }
 .s1_1{
-  height: 460rpx;
+  height: 480rpx;
   background-color: #f6f6f6;
 }
 .s1_b_top {

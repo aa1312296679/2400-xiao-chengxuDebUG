@@ -38,7 +38,7 @@ Page({
         icon: 'none'
       })
       wx.switchTab({
-        url: '/pages/user/user',
+        // url: '/pages/user/user',
       })
     }
   },

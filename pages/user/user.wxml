@@ -9,8 +9,8 @@
       <button class="login-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">登录</button>
     </view>
     <view wx:else>
-           <image src="{{userInfo.avatarUrl}}" style="border-radius:50px;width: 60px; height: 60px;"></image>
-      <view style="color:#fff;">{{userInfo.nickName}}</view>
+           <image src="{{userInfo.avatarUrl}}" style="border-radius:50px;width: 65px; height: 65px;"></image>
+      <view style="color:#fff; margin-bottom:20rpx;">{{userInfo.nickName}}</view>
       <view>
     </view>
       <view wx:if="{{userInfo.hone}}" class="s1_content">
@@ -174,7 +174,7 @@
 <view class="s5">
   <view class="s5_content">
     <image src="../../img/user/user_003.png" style="width: 100px; height: 15px;"></image>
-    <image src="../../img/user/user_062.png" style="margin-left:20rpx; width: 20px; height: 20px;"></image>
+    <image src="../../img/user/user_062.png" style="margin-left:20rpx; margin-right:20rpx; width: 20px; height: 20px;"></image>
     <text>猜你喜欢</text>
     <image src="../../img/user/user_005.png" style="margin-left:20rpx; width: 100px; height: 15px;"></image>
   </view>

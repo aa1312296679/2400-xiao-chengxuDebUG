@@ -36,7 +36,7 @@
 .main_mid li{
   display: flex;
   height: 70rpx;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #f6f6f6;
   margin-top: 30rpx;
   margin-left: 20rpx;
 }
@@ -45,3 +45,11 @@
   color:#f37b3a;
 }
 
+.btn {
+  background-color: red;
+  border-radius: 50rpx;
+  width: 90%;
+  border: 0;
+  margin: 30rpx auto;
+  color: #fff;
+}
