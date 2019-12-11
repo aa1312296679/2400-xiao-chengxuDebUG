@@ -46,7 +46,7 @@ Page({
               console.log(res)
               if (res.code === 1) {
                 wx.showToast({
-                  title: '开通成功',
+                  title: '开通成功,送你5张优惠券，快去看看吧~',
                   type: 'success'
                 })
                 this.setData({
