@@ -8,7 +8,8 @@ Page({
   data: {
     chooseList: [],
     typeOptions: [],
-    typeId: null
+    typeId: null,
+    page: 1
   },
   searchData(e) {
     let that = this
@@ -104,7 +105,22 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    let that = this
+    this.setData({
+      page: ++this.data.page
+    })
+    app.request({
+      url: '/content/api/cate-product',
+      data: {
+        catPid: that.data.typeId,
+        type: 1,
+        page: that.data.page
+      }
+    }).then(res => {
+      that.setData({
+        chooseList: that.data.chooseList.concat(res.data.data)
+      })
+    })
   },
 
   /**

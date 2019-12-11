@@ -60,6 +60,11 @@ Page({
         }
       }).then(res => {
         console.log(res)
+        if (res.code === 1) {
+          if (typeof res.data.product.image == 'string') {
+            res.data.product.image = res.data.product.image.split(',')
+          }
+        }
         that.setData({
           productData: res.data.product,
           show: true
@@ -113,6 +118,11 @@ Page({
         }
       }).then(res => {
         console.log(res)
+        if (res.code === 1) {
+          if (typeof res.data.product.image == 'string') {
+            res.data.product.image = res.data.product.image.split(',')
+          }
+        }
         this.setData({
           productData: res.data.product,
           show: true
