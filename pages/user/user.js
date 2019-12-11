@@ -7,7 +7,8 @@ Page({
     uid:null,
     orderNumber: [],
     integral: 0,
-    couponNumber: 0
+    couponNumber: 0,
+    memberData: null
   },
 
   onLoad: function() {
@@ -99,6 +100,7 @@ Page({
               wx.getUserInfo({
                 success(res) {
                   console.log(res)
+                  that.getVipInfo()
                   res.userInfo.phone = app.globalData.userInfo.phone
                   that.setData({
                     userInfo: res.userInfo
@@ -117,7 +119,25 @@ Page({
       url: '/pages/login/index',
     })
   },
+  getVipInfo() {
+    let that = this
+    app.request({
+      url: '/content/api/member-apply',
+      data: {
+        uid: app.globalData.userInfo.id
+      }
+    }).then(res => {
+      console.log('会员')
+      console.log(res)
+      if (res.code === 1) {
+        that.setData({
+          memberData: res.data
+        })
+      }
+    })
+  },
   onGotUserInfo(res) {
+    console.log(res)
     let userInfo = res.detail.userInfo
     let that = this
     wx.setStorage({
@@ -146,6 +166,7 @@ Page({
           },
           data: jsonData,
           success(resp) {
+            that.getVipInfo()
             app.globalData.userInfo = resp.data.data
             const code = wx.getStorage({
               key: 'code',

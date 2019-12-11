@@ -54,7 +54,8 @@
 </view>
 <view class="s4">
   <image style="width:120rpx; height:50rpx;" src="../../../img/user/vip_19.png" mode="scaleToFill"></image>
-  <text bindtap="goBuy">开通会员</text>
+  <text wx:if="{{memberData && memberData.member==0}}" bindtap="goBuy">开通会员</text>
+  <text wx:if="{{memberData && memberData.member==1}}" bindtap="goBuy">立即续费</text>
 </view>
 <view class="s6">
   <image style="width:40rpx; height:40rpx;" src="../../../img/user/vip_07.jpg" mode="scaleToFill"></image>

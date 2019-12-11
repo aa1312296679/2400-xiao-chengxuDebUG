@@ -21,10 +21,12 @@
     </view>
     <view class="s1_bottom">
       <view class="s1_b_top">
-        <image src="../../img/user/user_07.png" style="width: 30px; height: 25px;"></image>
+        <image wx:if="{{memberData && memberData.member==0}}" src="../../img/user/user_07.png" style="width: 30px; height: 25px;"></image>
+         <image wx:if="{{memberData && memberData.member==1}}" src="../../img/user/hasVip.png" style="width: 30px; height: 25px;"></image>
         <text style="color:#000;">花费100元/年，预计省200元/年 </text>
         <navigator url="/pages/vip/vipcenter/index">
-        <text class="s1_b_text">立即开通</text>
+        <text wx:if="{{memberData && memberData.member==0}}" class="s1_b_text">立即开通</text>
+        <text wx:if="{{memberData && memberData.member==1}}" class="s1_b_text">立即续费</text>
         </navigator>
       </view>
 

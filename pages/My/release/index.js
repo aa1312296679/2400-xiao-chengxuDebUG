@@ -8,7 +8,7 @@ Page({
   data: {
     imgUrl:'',
     img:[
-      '../../../img/home/发布商品_07.png'
+      '../../../img/home/release_03.png'
     ],
     imgBox:[],
     items: [{
@@ -97,7 +97,7 @@ Page({
         console.log(res)
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'http://lck.hzlyzhenzhi.com/content/api/upload-image', //仅为示例，非真实的接口地址
+          url: 'https://lck.hzlyzhenzhi.com/content/api/upload-image', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'upload',
           header: {
@@ -140,12 +140,13 @@ Page({
         console.log(res)
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'http://lck.hzlyzhenzhi.com/content/api/upload-image', //仅为示例，非真实的接口地址
+          url: 'https://lck.hzlyzhenzhi.com/content/api/upload-image', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'upload',
           success(res) {
             const data = JSON.parse(res.data)
             that.data.productData.image.push(data.data.imageUrl)
+            console.log(that.data.productData)
             //do something
           },
           fail(err) {
@@ -185,10 +186,13 @@ Page({
       url:'/content/api/product-upload',
       data: that.data.productData
     }).then(res => {
-      wx.showToast({
-        title: '添加成功',
-        type: 'success'
-      })
+      console.log(res)
+      if (res.code === 1) {
+        wx.showToast({
+          title: '添加成功',
+          type: 'success'
+        })
+      }
      setTimeout(_ => {
        wx.navigateBack()
      },3000)
