@@ -22,11 +22,12 @@
 .heard text::before{
   display: inline-block;
   content: "";
-  width: 10rpx;
+  width: 8rpx;
   height: 33rpx;
   margin-top: 10rpx;
   margin-right: 10rpx;
   background-color: #0eaaed;
+  border-radius: 20rpx;
 }
 .main text {
   display: block;
