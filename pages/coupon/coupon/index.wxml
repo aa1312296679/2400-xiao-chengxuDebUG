@@ -11,12 +11,14 @@
       </view>
 
       <view class="mid">
-          <view wx:for="{{couponList}}" wx:key="{{index}}" class="mid_d">
+          <view wx:for="{{couponList}}"  wx:key="{{index}}" class="mid_d">
               <image src="../../../img/home/coupon.png" style="width: 98%; height:180rpx; margin-left:8rpx; margin-top: 20rpx;"></image>
               <view class="mid_a">
                 <text>{{item.money}}</text>
-                <p>满{{item.least}}可用</p>
+                <view>
+                  <p>满{{item.least}}可用</p>
                 <navigator url="/pages/index/index" open-type="switchTab">  <span>立即使用</span></navigator>
+                </view>
   
               </view>
               

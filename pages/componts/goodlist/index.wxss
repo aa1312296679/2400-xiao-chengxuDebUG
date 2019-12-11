@@ -21,6 +21,7 @@
    .s7_content {
      color: #7c7a7a;
      font-size: 12px;
+     margin-top: 10px;
    }
    .s7_content text {
      color: #888;
@@ -31,10 +32,12 @@
      }
      .s7_left {
        margin-top: 20rpx;
-       margin-right: 50rpx
+       margin-right: 20rpx
      }
      .s7_right {
-       margin-left: 20rpx;
        margin-top: 20rpx;
        font-size: 14px;
      }
+      .s7_right h4 {
+        font-size: 18px;
+      }

@@ -18,9 +18,9 @@
 </view>
 
 <view class="s2">
-  <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+  <swiper  class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
   <block wx:key="{{index}}" wx:for="{{bnrUrl}}" wx:for-index="index">
-    <swiper-item>
+    <swiper-item style="border-radius: 15rpx;">
       <image bindtap="goToUrl" data-imageUrl="{{item.imageUrl}}" src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
     </swiper-item>
   </block>
@@ -29,20 +29,20 @@
 
 <view class="s3">
   <navigator url="../Pprice/index?type=1" class="demo">
-    <image src="../../img/home/shouye_07.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+    <image src="../../img/home/shouye_07.png" style=" width: 60px; height: 60px; margin:6px;" mode="scaleToFill"></image>
     <button>上门维修</button>
   </navigator>
   <navigator url="../index/choosegoods/index?type=2" class="demo">
-    <image src="../../img/home/shouye_09.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+    <image src="../../img/home/shouye_09.png" style=" width: 60px; height: 60px; margin:6px;" mode="scaleToFill"></image>
     <button>购新车</button>
   </navigator>
   <navigator url="../index/oldcar/oldcar?type=3" class="demo">
-    <image src="../../img/home/shouye_11.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+    <image src="../../img/home/shouye_11.png" style=" width: 60px; height: 60px; margin:6px;" mode="scaleToFill"></image>
     <button>购二手车</button>
   </navigator>
   <view class="demo"> 
     <button open-type="contact">
-     <image src="../../img/home/shouye_13.png" style=" width: 45px; height: 45px; margin:6px;" mode="scaleToFill"></image>
+     <image src="../../img/home/shouye_13.png" style=" width: 60px; height: 60px; margin:6px;" mode="scaleToFill"></image>
       <view>人工客服</view>
     </button>   
   </view>

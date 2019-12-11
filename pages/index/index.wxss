@@ -58,23 +58,24 @@
       color: #fff;
       margin-left: 25rpx;
     }
+
     .u-wrp-bnr {
       width: 95%;
       margin: 0 auto;
-      height: 300rpx;
+      height: 360rpx;
       display: block;
       position: relative;
       top: 20rpx;
-      background: #f0f0f0;
+      background: #fff;
     }
     .u-img-slide {
       width: 100%;
       height: inherit;
     }
     .s3 {
-      margin-top: 30rpx;
       display: flex;
       justify-content: space-around;
+      margin: 30rpx 40rpx 0px 40rpx;
     }
     .demo{
       text-align: center;
@@ -103,18 +104,23 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 10rpx;
+    margin-top: 30rpx;
   }
    .s6_top image {
      margin-right: 20rpx;
    }
+    .s6_top text {
+      display: flex;
+      align-items: center;
+    }
     .s6_top text::before{
       content: "";
       display: inline-block;
-      width: 10rpx;
-      height: 30rpx;
+      width: 8rpx;
+      height: 33rpx;
       background-color: #6180f1;
       border-radius: 15rpx;
+      margin-right: 10rpx;
     }
    
    .s6_top text {
@@ -152,3 +158,4 @@
      .s7_content image {
        margin-left: 10rpx;
      }
+
