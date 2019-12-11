@@ -18,7 +18,11 @@ Page({
   onLoad: function (options) {
 
   },
-
+  goToPhone() {
+    wx.makePhoneCall({
+      phoneNumber: '15984817250',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

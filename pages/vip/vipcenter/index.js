@@ -14,6 +14,7 @@ Page({
     personalData: null
   },
   userVip(e) {
+    let that = this
     console.log(e)
     const month = Number(e.currentTarget.dataset.num)
     const money = Number(e.currentTarget.dataset.money)
@@ -36,9 +37,26 @@ Page({
           signType: 'MD5',
           paySign: res.data.paySign,
           success: (res) => {
-            wx.showToast({
-              title: '开通成功',
-              type: 'success'
+            app.request({
+              url: '/content/api/member-apply',
+              data: {
+                uid: app.globalData.userInfo.id
+              }
+            }).then(res => {
+              console.log(res)
+              if (res.code === 1) {
+                wx.showToast({
+                  title: '开通成功',
+                  type: 'success'
+                })
+                this.setData({
+                  isShow: true,
+                  ismask: true,
+                })
+                that.setData({
+                  memberData: res.data
+                })
+              }
             })
           },
           complete: (data) => {
