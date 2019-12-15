@@ -5,9 +5,9 @@
           <image src="../../img/home/dingwei.png"></image>
       </view>
       <view class="search">  
-        <view class="df search_arr">  
-          <icon class="searchcion" size='15' color="#fff" type='search'></icon>  
-          <input bindconfirm="search" confirm-type="search" class="search_input" placeholder-style="color:#fff" placeholder="        搜索"/>  
+        <view class="df search_arr"> 
+          <icon class="searchcion" size='15' color="#fff" type='search'></icon> 
+          <input bindconfirm="search" confirm-type="search" class="search_input" placeholder-style="color:#fff" placeholder="搜索" value="{{searchName}}"/>  
         </view>  
       </view>
       <view class="gundong">
@@ -19,11 +19,18 @@
 
 <view class="s2">
   <swiper  class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
-  <block wx:key="{{index}}" wx:for="{{bnrUrl}}" wx:for-index="index">
-    <swiper-item style="border-radius: 15rpx;">
-      <image bindtap="goToUrl" data-imageUrl="{{item.imageUrl}}" src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+    <swiper-item wx:for="{{bnrUrl}}" wx:key="id" style="border-radius: 15rpx;">
+      <!--图片-->
+      <block wx:if="{{item.type===0}}">
+         <image bindtap="goToUrl" data-imageUrl="{{item.imageUrl}}" src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+      </block>
+      <block wx:else>
+        <!--视频-->
+        <view  class="video-wrapper {{item.screen?'show_screen':''}}" catchtap="videoHandle" data-vedioId="myVideo{{index}}" data-index="{{index}}">
+              <video src="{{item.url}}" class='video' muted="{{item.muted}}" autoplay="true" loop="true" id="myVideo{{index}}"></video>
+        </view>
+      </block>
     </swiper-item>
-  </block>
 </swiper>
 </view>
 

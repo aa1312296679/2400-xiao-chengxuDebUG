@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "Goods":"../pages/componts/goodlist",
-    "marquee": "../pages/componts/marquee"
+    "Goods":"/pages/componts/goodlist/index",
+    "marquee": "/pages/componts/marquee/index"
   }
 }
