@@ -15,12 +15,19 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     content:'',
     goodProduct:[],
+    location:"",//地理位置
     searchName:"",//搜索名称
     bnrUrl: [  //0图片 1视频 获取数据信息后对数据结构重构为该形式
       { id: '01', url:"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400",type:1,muted:true,screen:false},
       { id: '02', url: "/mock/img/木马首页_04.png", type:0 }
     ],
     isVedioScreen:false //视频全屏状态 true全屏 false非全屏
+  },
+  onShow(){
+      // console.log(app.globalData.location);
+      this.setData({
+        location: app.globalData.location
+      })
   },
   //事件处理函数
   bindViewTap: function() {
@@ -175,7 +182,7 @@ Page({
         bnrUrl: this.data.bnrUrl,
         isVedioScreen:this.data.isVedioScreen
       })
-      //
+    
       clearTimeout(screenTimer);
       screenTimer=null;
     },50);

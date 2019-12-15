@@ -76,14 +76,12 @@
     .u-img-slide,.video-wrapper{
       width: 100%;
       height: inherit;
-      border: 1px solid greenyellow;
       overflow: hidden;
     }
 
     .video-wrapper video{
       width: 100%;
       height: 100%;
-      border: 1px solid red;
     }
     /** s2全屏 **/
     .s2_screen{

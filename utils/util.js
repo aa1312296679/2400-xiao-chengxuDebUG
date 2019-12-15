@@ -14,9 +14,23 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+//地理信息检索失败
+const locationFail = function (data) {
+  console.log(data);
+};
 
-
+//地理信息检索成功
+const locationSuccess = function(data){
+  // 获取城市信息
+  var city=data.originalData.result.addressComponent.city;
+  // console.log(this.globalData.location)
+  this.globalData.location= city;
+  
+  console.log(this.globalData.location);
+}
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  locationFail: locationFail,
+  locationSuccess: locationSuccess
 }

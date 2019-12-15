@@ -1,4 +1,14 @@
 //app.js
+
+//默认值为地图图标
+var tempLocation ="/img/home/dingwei.png";
+//百度sdk
+var bmap=require("./utils/bmap-wx.min.js");
+//util
+var util = require("./utils/util.js");
+//ak
+var ak ="yBx1zIk4go2uPtKmWuiyqPnYfwOVRRp6";
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -6,6 +16,21 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     let that = this
+
+    console.log(util.locationFail);
+    console.log(util.locationSuccess);
+    console.log("www0");
+
+    // 新建bmap对象   
+    var BMap = new bmap.BMapWX({
+      ak:ak
+    });
+
+    BMap.regeocoding({
+      fail: util.locationFail,
+      success: util.locationSuccess.bind(this)
+    });
+
     // 登录
     wx.login({
       success(res1) {
@@ -55,6 +80,7 @@ App({
       
       }
     })
+
     // wx.login({
     //   success: res => {
     //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -80,6 +106,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    host: 'https://lck.hzlyzhenzhi.com'
+    host: 'https://lck.hzlyzhenzhi.com',
+    location: tempLocation
   }
 })

@@ -2,7 +2,7 @@
 <view class="s1">
     <view class='page_row' bindtap="suo">  
       <view class="s1_lefticon">
-          <image src="../../img/home/dingwei.png"></image>
+          <image src="{{location}}"></image>
       </view>
       <view class="search">  
         <view class="df search_arr"> 
