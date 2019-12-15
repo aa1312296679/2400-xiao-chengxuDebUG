@@ -17,8 +17,10 @@
     </view>  
 </view>
 
-<view class="s2">
-  <swiper  class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+<view class="s2 {{isVedioScreen?'s2_screen':''}}">
+  <!--swiper遮罩，禁止用户滑动 全屏模式下显示 非全屏模式隐藏-->
+  <view class="{{isVedioScreen?'zpto_show':'zpto_hide'}}" catchtap="closeScreenHandle"></view>
+  <swiper class="u-wrp-bnr {{isVedioScreen?'swiper_screen':''}}" indicator-dots='{{!isVedioScreen}}' autoplay='{{!isVedioScreen}}' interval='5000' duration='1000' circular='true'>
     <swiper-item wx:for="{{bnrUrl}}" wx:key="id" style="border-radius: 15rpx;">
       <!--图片-->
       <block wx:if="{{item.type===0}}">
@@ -26,8 +28,8 @@
       </block>
       <block wx:else>
         <!--视频-->
-        <view  class="video-wrapper {{item.screen?'show_screen':''}}" catchtap="videoHandle" data-vedioId="myVideo{{index}}" data-index="{{index}}">
-              <video src="{{item.url}}" class='video' muted="{{item.muted}}" autoplay="true" loop="true" id="myVideo{{index}}"></video>
+        <view  class="video-wrapper" catchtap="openScreenHandle" data-vedioId="myVideo{{index}}" data-index="{{index}}">
+              <video src="{{item.url}}" class="video" muted="{{item.muted}}" autoplay="true" loop="true" id="myVideo{{index}}"></video>
         </view>
       </block>
     </swiper-item>

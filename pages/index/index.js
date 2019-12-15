@@ -3,6 +3,10 @@
 const app = getApp()
 //全屏缓冲
 var screenTimer=false;
+//播放中的视频控件控件id
+var activeVideoId="";
+//播放中的视频控件控件索引
+var activeControlIndex=-1;
 Page({
   data: {
     motto: 'Hello World',
@@ -15,7 +19,8 @@ Page({
     bnrUrl: [  //0图片 1视频 获取数据信息后对数据结构重构为该形式
       { id: '01', url:"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400",type:1,muted:true,screen:false},
       { id: '02', url: "/mock/img/木马首页_04.png", type:0 }
-    ]
+    ],
+    isVedioScreen:false //视频全屏状态 true全屏 false非全屏
   },
   //事件处理函数
   bindViewTap: function() {
@@ -114,43 +119,65 @@ Page({
       hasUserInfo: true
     })
   },
-  videoHandle(e){
-    //获取被点击的视频控件的控件id
-    let videoId=e.currentTarget.dataset.vedioid;   
-    //获取控件索引
-    let controlIndex = e.currentTarget.dataset.index;
-    // console.log(controlIndex); 
-    this.screenPlay(videoId, controlIndex);                          
-  },
   /**
-   * 全屏播放
+   * 全屏事件
+   * **/
+  openScreenHandle(e){
+    //视频控件
+    let tempVideo;
+    //终止其他未终止的轮播视频
+    if (e.currentTarget.dataset.vedioid !== activeVideoId && activeVideoId!==""){
+      //获取视频控件
+      tempVideo = wx.createVideoContext(activeVideoId, this);
+      //停止视频播放内容
+      tempVideo.stop();
+    }
+      
+    //获取被点击的视频控件的控件id
+    activeVideoId = e.currentTarget.dataset.vedioid;   
+    //获取控件索引
+    activeControlIndex = e.currentTarget.dataset.index;
+    //播放被点击的轮播视频
+    //获取视频控件
+    tempVideo = wx.createVideoContext(activeVideoId, this);
+    //停止视频播放内容
+    tempVideo.play();
+    // 启用全屏状态
+    this.screenPlay(activeVideoId, activeControlIndex,true);                          
+  },
+   /***
+    * 退出全屏事件
+    **/
+    closeScreenHandle(e){
+      //关闭当期正在播放的视频
+      console.log(activeVideoId);
+      // 退出全屏
+      this.screenPlay(activeVideoId, activeControlIndex, false); 
+    },
+  /**
+   * 全屏播放处理/退出全屏处理
    * @param id 视频控件的控件id
    * @param index 视频控件的控件索引
+   * @param isScreen 全屏状态 true 全屏，false非全屏
    * **/ 
-  screenPlay(id,index){
+  screenPlay(id, index, isScreen){
     //限制执行频率
     if (screenTimer){
-      console.log("----");
       return false;
     }
 
     screenTimer=setTimeout(()=>{
       //启用视频声音或关闭视频声音
-      this.data.bnrUrl[index].muted = !this.data.bnrUrl[index].muted;
-      //全屏或关闭全屏
-      this.data.bnrUrl[index].screen = !this.data.bnrUrl[index].screen;
-      //
-      console.log(this.data.bnrUrl);
+      this.data.bnrUrl[index].muted = !isScreen;
+      //全屏或退出全屏
+      this.data.isVedioScreen = isScreen;
       this.setData({
-        bnrUrl: this.data.bnrUrl
+        bnrUrl: this.data.bnrUrl,
+        isVedioScreen:this.data.isVedioScreen
       })
+      //
       clearTimeout(screenTimer);
       screenTimer=null;
-    },500);
-    
-    //执行全屏方法
-    // var videoContent=wx.createVideoContext(id,this);
-    // console.log(videoContent);
-    // videoContent.requestFullScreen();
+    },50);
   }
 })

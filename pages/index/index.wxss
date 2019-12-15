@@ -85,6 +85,35 @@
       height: 100%;
       border: 1px solid red;
     }
+    /** s2全屏 **/
+    .s2_screen{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top:0;
+        z-index: 9999;
+    }
+
+    /**swiper全屏**/
+    .swiper_screen{
+      width:100%;
+      height: 100%;
+      top:0rpx;
+    }
+    
+    /**swiper遮罩显示**/
+    .zpto_show{
+       display: block;
+       background:transparent;
+       width: 100%;
+       height: 100%;
+       position: absolute;
+       z-index: 9999;
+    }
+    /**swiper遮罩隐藏**/
+    .zpto_hide{
+      display: none;
+    }
 
     .s3 {
       display: flex;
