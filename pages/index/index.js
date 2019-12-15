@@ -15,20 +15,34 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     content:'',
     goodProduct:[],
-    location:"",//地理位置
+    locationText: "",//地理位置文字信息
+    locationIco: "", //地理位置图标信息
     searchName:"",//搜索名称
     bnrUrl: [  //0图片 1视频 获取数据信息后对数据结构重构为该形式
-      { id: '01', url:"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400",type:1,muted:true,screen:false},
+      { id: '01', url:"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400",type:1},
       { id: '02', url: "/mock/img/木马首页_04.png", type:0 }
     ],
-    isVedioScreen:false //视频全屏状态 true全屏 false非全屏
+    isVedioScreen:false, //视频全屏状态 true全屏 false非全屏
+    activeControlIndex: -1 //播放中的视频控件控件
   },
+ 
   onShow(){
-      // console.log(app.globalData.location);
-      this.setData({
-        location: app.globalData.location
-      })
+       //读取城市信息
+       app.watch(app,this.locationHandle,'location'); 
   },
+  /**
+   * 地理位置信息处理
+   * ** */
+  locationHandle(localtion){
+    let { infor, ico } = localtion;
+    
+    this.setData({
+      locationText: infor,
+      locationIco:ico
+    })
+    console.log(this.data.locationIco);
+    console.log(this.data.locationText);
+   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -132,59 +146,69 @@ Page({
   openScreenHandle(e){
     //视频控件
     let tempVideo;
-    //终止其他未终止的轮播视频
-    if (e.currentTarget.dataset.vedioid !== activeVideoId && activeVideoId!==""){
-      //获取视频控件
-      tempVideo = wx.createVideoContext(activeVideoId, this);
-      //停止视频播放内容
-      tempVideo.stop();
+    //获取被点击的视频控件索引
+    let tempVedioIndex=e.currentTarget.dataset.index;
+    //视频控件id前缀
+    let tempVedioIdFirst ="myVideo";
+    //视频控件id
+    let tempVedioId="";
+
+    //终止上一次未终止的轮播视频
+    if (tempVedioIndex !== this.data.activeControlIndex && this.data.activeControlIndex!==-1){
+      // 获取上次播放的视频的视频id
+      tempVedioId = tempVedioIdFirst + this.data.activeControlIndex
+      //  停止上次播放的视频
+      this.vedioHandle(tempVedioId, false)
     }
       
     //获取被点击的视频控件的控件id
     activeVideoId = e.currentTarget.dataset.vedioid;   
-    //获取控件索引
-    activeControlIndex = e.currentTarget.dataset.index;
-    //播放被点击的轮播视频
-    //获取视频控件
-    tempVideo = wx.createVideoContext(activeVideoId, this);
-    //停止视频播放内容
-    tempVideo.play();
+    //更新播放中的播放控件索引
+    this.data.activeControlIndex = tempVedioIndex;
+    //获取播放中的播放控件的控件id
+    tempVedioId = tempVedioIdFirst + this.data.activeControlIndex
+    //播放更新后的播放内容
+    this.vedioHandle(tempVedioId, true);
     // 启用全屏状态
-    this.screenPlay(activeVideoId, activeControlIndex,true);                          
+    this.screenPlay(true);                          
   },
    /***
     * 退出全屏事件
     **/
     closeScreenHandle(e){
-      //关闭当期正在播放的视频
-      console.log(activeVideoId);
       // 退出全屏
-      this.screenPlay(activeVideoId, activeControlIndex, false); 
+      this.screenPlay(false); 
     },
   /**
    * 全屏播放处理/退出全屏处理
-   * @param id 视频控件的控件id
-   * @param index 视频控件的控件索引
    * @param isScreen 全屏状态 true 全屏，false非全屏
    * **/ 
-  screenPlay(id, index, isScreen){
+  screenPlay(isScreen){
     //限制执行频率
     if (screenTimer){
       return false;
     }
 
     screenTimer=setTimeout(()=>{
-      //启用视频声音或关闭视频声音
-      this.data.bnrUrl[index].muted = !isScreen;
-      //全屏或退出全屏
+      //进入全屏或退出全屏
       this.data.isVedioScreen = isScreen;
       this.setData({
-        bnrUrl: this.data.bnrUrl,
         isVedioScreen:this.data.isVedioScreen
       })
     
       clearTimeout(screenTimer);
       screenTimer=null;
     },50);
+  },
+  /***
+   *视频播放或停止
+   * @param vedioId 视频控件id
+   * @param vedioState true播放,false停止 
+   */
+  vedioHandle(vedioId,vedioState){
+    //获取视频控件
+    let tempVideo = wx.createVideoContext(vedioId, this);
+    //播放视频内容或停止视频内容
+    vedioState ? tempVideo.play():tempVideo.stop(); 
   }
 })

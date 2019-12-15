@@ -2,7 +2,8 @@
 <view class="s1">
     <view class='page_row' bindtap="suo">  
       <view class="s1_lefticon">
-          <image src="{{location}}"></image>
+          <text class="location_text" wx:if="{{locationText!==''}}">{{locationText}}</text>
+          <image class="{{locationText===''?'normalIco':'downIco'}}" src="{{locationIco}}"></image>
       </view>
       <view class="search">  
         <view class="df search_arr"> 
@@ -29,7 +30,8 @@
       <block wx:else>
         <!--视频-->
         <view  class="video-wrapper" catchtap="openScreenHandle" data-vedioId="myVideo{{index}}" data-index="{{index}}">
-              <video src="{{item.url}}" class="video" muted="{{item.muted}}" autoplay="true" loop="true" id="myVideo{{index}}"></video>
+              <!-- <video src="{{item.url}}" class="video" muted="{{item.muted}}" autoplay="true" loop="true" id="myVideo{{index}}"></video> -->
+              <video src="{{item.url}}" class="video" muted="{{!isVedioScreen&&index!==activeControlIndex}}" autoplay="true" loop="true" id="myVideo{{index}}"></video>
         </view>
       </block>
     </swiper-item>

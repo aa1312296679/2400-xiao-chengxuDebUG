@@ -1,11 +1,15 @@
 //app.js
 
 //默认值为地图图标
-var tempLocation ="/img/home/dingwei.png";
+var tempLocation ="";
 //百度sdk
 var bmap=require("./utils/bmap-wx.min.js");
 //util
 var util = require("./utils/util.js");
+//promise
+var promisify = require("./utils/promisify");
+//watch
+var watchHandle=require("./utils/watch.js");
 //ak
 var ak ="yBx1zIk4go2uPtKmWuiyqPnYfwOVRRp6";
 
@@ -17,18 +21,22 @@ App({
     wx.setStorageSync('logs', logs)
     let that = this
 
-    console.log(util.locationFail);
-    console.log(util.locationSuccess);
-    console.log("www0");
-
     // 新建bmap对象   
     var BMap = new bmap.BMapWX({
       ak:ak
     });
 
+    //请求地理位置       
     BMap.regeocoding({
-      fail: util.locationFail,
-      success: util.locationSuccess.bind(this)
+      fail:(data)=> {
+        tempLocation = { infor: "", ico:"/img/home/dingwei.png"};
+        this.globalData.location = tempLocation;
+      },
+      success:(data)=> {
+        // 获取城市信息
+        tempLocation = { infor: data.originalData.result.addressComponent.city, ico:"/img/home/oldcar_01_03.png"};
+        this.globalData.location = tempLocation;
+      }
     });
 
     // 登录
@@ -87,6 +95,12 @@ App({
     //   }
     // })
   },
+  /**
+   * 监听globalData
+   * @param method数据发生改变后的回调函数
+   * @param globalDataName 监听的globalData的属性名
+   * ** */
+  watch: watchHandle,
   request({ url, data = {}, method = "post", header = { 'content-type': "application/x-www-form-urlencoded" }, host, complate }) {
     return new Promise((resolve, reject) => {
       wx.request({

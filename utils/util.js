@@ -25,8 +25,6 @@ const locationSuccess = function(data){
   var city=data.originalData.result.addressComponent.city;
   // console.log(this.globalData.location)
   this.globalData.location= city;
-  
-  console.log(this.globalData.location);
 }
 
 module.exports = {

@@ -8,6 +8,20 @@
   height: 110rpx;
   background-color: #f13a1c;
 }
+
+.s1_lefticon{
+  display: flex;
+  color: #fff;
+  font-size: 30rpx;
+  align-items: center;
+}
+
+.s1_lefticon .location_text{
+  width: 90rpx;
+  height: 20rpx;
+  line-height: 20rpx;
+}
+
 .search{  
       width: 70%;
     }  
@@ -49,11 +63,19 @@
       height: 38.8rpx;
     }
 
-    .s1_lefticon image{
-      width: 20px;
-      height: 20px;
-      margin-top: 30rpx;
+    .s1_lefticon .normalIco,.s1_lefticon .downIco{
+        width: 20px;
+        height: 20px;
+    }
+
+    .s1_lefticon .normalIco{
+      margin-top: 1rpx;
     }  
+
+    .s1_lefticon .downIco{
+        margin-top: -11rpx;
+    }
+
     .s1_right {
       width: 60rpx;
       height: 50px;
